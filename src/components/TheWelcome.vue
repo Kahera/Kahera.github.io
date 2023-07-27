@@ -1,86 +1,60 @@
 <script setup lang="ts">
-import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
+import ListItem from './ListItem.vue'
+import SvgSchool from '@/assets/icons/school.vue';
+import SvgWork from '@/assets/icons/work.vue';
+import CVItem from './CVItem.vue';
+
+const date = new Date();
 </script>
 
 <template>
-  <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
-    <template #heading>Documentation</template>
+  <ul class="space-y-6">
+    <ListItem>
+      <template #icon>
+        <SvgWork />
+      </template>
+      <template #heading>Work</template>
 
-    Vue’s
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-    provides you with all information you need to get started.
-  </WelcomeItem>
+      <ul class="flex flex-col space-y-6">
+        <CVItem :startDate="new Date(2021, 7, 1)" :company="'Evidi'" :url="'https://www.evidi.com/'"
+          :position="'Fullstack Developer'">
+          <template #description>Fullstack developer with main emphasis on .NET/C# as backend, Angular and Vue as
+            frontend,
+            and Azure as cloud provider.</template>
+        </CVItem>
+        <CVItem :startDate="new Date(2020, 7, 1)" :endDate="new Date(2021, 5, 1)" :company="'NTNU'"
+          :url="'https://www.ntnu.no/'" :position="'Teching assistant'">
+          <template #description>Student assisstant in the subjects: WWW-technologies: with main emphasis on helping
+            students finding good solutions, troubleshoot problems in assignments and projects, as well as some teaching.
+            Software development: with main emphasis on guiding groups with a larger semester task, as well as lab
+            assistance.</template>
+        </CVItem>
 
-  <WelcomeItem>
-    <template #icon>
-      <ToolingIcon />
-    </template>
-    <template #heading>Tooling</template>
+      </ul>
+    </ListItem>
 
-    This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank">Cypress Component Testing</a>.
+    <ListItem>
+      <template #icon>
+        <SvgSchool />
+      </template>
+      <template #heading>Education</template>
 
-    <br />
-
-    More instructions are available in <code>README.md</code>.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Ecosystem</template>
-
-    Get official tools and libraries for your project:
-    <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
-    <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
-    <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>, and
-    <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a>. If
-    you need more resources, we suggest paying
-    <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
-    a visit.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Community</template>
-
-    Got stuck? Ask your question on
-    <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Vue Land</a>, our official
-    Discord server, or
-    <a href="https://stackoverflow.com/questions/tagged/vue.js" target="_blank" rel="noopener"
-      >StackOverflow</a
-    >. You should also subscribe to
-    <a href="https://news.vuejs.org" target="_blank" rel="noopener">our mailing list</a> and follow
-    the official
-    <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
-    twitter account for latest news in the Vue world.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Support Vue</template>
-
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
-  </WelcomeItem>
+      <ul>
+        <CVItem :startDate="new Date(2018, 7, 1)" :endDate="new Date(2021, 5, 1)" :company="'NTNU'"
+          :url="'https://www.ntnu.no/'" :position="'Bachelor in Programming'">
+          <template #description>
+            During the degree I developed skills writing good and efficient program code in different programming
+            languages.
+            I followed the process from idea to working program with specialisation in application development. The
+            program
+            provides a foundation in informatics, but with greater emphasis on programming than is usual in such studies.
+            To
+            a large extent, the tools used are the same ones that are used professionally.
+          </template>
+        </CVItem>
+      </ul>
+    </ListItem>
+  </ul>
 </template>
+
+<style scoped></style>

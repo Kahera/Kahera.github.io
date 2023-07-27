@@ -1,0 +1,12 @@
+{
+  "css.customData": [
+    ".vscode/tailwind.json"
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "bradlc.vscode-tailwindcss"
+  },
+  "tailwindCSS.includeLanguages": {
+    "vue": "html",
+    "vue-html": "html",
+  }
+}

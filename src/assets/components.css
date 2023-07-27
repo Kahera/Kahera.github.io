@@ -1,0 +1,7 @@
+.btn {
+    @apply p-4 rounded;
+
+    &.outline {
+        @apply border rounded-xl ; 
+    }
+}

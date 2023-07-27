@@ -1,6 +1,12 @@
 # junehansen.no
 
-This template should help get you started developing with Vue 3 in Vite.
+## TODO: 
+- [ ] Complete experience page
+- [ ] Restructure layout
+- [ ] Add social links
+- [ ] Add i18n
+- [ ] Make it look decent
+- [ ] ...
 
 ## Recommended IDE Setup
 
