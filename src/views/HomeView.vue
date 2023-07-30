@@ -1,9 +1,9 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+  <div class="flex w-full h-full justify-between">
+    <RouterLink v-for="route in $router.getRoutes()" :key="route.path" :to="route.path">
+      {{ route.name }}
+    </RouterLink>
+  </div>
+</template> 

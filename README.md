@@ -1,9 +1,15 @@
 # junehansen.no
 
 ## TODO: 
-- [ ] Complete experience page
+- [ ] Complete experience page 
+> - Add voluntary work 
+> - Add certifications and courses
+> - Only show relevant work by default
+> - Add technologies section?
 - [ ] Restructure layout
 - [ ] Add social links
+- [ ] Add landing page content
+- [ ] Add about content
 - [ ] Add i18n
 - [ ] Make it look decent
 - [ ] ...

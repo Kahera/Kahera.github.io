@@ -1,10 +1,14 @@
 <template>
-  <section class="flex space-x-6">
-    <slot name="icon" class="w-16 h-16"></slot>
-    <div>
-      <h3>
+  <section class="space-y-2">
+    <div class="flex space-x-4 text-secondary-darkest dark:text-secondary-darker">
+      <span class="font-icon filled text-4xl">
+        <slot name="icon"></slot>
+      </span>
+      <h3 class="my-auto font-display font-bold text-2xl">
         <slot name="heading"></slot>
       </h3>
+    </div>
+    <div>
       <slot></slot>
     </div>
   </section>

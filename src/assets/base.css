@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities { }
+
+.font-icon {
+  &.filled {
+    font-variation-settings:
+    'FILL' 1
+  }
+};  
+
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-weight: 100 900;
+}
+
 @font-face {
   font-family: "Merienda";
   src: url(./fonts/Merienda-VariableFont_wght.ttf);
@@ -14,27 +28,36 @@
   src: url(./fonts/OpenSans-VariableFont_wdth,wght.ttf);
 }
 
-/* @font-face {
-  font-family: "OpenSansItalic";
-  src: url(./fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf);
-} */
-
 @font-face {
   font-family: "RedHatMono";
   src: url("./fonts/RedHatMono-VariableFont_wght.ttf");
 }
 
 body {
-  @apply min-h-[100dvh] bg-white dark:bg-black text-black dark:text-white font-sans antialiased;
+  @apply min-h-[100dvh] bg-primary-lightest dark:bg-accent-deep text-accent-deep dark:text-primary-lightest font-sans antialiased leading-6;
 
   transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
-
-  svg {
-    @apply fill-current;
-  }
 
   h2 {
     @apply text-2xl font-bold font-display;
+    color: #0c1018;
+  }
+
+  a {
+    @apply text-accent dark:text-accent-lighter hover:dark:opacity-90 hover:opacity-80;
   }
 }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary-darker rounded-full; 
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+

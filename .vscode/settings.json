@@ -1,4 +1,9 @@
 {
+  "editor.inlineSuggest.enabled": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "css.validate": false,
   "css.customData": [
     ".vscode/tailwind.json"
   ],
@@ -8,5 +13,6 @@
   "tailwindCSS.includeLanguages": {
     "vue": "html",
     "vue-html": "html",
-  }
+  },
+  "tailwindCSS.emmetCompletions": true,
 }

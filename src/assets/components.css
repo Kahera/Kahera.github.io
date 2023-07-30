@@ -1,7 +1,21 @@
 .btn {
-    @apply p-4 rounded;
+    &.icon {
+        @apply px-2.5 py-1.5 aspect-square h-12 w-12 rounded-xl border;
 
-    &.outline {
-        @apply border rounded-xl ; 
+        >span {
+            @apply font-icon text-2xl;
+        }
+    }
+
+    &.accent {
+        @apply border-accent;
+    }
+
+    &.primary {
+        @apply border-primary;
+    }
+
+    &.secondary {
+        @apply border-secondary;
     }
 }

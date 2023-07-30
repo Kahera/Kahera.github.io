@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
     startDate: {
         type: Date,
         required: true,
@@ -22,12 +22,26 @@ const props = defineProps({
 });
 </script>
 
+<script lang="ts">
+// function to display date as "Month Year" (e.g. "January 2021")
+function formatDate(date: Date) {
+    return date.toLocaleDateString('default', {
+        month: 'long',
+        year: 'numeric'
+    });
+}
+</script>
+
 <template>
     <div>
-
-        <div class="flex space-x-4">
-            <p>{{ startDate.toLocaleDateString() }} — {{ endDate?.toLocaleDateString() ?? 'Current' }}</p>
-            <a :href="url" target="_blank" rel="noopener"><span>{{ company }}</span></a>
+        <div class="flex justify-between mb-2">
+            <a :href="url" target="_blank" rel="noopener">
+                <p class="font-bold">{{ position }}</p>
+                <p class="italic opacity-80">{{ company }}</p>
+            </a>
+            <p class="my-auto text-right">
+                {{ formatDate(startDate) }} — {{ endDate ? formatDate(endDate) : 'Current' }}
+            </p>
         </div>
         <p>
             <slot name="description"></slot>
