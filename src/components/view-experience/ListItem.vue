@@ -1,6 +1,6 @@
 <template>
   <section class="space-y-2">
-    <div class="flex space-x-4 text-secondary-darkest dark:text-secondary-darker">
+    <div class="flex space-x-4 mb-4 text-secondary-darkest dark:text-secondary-darker">
       <span class="font-icon filled text-4xl">
         <slot name="icon"></slot>
       </span>

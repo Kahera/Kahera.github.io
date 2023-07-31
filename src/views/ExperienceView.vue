@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // Components
-import ListItem from '@/components/ListItem.vue'
-import CVItem from '@/components/CVItem.vue';
+import ListItem from '@/components/view-experience/ListItem.vue'
+import CVItem from '@/components/view-experience/CVItem.vue';
 
 // Data
 import jobData from '@/assets/data/jobs.json';
@@ -22,7 +22,7 @@ const educations = educationData.sort((a, b) => {
 </script>
 
 <template>
-  <ul class="space-y-8">
+  <ul class="space-y-8 mb-8">
     <ListItem>
       <template #icon>work</template>
       <template #heading>Work</template>
@@ -33,6 +33,7 @@ const educations = educationData.sort((a, b) => {
           :position="job.position">
           <template #description><span class="whitespace-pre-wrap">{{ job.description }}</span></template>
         </CVItem>
+        <!-- TODO: Add expand button - display 2 before, all after -->
       </ul>
     </ListItem>
 

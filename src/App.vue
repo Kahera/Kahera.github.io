@@ -5,6 +5,7 @@ import { useDarkModeStore } from '@/stores/darkMode';
 
 // Components
 import Dropdown from '@/components/Dropdown.vue';
+import Button from '@/components/Button.vue';
 
 // Variables
 const darkModeStore = useDarkModeStore();
@@ -33,6 +34,10 @@ const isDev = import.meta.env.DEV;
       <span v-if="darkModeStore.darkMode">dark_mode</span>
       <span v-else>light_mode</span>
     </button>
+    <!-- <Button @click="darkModeStore.toggle()" :icon="darkModeStore.darkMode ? 'light_mode' : 'dark_mode'"
+      :icon-position="'right'">
+      <template #text>test</template>
+    </Button> -->
   </header>
 
   <main class="mx-auto w-4/5 mt-20">
