@@ -37,6 +37,7 @@ body {
   @apply min-h-[100dvh] bg-primary-lightest dark:bg-accent-deep text-accent-deep dark:text-primary-lightest font-sans antialiased leading-6;
 
   transition: color 0.5s, background-color 0.5s;
+  text-wrap: balance;
 
   h2 {
     @apply text-2xl font-bold font-display;
