@@ -170,7 +170,7 @@ const iconSize = computed(() => {
 
 
 <template>
-    <button class="btn flex space-x-2"
+    <button class="btn flex justify-center space-x-2"
         :class="[{ 'flex-row-reverse space-x-reverse': iconPosition == 'right' }, background, textColor, border, buttonSize, rounded]">
         <span v-if="icon" class="font-icon my-auto" :class="[iconSize]">{{ icon }}</span>
         <span v-if="$slots.text" class="my-auto">

@@ -1,11 +1,13 @@
 <script setup lang="ts">
 // Components
+import Button from '@/components/Button.vue';
 import ListItem from '@/components/view-experience/ListItem.vue'
 import CVItem from '@/components/view-experience/CVItem.vue';
 
 // Data
 import jobData from '@/assets/data/jobs.json';
 import educationData from '@/assets/data/education.json';
+import { computed, ref } from 'vue';
 
 // sort data by end date - most recent first, with current jobs at the top
 const jobs = jobData.sort((a, b) => {
@@ -19,6 +21,13 @@ const educations = educationData.sort((a, b) => {
   else if (b.endDate === undefined) return 1;
   else return new Date(b.endDate).getUTCMilliseconds() - new Date(a.endDate).getUTCMilliseconds();
 });
+
+const displayAllJobs = ref(false);
+const displayJobs = computed(() => {
+  if (displayAllJobs.value) return jobs;
+  else return jobs.slice(0, 2);
+});
+
 </script>
 
 <template>
@@ -28,12 +37,16 @@ const educations = educationData.sort((a, b) => {
       <template #heading>Work</template>
 
       <ul class="flex flex-col space-y-6">
-        <CVItem v-for="job in jobs" :startDate="new Date(job.startDate)"
-          :endDate="job.endDate ? new Date(job.endDate) : undefined" :company="job.company" :url="job.url"
-          :position="job.position">
-          <template #description><span class="whitespace-pre-wrap">{{ job.description }}</span></template>
-        </CVItem>
-        <!-- TODO: Add expand button - display 2 before, all after -->
+        <TransitionGroup> <!-- TODO: Add animation -->
+          <CVItem v-for="(job, index) in displayJobs" :key="index" :startDate="new Date(job.startDate)"
+            :endDate="job.endDate ? new Date(job.endDate) : undefined" :company="job.company" :url="job.url"
+            :position="job.position">
+            <template #description><span class="whitespace-pre-wrap">{{ job.description }}</span></template>
+          </CVItem>
+        </TransitionGroup>
+        <Button @click="displayAllJobs = !displayAllJobs" :icon="displayAllJobs ? 'expand_less' : 'expand_more'">
+          <template #text>{{ displayAllJobs ? 'Show fewer' : 'Show all' }}</template>
+        </Button>
       </ul>
     </ListItem>
 
