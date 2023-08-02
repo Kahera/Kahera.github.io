@@ -1,6 +1,6 @@
 <template>
   <section class="space-y-2">
-    <div class="flex space-x-4 mb-4 text-secondary-darkest dark:text-secondary-darker">
+    <div class="flex space-x-4 mb-4 text-secondary-darker dark:text-secondary-600">
       <span class="font-icon filled text-4xl">
         <slot name="icon"></slot>
       </span>
@@ -15,3 +15,4 @@
 </template>
 
 <style scoped></style>
+

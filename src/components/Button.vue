@@ -2,7 +2,7 @@
 import { computed, useSlots, type PropType } from 'vue';
 
 const props = defineProps({
-    buttonType: {
+    type: {
         type: String as PropType<'outline' | 'solid' | 'soft'>,
         default: 'outline'
     },
@@ -31,9 +31,6 @@ const props = defineProps({
         default: false
     }
 });
-const slots = useSlots();
-
-console.log(slots.other)
 
 const rounded = computed(() => {
     if (props.round) {
@@ -44,96 +41,105 @@ const rounded = computed(() => {
 });
 
 const background = computed(() => {
+    if (props.type == 'outline') return 'bg-transparent';
     if (props.disabled) {
-        return 'bg-disabled';
-    };
+        if (props.type == 'soft') return 'bg-gray-200/40';
+        return 'bg-gray-200 dark:bg-gray-700';
+    }
 
-    switch (props.buttonType) {
-        case 'outline':
-            return 'bg-transparent';
-        case 'solid':
-            switch (props.color) {
-                case 'primary':
-                    return 'bg-primary';
-                case 'secondary':
-                    return 'bg-secondary';
-                case 'accent':
-                    return 'bg-accent';
-                case 'neutral':
-                    return 'bg-neutral';
-                case 'danger':
-                    return 'bg-danger';
-                case 'warning':
-                    return 'bg-warning';
-                case 'success':
-                    return 'bg-success';
-            }
-        case 'soft':
-            switch (props.color) {
-                case 'primary':
-                    return 'bg-primary-lighter';
-                case 'secondary':
-                    return 'bg-secondary-lighter';
-                case 'accent':
-                    return 'bg-accent-lighter';
-                case 'neutral':
-                    return 'bg-neutral-lighter';
-                case 'danger':
-                    return 'bg-danger-lighter';
-                case 'warning':
-                    return 'bg-warning-lighter';
-                case 'success':
-                    return 'bg-success-lighter';
-            }
+    switch (props.color) {
+        case 'primary':
+            if (props.type == 'soft') return 'bg-primary/40';
+            return 'bg-primary';
+        case 'secondary':
+            if (props.type == 'soft') return 'bg-secondary/40';
+            return 'bg-secondary';
+        case 'accent':
+            if (props.type == 'soft') return 'bg-accent/40';
+            return 'bg-accent';
+        case 'neutral':
+            if (props.type == 'soft') return 'bg-gray-500/40';
+            return 'bg-gray-500';
+        case 'success':
+            if (props.type == 'soft') return 'bg-green-500/40';
+            return 'bg-green-500';
+        case 'warning':
+            if (props.type == 'soft') return 'bg-yellow-500/40';
+            return 'bg-yellow-500';
+        case 'danger':
+            if (props.type == 'soft') return 'bg-red-500/40';
+            return 'bg-red-500';
     }
 })
 
 const textColor = computed(() => {
-    if (props.disabled) {
-        return 'text-disabled';
-    };
+    if (props.disabled) return 'text-gray-400';
 
-    if (props.buttonType == 'outline') {
+    if (props.type == 'outline') {
         switch (props.color) {
             case 'primary':
                 return 'text-primary';
             case 'secondary':
-                return 'text-secondary';
+                return 'text-secondary-darkest dark:text-secondary';
             case 'accent':
-                return 'text-accent';
+                return 'text-accent dark:text-accent-lighter';
             case 'neutral':
-                return 'text-neutral';
+                return 'text-gray-500 dark:text-gray-400';
             case 'danger':
-                return 'text-danger';
+                return 'text-red-500';
             case 'warning':
-                return 'text-warning';
+                return 'text-yellow-500';
             case 'success':
-                return 'text-success';
+                return 'text-green-500';
         }
     } else {
-        return 'text-transparent';
+        switch (props.color) {
+            case 'primary':
+                if (props.type == 'soft') return 'text-primary-dark';
+                return 'text-white';
+            case 'secondary':
+                if (props.type == 'soft') return 'text-black/80 dark:text-white/90';
+                return 'text-black/80';
+            case 'accent':
+                if (props.type == 'soft') return 'text-accent-darkest dark:text-accent-lightest';
+                return 'text-white';
+            case 'neutral':
+                if (props.type == 'soft') return 'text-gray-600 dark:text-gray-200';
+                return 'text-white';
+            case 'success':
+                if (props.type == 'soft') return 'text-black/70 dark:text-white/90';
+                return 'text-black/90';
+            case 'warning':
+                if (props.type == 'soft') return 'text-black/70 dark:text-white/90';
+                return 'text-black/90';
+            case 'danger':
+                if (props.type == 'soft') return 'text-black/80 dark:text-white/90';
+                return 'text-white';
+        }
     }
 
 
 });
 
 const border = computed(() => {
-    if (props.buttonType == 'outline') {
+    if (props.type == 'outline') {
+        if (props.disabled) return 'border border-gray-300 dark:border-gray-600';
+
         switch (props.color) {
             case 'primary':
                 return 'border border-primary';
             case 'secondary':
-                return 'border border-secondary';
+                return 'border border-secondary-darkest dark:border-secondary';
             case 'accent':
-                return 'border border-accent';
+                return 'border border-accent dark:border-accent-lighter';
             case 'neutral':
-                return 'border border-neutral';
+                return 'border border-gray-500';
             case 'danger':
-                return 'border border-danger';
+                return 'border border-red-500';
             case 'warning':
-                return 'border border-warning';
+                return 'border border-yellow-500';
             case 'success':
-                return 'border border-success';
+                return 'border border-green-500';
         }
     } else {
         return 'border-0';
@@ -155,19 +161,18 @@ const iconSize = computed(() => {
     switch (props.size) {
         case 'sm':
             return 'text-xl';
-        case 'md' || 'lg':
+        case 'md':
+        case 'lg':
             return 'text-2xl';
     }
 });
-
-// console.log(background.value, textColor.value, border.value)
 </script>
 
 
 <template>
     <button class="btn flex space-x-2"
         :class="[{ 'flex-row-reverse space-x-reverse': iconPosition == 'right' }, background, textColor, border, buttonSize, rounded]">
-        <span v-if="icon" class="font-icon" :class="[iconSize]">{{ icon }}</span>
+        <span v-if="icon" class="font-icon my-auto" :class="[iconSize]">{{ icon }}</span>
         <span v-if="$slots.text" class="my-auto">
             <slot name="text"></slot>
         </span>

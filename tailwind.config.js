@@ -30,8 +30,10 @@ module.exports = {
           'lightest': '#e5f3dd',
           'lighter': '#d6f5db',
           DEFAULT: '#C5ECB1',
-          'darker': '#75cc84',
-          'darkest': '#45ba93'
+          '600': '#75cc84',
+          'darker': '#45ba93',
+          'darkest': '#297058',
+          'deep': '#1e3932',
         },
         'accent': {
           'lightest': '#d1eff4',

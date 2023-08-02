@@ -62,3 +62,6 @@ body {
   @apply bg-primary rounded-full;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/60;
+}

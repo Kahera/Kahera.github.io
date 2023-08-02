@@ -15,7 +15,6 @@ export const useDarkModeStore = defineStore('darkMode', () => {
         document.documentElement.classList.toggle('dark');
 
         localStorage.theme = darkMode.value ? 'dark' : 'light';
-        console.log(darkMode);
     }
 
     return { darkMode, toggle };

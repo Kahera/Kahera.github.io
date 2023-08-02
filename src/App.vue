@@ -35,7 +35,7 @@ const isDev = import.meta.env.DEV;
       <span v-else>light_mode</span>
     </button> -->
     <Button @click="darkModeStore.toggle()" :icon="darkModeStore.darkMode ? 'light_mode' : 'dark_mode'"
-      :icon-position="'right'" :button-type="'outline'" :size="'md'">
+      :icon-position="'right'" :type="'outline'" :size="'md'">
       <!-- <template #text>test</template> -->
     </Button>
   </header>
