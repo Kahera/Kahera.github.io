@@ -30,27 +30,26 @@ window.addEventListener('click', (e) => {
 
 <template>
     <!-- TODO: Replace with custom button -->
-    <button class="btn icon dropdown-btn" @click="dropdownOpen = !dropdownOpen"
-        :class="{ 'bg-primary !border-0': buttonType == 'solid', 'bg-transparent text-primary border-primary': buttonType == 'outline' }">
-        <span class="dropdown-icon"
-            :class="{ 'text-accent-lightest dark:text-accent-deep': buttonType == 'solid' }">menu</span>
-        <div id="dropdown" class="dropdown absolute z-10 pt-2
-                    min-w-[12rem] leading-8
-                    overflow-hidden rounded-xl"
-            :class="{ 'hidden': !dropdownOpen, 'right-0': position == 'right', 'left-0': position == 'left' }">
-            <a v-for="link in links" :href=link.path class="block 
-                    bg-primary-lighter dark:bg-accent-darkest
-                    hover:bg-primary-light hover:dark:bg-accent-darker 
-                    hover:opacity-100 hover:dark:opacity-100">
-                <span class="font-icon">
-                    <slot name="icon"></slot>
-                </span>
-                <span class="text-primary-darker dark:text-primary-light">
-                    {{ link.name }}
-                </span>
-            </a>
-        </div>
-    </button>
+    <Button class="dropdown-btn" @click="dropdownOpen = !dropdownOpen" :type="'solid'" :icon="'menu'" :size="'lg'">
+        <template #other>
+            <div id="dropdown" class="dropdown absolute z-10 top-14 mb-2
+                        min-w-[12rem] leading-8
+                        overflow-hidden rounded-xl"
+                :class="{ 'hidden': !dropdownOpen, 'right-0': position == 'right', 'left-0': position == 'left' }">
+                <a v-for="link in links" :href=link.path class="block 
+                        bg-primary-lighter dark:bg-accent-darkest
+                        hover:bg-primary-light hover:dark:bg-accent-darker 
+                        hover:opacity-100 hover:dark:opacity-100">
+                    <span class="font-icon">
+                        <slot name="icon"></slot>
+                    </span>
+                    <span class="text-primary-darker dark:text-primary-light">
+                        {{ link.name }}
+                    </span>
+                </a>
+            </div>
+        </template>
+    </Button>
 </template>
 
 
