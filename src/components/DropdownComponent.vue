@@ -5,6 +5,7 @@ import Button from './ButtonComponent.vue';
 
 // Animations
 import gsap from 'gsap';
+import { usePrefersReducedMotion } from '@/utilities/prefers-reduced-motion';
 
 const props = defineProps({
     links: {
@@ -35,19 +36,18 @@ window.addEventListener('click', (e) => {
 });
 
 // Animations
-const prefersReducedMotion = window.matchMedia(
-    'screen and (prefers-reduced-motion: reduce)',
-).matches;
+const reducedMotion = usePrefersReducedMotion();
 
 function onEnter(el: any, done: any) {
+    console.log(reducedMotion)
     gsap.fromTo(el, {
         opacity: 0,
         height: 0
     }, {
         opacity: 1,
         height: 'auto',
-        duration: prefersReducedMotion ? 0 : 0.2,
-        delay: prefersReducedMotion ? 0 : el.dataset.index * 0.08,
+        duration: reducedMotion.value ? 0 : 0.2,
+        delay: reducedMotion.value ? 0 : el.dataset.index * 0.08,
         onComplete: done
     })
 }
@@ -57,8 +57,8 @@ function onLeave(el: any, done: any) {
     gsap.to(el, {
         opacity: 0,
         height: 0,
-        duration: prefersReducedMotion ? 0 : 0.2,
-        delay: prefersReducedMotion ? 0 : (delayModifier - el.dataset.index) * 0.05,
+        duration: reducedMotion.value ? 0 : 0.2,
+        delay: reducedMotion.value ? 0 : (delayModifier - el.dataset.index) * 0.05,
         onComplete: done
     })
 }

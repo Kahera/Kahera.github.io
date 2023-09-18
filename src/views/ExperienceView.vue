@@ -11,6 +11,7 @@ import { computed, ref } from 'vue';
 
 // Animations
 import gsap from 'gsap';
+import { usePrefersReducedMotion } from '@/utilities/prefers-reduced-motion';
 
 // sort data by end date - most recent first, with current jobs at the top
 const jobs = jobData.sort((a, b) => {
@@ -33,9 +34,7 @@ const displayJobs = computed(() => {
 });
 
 // Animations
-const prefersReducedMotion = window.matchMedia(
-  'screen and (prefers-reduced-motion: reduce)',
-).matches;
+const reducedMotion = usePrefersReducedMotion();
 
 function onEnter(el: any, done: any) {
   gsap.fromTo(el, {
@@ -44,7 +43,8 @@ function onEnter(el: any, done: any) {
   }, {
     opacity: 1,
     height: 'auto',
-    delay: prefersReducedMotion ? 0 : el.dataset.index * 0.15,
+    duration: reducedMotion.value ? 0 : 0.5,
+    delay: reducedMotion.value ? 0 : el.dataset.index * 0.15,
     onComplete: done
   })
 }
@@ -54,8 +54,8 @@ function onLeave(el: any, done: any) {
   gsap.to(el, {
     opacity: 0,
     height: 0,
-    duration: prefersReducedMotion ? 0 : 0.4,
-    delay: prefersReducedMotion ? 0 : (delayModifier - el.dataset.index) * 0.1,
+    duration: reducedMotion.value ? 0 : 0.4,
+    delay: reducedMotion.value ? 0 : (delayModifier - el.dataset.index) * 0.1,
     onComplete: done
   })
 }
