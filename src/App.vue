@@ -16,14 +16,15 @@ const isDev = import.meta.env.DEV;
   <!-- Under construction indicator for deployed version -->
   <p v-if="!isDev" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45
   text-center text-red-600 opacity-90 font-bold text-6xl pointer-events-none">
-    Under construction</p>
+    {{ $t('warnings.underConstruction') }}
+  </p>
 
   <header class="flex items-center space-x-4 md:space-x-8 mx-4 md:mx-6 my-2 md:my-4">
     <!-- Logo home-link -->
     <RouterLink to="/" class="flex sm:space-x-4 md:space-x-6 max-md:grow">
-      <img alt="June icon" src="@/assets/images/Kahera.png" class="max-h-12 max-sm:hidden" />
+      <img alt="icon" src="@/assets/images/Kahera.png" class="max-h-12 max-sm:hidden" />
       <h1 class="font-display font-bold text-center my-auto text-2xl sm:text-4xl text-primary dark:text-primary/80">
-        June Hansen
+        {{ $t('June', 2) }}
       </h1>
     </RouterLink>
 
@@ -31,12 +32,17 @@ const isDev = import.meta.env.DEV;
       <!-- Dropdown on small screens, link list on larger -->
       <Dropdown class="md:hidden" :position="'right'" :button-type="'solid'" :links="$router.getRoutes()" />
       <div class="max-md:hidden mx-auto space-x-6">
-        <RouterLink v-for="route in $router.getRoutes().filter(x => x.name != 'Home')" :key="route.path" :to="route.path"
+        <RouterLink v-for="route in $router.getRoutes().filter(x => x.name != 'home')" :key="route.path" :to="route.path"
           class="!text-primary/80">
-          {{ route.name }}
+          {{ $t('pages.' + route.name?.toString()) }}
         </RouterLink>
       </div>
     </nav>
+    <select v-model="$i18n.locale">
+      <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">
+        {{ $t('locale.' + locale) }}
+      </option>
+    </select>
     <Button @click="darkModeStore.toggle()" :icon-position="'right'" :type="'outline'" :size="'lg'">
       <template #icon> {{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }}</template>
     </Button>

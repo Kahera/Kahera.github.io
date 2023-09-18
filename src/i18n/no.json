@@ -1,0 +1,23 @@
+{
+    "June": "June | June Hansen",
+    "locale": {
+        "en": "EN",
+        "no": "NO"
+    },
+    "pages": {
+        "about": "Om",
+        "blog": "Blogg",
+        "contact": "Kontakt",
+        "home": "Hjem",
+        "projects": "Prosjekter",
+        "resume": "CV"
+    },
+    "warnings": {
+        "underConstruction": "Under konstruksjon"
+    },
+    "resume": {
+        "work": "Arbeid",
+        "education": "Utdanning",
+        "present": "Nåværende"
+    }
+}

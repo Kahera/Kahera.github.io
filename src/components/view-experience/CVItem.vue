@@ -22,15 +22,6 @@ defineProps({
 });
 </script>
 
-<script lang="ts">
-// function to display date as "Month Year" (e.g. "January 2021")
-function formatDate(date: Date) {
-    return date.toLocaleDateString('default', {
-        month: 'long',
-        year: 'numeric'
-    });
-}
-</script>
 
 <template>
     <li class="bg-primary-lighter/50 dark:bg-accent-darkest/50 
@@ -46,7 +37,9 @@ function formatDate(date: Date) {
 
             <!-- Date(s) -->
             <p class="text-right">
-                {{ formatDate(startDate) }} — {{ endDate ? formatDate(endDate) : 'Current' }}
+                {{ $d(startDate, 'month') }} — {{ endDate ? $d(endDate, 'month') :
+                    $t('resume.present')
+                }}
             </p>
         </div>
 

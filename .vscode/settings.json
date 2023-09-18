@@ -15,4 +15,7 @@
     "vue-html": "html",
   },
   "tailwindCSS.emmetCompletions": true,
+  "i18n-ally.localesPaths": [
+    "src/i18n"
+  ],
 }

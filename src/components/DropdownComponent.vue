@@ -81,7 +81,7 @@ function onLeave(el: any, done: any) {
                             <slot name="icon"></slot>
                         </span>
                         <span class="text-primary-darker dark:text-primary-light">
-                            {{ link.name }}
+                            {{ $t('pages.' + link.name?.toString()) }}
                         </span>
                     </a>
                 </TransitionGroup>

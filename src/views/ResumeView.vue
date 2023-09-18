@@ -13,6 +13,7 @@ import { computed, ref } from 'vue';
 import gsap from 'gsap';
 import { usePrefersReducedMotion } from '@/utilities/prefers-reduced-motion';
 
+
 // sort data by end date - most recent first, with current jobs at the top
 const jobs = jobData.sort((a, b) => {
   if (a.endDate === undefined) return -1;
@@ -65,7 +66,7 @@ function onLeave(el: any, done: any) {
   <ul class="space-y-8 mb-8">
     <ListItem>
       <template #icon>work</template>
-      <template #heading>Work</template>
+      <template #heading>{{ $t('resume.work') }}</template>
 
       <ol class="flex flex-col space-y-6">
         <TransitionGroup name="list" @enter="onEnter" @leave="onLeave">
@@ -85,7 +86,7 @@ function onLeave(el: any, done: any) {
 
     <ListItem>
       <template #icon>school</template>
-      <template #heading>Education</template>
+      <template #heading>{{ $t('resume.education') }}</template>
       <ul class="flex flex-col space-y-6">
         <CVItem v-for="education in educations" :key="education.degree" :startDate="new Date(education.startDate)"
           :endDate="education.endDate ? new Date(education.endDate) : undefined" :company="education.school"
