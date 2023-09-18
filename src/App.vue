@@ -4,8 +4,8 @@ import { RouterLink, RouterView } from 'vue-router'
 import { useDarkModeStore } from '@/stores/darkMode';
 
 // Components
-import Dropdown from '@/components/Dropdown.vue';
-import Button from '@/components/Button.vue';
+import Dropdown from '@/components/DropdownComponent.vue';
+import Button from '@/components/ButtonComponent.vue';
 
 // Variables
 const darkModeStore = useDarkModeStore();
@@ -24,14 +24,14 @@ const isDev = import.meta.env.DEV;
     <nav class="max-md:order-last md:grow flex justify-center">
       <Dropdown class="md:hidden" :position="'right'" :button-type="'solid'" :links="$router.getRoutes()" />
       <div class="max-md:hidden mx-auto space-x-6">
-        <RouterLink v-for="route in $router.getRoutes().filter(x => x.name != 'Home')" :to="route.path"
+        <RouterLink v-for="route in $router.getRoutes().filter(x => x.name != 'Home')" :key="route.path" :to="route.path"
           class="!text-primary">
           {{ route.name }}
         </RouterLink>
       </div>
     </nav>
-    <Button @click="darkModeStore.toggle()" :icon="darkModeStore.darkMode ? 'light_mode' : 'dark_mode'"
-      :icon-position="'right'" :type="'outline'" :size="'lg'">
+    <Button @click="darkModeStore.toggle()" :icon-position="'right'" :type="'outline'" :size="'lg'">
+      <template #icon> {{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }}</template>
     </Button>
   </header>
 
@@ -40,4 +40,11 @@ const isDev = import.meta.env.DEV;
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>

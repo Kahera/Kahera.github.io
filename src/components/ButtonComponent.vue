@@ -10,10 +10,6 @@ const props = defineProps({
         type: String as PropType<'primary' | 'secondary' | 'accent' | 'neutral' | 'danger' | 'warning' | 'success'>,
         default: 'primary'
     },
-    icon: {
-        type: String,
-        required: false
-    },
     iconPosition: {
         type: String as PropType<'left' | 'right'>,
         default: 'left'
@@ -69,6 +65,7 @@ const background = computed(() => {
         case 'danger':
             if (props.type == 'soft') return 'bg-red-500/40';
             return 'bg-red-500';
+        default: return 'bg-transparent';
     }
 })
 
@@ -91,6 +88,7 @@ const textColor = computed(() => {
                 return 'text-yellow-500';
             case 'success':
                 return 'text-green-500';
+            default: return 'text-primary';
         }
     } else {
         switch (props.color) {
@@ -115,6 +113,7 @@ const textColor = computed(() => {
             case 'danger':
                 if (props.type == 'soft') return 'text-black/80 dark:text-white/90';
                 return 'text-white';
+            default: return 'text-white';
         }
     }
 
@@ -140,6 +139,7 @@ const border = computed(() => {
                 return 'border border-yellow-500';
             case 'success':
                 return 'border border-green-500';
+            default: return 'border border-primary';
         }
     } else {
         return 'border-0';
@@ -154,6 +154,7 @@ const buttonSize = computed(() => {
             return 'px-3 py-1 text-base';
         case 'lg':
             return 'px-3 py-2 text-lg';
+        default: return 'px-3 py-1 text-base';
     }
 });
 
@@ -164,6 +165,8 @@ const iconSize = computed(() => {
         case 'md':
         case 'lg':
             return 'text-2xl';
+        default:
+            return 'text-2xl';
     }
 });
 </script>
@@ -172,7 +175,9 @@ const iconSize = computed(() => {
 <template>
     <button class="btn flex justify-center space-x-2"
         :class="[{ 'flex-row-reverse space-x-reverse': iconPosition == 'right' }, background, textColor, border, buttonSize, rounded]">
-        <span v-if="icon" class="font-icon my-auto" :class="[iconSize]">{{ icon }}</span>
+        <span v-if="$slots.icon" class="font-icon my-auto" :class="[iconSize]">
+            <slot name="icon"></slot>
+        </span>
         <span v-if="$slots.text" class="my-auto">
             <slot name="text"></slot>
         </span>

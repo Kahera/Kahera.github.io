@@ -33,9 +33,9 @@ function formatDate(date: Date) {
 </script>
 
 <template>
-    <div class="bg-primary-lighter/50 dark:bg-accent-darkest/50 
-            rounded-lg overflow-hidden p-6">
-        <div class="flex justify-between mb-2">
+    <li class="bg-primary-lighter/50 dark:bg-accent-darkest/50 
+            rounded-lg overflow-hidden">
+        <div class="flex justify-between mb-2 m-6">
             <div class="justify-between">
                 <p class="font-bold">{{ position }}</p>
                 <a :href="url" target="_blank" rel="noopener">
@@ -46,10 +46,10 @@ function formatDate(date: Date) {
                 {{ formatDate(startDate) }} — {{ endDate ? formatDate(endDate) : 'Current' }}
             </p>
         </div>
-        <p>
+        <p class="m-6 mt-0">
             <slot name="description"></slot>
         </p>
-    </div>
+    </li>
 </template>
 
 <style scoped></style>

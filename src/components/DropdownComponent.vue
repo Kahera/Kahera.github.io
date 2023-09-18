@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, type PropType } from 'vue';
 import type { RouteRecordNormalized } from 'vue-router';
-import Button from './Button.vue';
+import Button from './ButtonComponent.vue';
 
 defineProps({
     links: {
@@ -29,14 +29,14 @@ window.addEventListener('click', (e) => {
 </script>
 
 <template>
-    <!-- TODO: Replace with custom button -->
-    <Button class="dropdown-btn" @click="dropdownOpen = !dropdownOpen" :type="'solid'" :icon="'menu'" :size="'lg'">
+    <Button class="dropdown-btn" @click="dropdownOpen = !dropdownOpen" :type="'solid'" :size="'lg'">
+        <template #icon>menu</template>
         <template #other>
-            <div id="dropdown" class="dropdown absolute z-10 top-14 mb-2
+            <div class="dropdown absolute z-10 top-16 mb-2
                         min-w-[12rem] leading-8
                         overflow-hidden rounded-xl"
                 :class="{ 'hidden': !dropdownOpen, 'right-0': position == 'right', 'left-0': position == 'left' }">
-                <a v-for="link in links" :href=link.path class="block 
+                <a v-for="link in links" :key="link.path" :href=link.path class="block 
                         bg-primary-lighter dark:bg-accent-darkest
                         hover:bg-primary-light hover:dark:bg-accent-darker 
                         hover:opacity-100 hover:dark:opacity-100">

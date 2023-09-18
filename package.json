@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10",
+    "gsap": "^3.12.2",
     "pinia": "^2.1.4",
     "postcss": "^8",
     "tailwindcss": "^3",
