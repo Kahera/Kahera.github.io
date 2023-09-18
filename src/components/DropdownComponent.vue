@@ -38,7 +38,6 @@ window.addEventListener('click', (e) => {
 // Animations
 const reducedMotion = usePrefersReducedMotion();
 function onEnter(el: any, done: any) {
-    console.log(reducedMotion)
     gsap.fromTo(el, {
         opacity: 0,
         height: 0
