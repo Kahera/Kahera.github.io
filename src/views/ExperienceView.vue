@@ -8,6 +8,8 @@ import CVItem from '@/components/view-experience/CVItem.vue';
 import jobData from '@/assets/data/jobs.json';
 import educationData from '@/assets/data/education.json';
 import { computed, ref } from 'vue';
+
+// Animations
 import gsap from 'gsap';
 
 // sort data by end date - most recent first, with current jobs at the top
@@ -30,6 +32,10 @@ const displayJobs = computed(() => {
   else return jobs.slice(0, 2);
 });
 
+// Animations
+const prefersReducedMotion = window.matchMedia(
+  'screen and (prefers-reduced-motion: reduce)',
+).matches;
 
 function onEnter(el: any, done: any) {
   gsap.fromTo(el, {
@@ -38,7 +44,7 @@ function onEnter(el: any, done: any) {
   }, {
     opacity: 1,
     height: 'auto',
-    delay: el.dataset.index * 0.15,
+    delay: prefersReducedMotion ? 0 : el.dataset.index * 0.15,
     onComplete: done
   })
 }
@@ -48,8 +54,8 @@ function onLeave(el: any, done: any) {
   gsap.to(el, {
     opacity: 0,
     height: 0,
-    duration: 0.4,
-    delay: (delayModifier - el.dataset.index) * 0.1,
+    duration: prefersReducedMotion ? 0 : 0.4,
+    delay: prefersReducedMotion ? 0 : (delayModifier - el.dataset.index) * 0.1,
     onComplete: done
   })
 }

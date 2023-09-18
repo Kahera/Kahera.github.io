@@ -19,7 +19,8 @@ const isDev = import.meta.env.DEV;
   <header class="flex space-x-4 md:space-x-8 items-center h-fit mx-2 my-2 md:mx-6 md:my-4">
     <RouterLink to="/" class="flex space-x-4 md:space-x-6 max-md:grow items-center">
       <img alt="June icon" src="@/assets/images/Kahera.png" class="w-8 h-8 md:h-16 md:w-16" />
-      <h1 class="font-display font-bold text-center text-2xl md:text-4xl text-primary">June Hansen</h1>
+      <h1 class="font-display font-bold text-center text-2xl md:text-4xl text-primary dark:text-primary/80">June Hansen
+      </h1>
     </RouterLink>
     <nav class="max-md:order-last md:grow flex justify-center">
       <Dropdown class="md:hidden" :position="'right'" :button-type="'solid'" :links="$router.getRoutes()" />
@@ -40,7 +41,7 @@ const isDev = import.meta.env.DEV;
   </main>
 </template>
 
-<style scoped>
+<style>
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
