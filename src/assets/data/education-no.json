@@ -1,0 +1,26 @@
+[
+    {
+        "school": "NTNU",
+        "url": "https://www.ntnu.no/",
+        "degree": "Bacehlor i Programmering",
+        "startDate": "2018-08-01",
+        "endDate": "2021-06-01",
+        "description": "I studiet opparbeider jeg ferdigheter i å skrive god og effektiv programkode i ulike programmeringsspråk. Jeg følger prosessen fra idé til fungerende program med spesialisering i applikasjonsutvikling.\n\nStudiet gir en grunnleggende informatikkutdannelse, men med større vekt på programmering enn det som er vanlig i slike studier. Det benyttes i stor grad de samme verktøyene som man finner i bruk i profesjonelle virksomheter."
+    },
+    {
+        "school": "OsloMet (previously HiOA)",
+        "url": "https://www.oslomet.no/",
+        "degree": "Bachelor of Administration and Management",
+        "startDate": "2014-08-01",
+        "endDate": "2017-06-01",
+        "description": "Bachelorstudiet ga bred kompetanse i offentlig politikk og administrasjon, juss, økonomi, organisasjonsfag og ledelse. Utdanningen er særlig rettet mot offentlig sektor, men gir også relevant kompetanse for arbeid innen organisasjons- og næringsliv.\n\nBacheloroppgaven min omhandlet Jernbanereformen, og hvordan de ansatte har oppfattet kommunikasjon fra politikerne og fra ledelsen underveis i prosessen. "
+    },
+    {
+        "school": "Frederik II High School",
+        "url": "https://viken.no/frederikii-vgs/utdanningstilbud/international-baccalaureate-ib/international-baccalaureate/",
+        "degree": "International Baccalaureate",
+        "startDate": "2012-08-01",
+        "endDate": "2014-06-01",
+        "description": "Et internationalt studiespesialiserende utdanningsprogram med engelsk som undervisnings- og eksamensspråk. Regnes generelt som mer krevende enn vanlig studiespesialiserende."
+    }
+]
