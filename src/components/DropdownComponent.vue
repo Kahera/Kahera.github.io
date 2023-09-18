@@ -37,7 +37,6 @@ window.addEventListener('click', (e) => {
 
 // Animations
 const reducedMotion = usePrefersReducedMotion();
-
 function onEnter(el: any, done: any) {
     console.log(reducedMotion)
     gsap.fromTo(el, {
@@ -68,10 +67,12 @@ function onLeave(el: any, done: any) {
     <Button class="dropdown-btn" @click="dropdownOpen = !dropdownOpen" :type="'solid'" :size="'lg'">
         <template #icon>menu</template>
         <template #other>
+            <!-- Wrapper with position styling -->
             <div class="dropdown absolute z-10 top-16 mb-2
                         min-w-[12rem] leading-8
                         overflow-hidden rounded-lg"
                 :class="{ 'right-0': position == 'right', 'left-0': position == 'left' }">
+                <!-- Dropdown items (list content) -->
                 <TransitionGroup name="list" @enter="onEnter" @leave="onLeave">
                     <a v-for="(link, index) in dropDownElements" :key="index" :href=link.path :data-index="index" class="block 
                         bg-primary-lighter dark:bg-accent-darker

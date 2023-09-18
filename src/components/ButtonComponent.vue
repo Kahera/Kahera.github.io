@@ -36,6 +36,7 @@ const rounded = computed(() => {
     }
 });
 
+// Note: Need to spell out the colors instead of compositing the names, because of how Tailwind minimizes the CSS
 const background = computed(() => {
     if (props.type == 'outline') return 'bg-transparent';
     if (props.disabled) {

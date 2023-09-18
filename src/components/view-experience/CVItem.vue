@@ -36,16 +36,21 @@ function formatDate(date: Date) {
     <li class="bg-primary-lighter/50 dark:bg-accent-darkest/50 
             rounded-lg overflow-hidden">
         <div class="flex justify-between mb-2 m-6">
+            <!-- Position/company -->
             <div class="justify-between">
                 <p class="font-bold">{{ position }}</p>
                 <a :href="url" target="_blank" rel="noopener">
                     <p class="italic opacity-80">{{ company }}</p>
                 </a>
             </div>
+
+            <!-- Date(s) -->
             <p class="text-right">
                 {{ formatDate(startDate) }} — {{ endDate ? formatDate(endDate) : 'Current' }}
             </p>
         </div>
+
+        <!-- Description -->
         <p class="m-6 mt-0">
             <slot name="description"></slot>
         </p>

@@ -13,20 +13,26 @@ const isDev = import.meta.env.DEV;
 </script>
 
 <template>
+  <!-- Under construction indicator for deployed version -->
   <p v-if="!isDev" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45
-  text-center text-red-600 opacity-90 font-bold text-6xl">
+  text-center text-red-600 opacity-90 font-bold text-6xl pointer-events-none">
     Under construction</p>
-  <header class="flex space-x-4 md:space-x-8 items-center h-fit mx-2 my-2 md:mx-6 md:my-4">
-    <RouterLink to="/" class="flex space-x-4 md:space-x-6 max-md:grow items-center">
-      <img alt="June icon" src="@/assets/images/Kahera.png" class="w-8 h-8 md:h-16 md:w-16" />
-      <h1 class="font-display font-bold text-center text-2xl md:text-4xl text-primary dark:text-primary/80">June Hansen
+
+  <header class="flex items-center space-x-4 md:space-x-8 mx-4 md:mx-6 my-2 md:my-4">
+    <!-- Logo home-link -->
+    <RouterLink to="/" class="flex sm:space-x-4 md:space-x-6 max-md:grow">
+      <img alt="June icon" src="@/assets/images/Kahera.png" class="max-h-12 max-sm:hidden" />
+      <h1 class="font-display font-bold text-center my-auto text-2xl sm:text-4xl text-primary dark:text-primary/80">
+        June Hansen
       </h1>
     </RouterLink>
-    <nav class="max-md:order-last md:grow flex justify-center">
+
+    <nav class="flex justify-center max-md:order-last md:grow">
+      <!-- Dropdown on small screens, link list on larger -->
       <Dropdown class="md:hidden" :position="'right'" :button-type="'solid'" :links="$router.getRoutes()" />
       <div class="max-md:hidden mx-auto space-x-6">
         <RouterLink v-for="route in $router.getRoutes().filter(x => x.name != 'Home')" :key="route.path" :to="route.path"
-          class="!text-primary">
+          class="!text-primary/80">
           {{ route.name }}
         </RouterLink>
       </div>
@@ -36,12 +42,14 @@ const isDev = import.meta.env.DEV;
     </Button>
   </header>
 
+  <!-- Main page content -->
   <main class="mx-auto w-4/5 mt-20">
     <RouterView />
   </main>
 </template>
 
 <style>
+/* Disable css animations when user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
