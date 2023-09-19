@@ -22,9 +22,9 @@ const isDev = import.meta.env.DEV;
   <header class="flex items-center space-x-4 md:space-x-8 mx-4 md:mx-6 my-2 md:my-4">
     <!-- Logo home-link -->
     <RouterLink to="/" class="flex sm:space-x-4 md:space-x-6 max-md:grow">
-      <img alt="icon" src="@/assets/images/Kahera.png" class="max-h-12 max-sm:hidden" />
+      <img alt="{{ $t('common.JuneIcon') }}" src="@/assets/images/Kahera.png" class="max-h-12 max-sm:hidden" />
       <h1 class="font-display font-bold text-center my-auto text-2xl sm:text-4xl text-primary dark:text-primary/80">
-        {{ $t('June', 2) }}
+        {{ $t('common.JuneHansen') }}
       </h1>
     </RouterLink>
 
@@ -38,12 +38,15 @@ const isDev = import.meta.env.DEV;
         </RouterLink>
       </div>
     </nav>
-    <select v-model="$i18n.locale">
-      <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">
+    <!-- TODO: Complete select -->
+    <select v-model="$i18n.locale"
+      class="h-12 px-2 rounded-lg bg-transparent border border-primary dark:border-primary/80 text-primary dark:text-primary/80 outline-none outline-offset-0 focus:outline-1 focus:outline-primary-light">
+      <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale"
+        class="bg-primary-lighter dark:bg-accent-darker">
         {{ $t('locale.' + locale) }}
       </option>
     </select>
-    <Button @click="darkModeStore.toggle()" :icon-position="'right'" :type="'outline'" :size="'lg'">
+    <Button @click=" darkModeStore.toggle()" :icon-position="'right'" :type="'outline'" :size="'lg'">
       <template #icon> {{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }}</template>
     </Button>
   </header>
