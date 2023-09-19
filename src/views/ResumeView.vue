@@ -15,6 +15,7 @@ import { usePrefersReducedMotion } from '@/utilities/prefers-reduced-motion';
 import { type IEmployment } from '@/models/IEmployment';
 import { type IEducation } from '@/models/IEducation';
 
+// i18n
 import { useI18n } from "vue-i18n";
 import type { IResumeItem } from '@/models/IResumeItem';
 const i18n = useI18n();
@@ -104,7 +105,7 @@ function onLeave(el: any, done: any) {
       <template #icon>school</template>
       <template #heading>{{ $t('resume.education') }}</template>
       <ul class="flex flex-col space-y-6">
-        <CVItem v-for="ed in education" :key="ed.degree" :startDate="new Date(ed.startDate)"
+        <CVItem v-for="ed in education" :startDate="new Date(ed.startDate)"
           :endDate="ed.endDate ? new Date(ed.endDate) : undefined" :company="ed.school" :url="ed.url"
           :position="ed.degree">
           <template #description>{{ ed.description }}</template>
@@ -114,4 +115,4 @@ function onLeave(el: any, done: any) {
   </ul>
 </template>
 
-<style scoped></style>@/models/IEducation@/models/IEmployment
+<style scoped></style>

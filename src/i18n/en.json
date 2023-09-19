@@ -66,7 +66,7 @@
                 "location": "Oslo, Norway",
                 "startDate": "2016-08-01",
                 "endDate": "2016-12-01",
-                "description": "Seminar leader and teaching assistant for the subject 'Public administration and management'. Main emphasis on planning, facilitating and leading seminars, as well as helping students with assignments and projects."
+                "description": "Seminar leader and teaching assistant for the subject \"Public administration and management\". Main emphasis on planning, facilitating and leading seminars, as well as helping students with assignments and projects."
             },
             {
                 "company": "Norwegian Institute for Urban and Regional Research - NIBR",
@@ -122,5 +122,19 @@
                 "description": "An international educational programme taught in English. The programme gives qualification for entry into higher education."
             }
         ]
-    }
+    },
+    "about": [
+        {
+            "heading": "About me",
+            "body": "hei"
+        },
+        {
+            "heading": "?",
+            "icon": "expand_more",
+            "body": "hei2"
+        },
+        {
+            "body": "hei3"
+        }
+    ]
 }
