@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 // Vue
 import { computed, ref, watch } from 'vue';
 
@@ -12,35 +11,30 @@ import CVItem from '@/components/view-experience/CVItem.vue';
 import gsap from 'gsap';
 import { usePrefersReducedMotion } from '@/utilities/prefers-reduced-motion';
 
-// Data
-import jobsNo from "@/assets/data/jobs-no.json";
-import jobsEn from "@/assets/data/jobs-en.json";
-import educationNo from '@/assets/data/education-no.json';
-import educationEn from '@/assets/data/education-en.json';
+// Models
+import { type IEmployment } from '@/models/IEmployment';
+import { type IEducation } from '@/models/IEducation';
 
 import { useI18n } from "vue-i18n";
-const i18nLocale = useI18n();
+import type { IResumeItem } from '@/models/IResumeItem';
+const i18n = useI18n();
 
-let jobs = ref(<typeof jobsEn>[]);
-let education = ref(<typeof educationEn>[]);
-updateData(i18nLocale.locale.value);
+let educationRef = ref(<IEducation[]>[]);
+let jobsRef = ref(<IEmployment[]>[]);
 
-watch(() => i18nLocale.locale.value, (newLocale, _) => {
-  updateData(newLocale);
+updateData();
+
+watch(() => i18n.locale.value, (newLocale, oldLocale) => {
+  updateData();
 });
 
-function updateData(locale: string) {
-  if (locale == "en") {
-    jobs.value = jobsEn;
-    education.value = educationEn;
-  } else {
-    jobs.value = jobsNo;
-    education.value = educationNo;
-  }
+function updateData() {
+  jobsRef.value = i18n.tm('resume.jobs') as IEmployment[];
+  educationRef.value = i18n.tm('resume.educations') as IEducation[];
 }
 
 // Sort data by end date - most recent first, with current jobs at the top
-function sortDataByEndDate(array: any[]): any[] {
+function sortDataByEndDate<T extends IResumeItem>(array: T[]): T[] {
   return array.sort((a, b) => {
     if (a.endDate === undefined) return -1;
     else if (b.endDate === undefined) return 1;
@@ -50,13 +44,12 @@ function sortDataByEndDate(array: any[]): any[] {
 
 const displayAllJobs = ref(false);
 
-const educations = computed(() => sortDataByEndDate(education.value) as typeof educationEn);
-const jobsSorted = computed(() => sortDataByEndDate(jobs.value) as typeof jobsEn);
+const education = computed(() => sortDataByEndDate(educationRef.value));
+const jobsSorted = computed(() => sortDataByEndDate(jobsRef.value));
 const jobsToDisplay = computed(() => {
   if (displayAllJobs.value) return jobsSorted.value;
   else return jobsSorted.value.slice(0, 2);
 });
-
 
 // Animations
 const reducedMotion = usePrefersReducedMotion();
@@ -74,7 +67,7 @@ function onEnter(el: any, done: any) {
 }
 
 function onLeave(el: any, done: any) {
-  const delayModifier = el.dataset.type === 'job' ? jobsSorted.value.length : educations.value.length;
+  const delayModifier = el.dataset.type === 'job' ? jobsSorted.value.length : education.value.length;
   gsap.to(el, {
     opacity: 0,
     height: 0,
@@ -111,14 +104,14 @@ function onLeave(el: any, done: any) {
       <template #icon>school</template>
       <template #heading>{{ $t('resume.education') }}</template>
       <ul class="flex flex-col space-y-6">
-        <CVItem v-for="education in educations" :key="education.degree" :startDate="new Date(education.startDate)"
-          :endDate="education.endDate ? new Date(education.endDate) : undefined" :company="education.school"
-          :url="education.url" :position="education.degree">
-          <template #description>{{ education.description }}</template>
+        <CVItem v-for="ed in education" :key="ed.degree" :startDate="new Date(ed.startDate)"
+          :endDate="ed.endDate ? new Date(ed.endDate) : undefined" :company="ed.school" :url="ed.url"
+          :position="ed.degree">
+          <template #description>{{ ed.description }}</template>
         </CVItem>
       </ul>
     </ListItem>
   </ul>
 </template>
 
-<style scoped></style>
+<style scoped></style>@/models/IEducation@/models/IEmployment

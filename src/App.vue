@@ -30,7 +30,8 @@ const isDev = import.meta.env.DEV;
 
     <nav class="flex justify-center max-md:order-last md:grow">
       <!-- Dropdown on small screens, link list on larger -->
-      <Dropdown class="md:hidden" :position="'right'" :button-type="'solid'" :links="$router.getRoutes()" />
+      <Dropdown class="md:hidden focus:outline-1 focus:outline-primary-light" :position="'right'" :button-type="'solid'"
+        :links="$router.getRoutes()" />
       <div class="max-md:hidden mx-auto space-x-6">
         <RouterLink v-for="route in $router.getRoutes().filter(x => x.name != 'home')" :key="route.path" :to="route.path"
           class="!text-primary/80">
@@ -38,15 +39,15 @@ const isDev = import.meta.env.DEV;
         </RouterLink>
       </div>
     </nav>
-    <!-- TODO: Complete select -->
     <select v-model="$i18n.locale"
-      class="h-12 px-2 rounded-lg bg-transparent border border-primary dark:border-primary/80 text-primary dark:text-primary/80 outline-none outline-offset-0 focus:outline-1 focus:outline-primary-light">
-      <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale"
-        class="bg-primary-lighter dark:bg-accent-darker">
+      class="h-12 px-2 rounded-lg bg-transparent border border-primary dark:border-primary/80 text-primary dark:text-primary/80">
+      <option v-for="(locale, index) in $i18n.availableLocales" :data-index="index" :key="`locale-${locale}`"
+        :value="locale" class="bg-primary-lighter dark:bg-accent-darker">
         {{ $t('locale.' + locale) }}
       </option>
     </select>
-    <Button @click=" darkModeStore.toggle()" :icon-position="'right'" :type="'outline'" :size="'lg'">
+    <Button @click=" darkModeStore.toggle()" :icon-position="'right'" :type="'outline'" :size="'lg'"
+      class="focus:outline-1 focus:outline-primary-light">
       <template #icon> {{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }}</template>
     </Button>
   </header>

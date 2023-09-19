@@ -21,6 +21,106 @@
     "resume": {
         "work": "Erfaring",
         "education": "Utdanning",
-        "present": "Nåværende"
+        "present": "Nåværende",
+        "jobs": [
+            {
+                "company": "Evidi",
+                "url": "https://evidi.com",
+                "position": "Utvikler",
+                "location": "Oslo",
+                "startDate": "2021-08-01",
+                "endDate": "",
+                "description": "Fullstack utvikler med hovedvekt på .NET/C# som backend, Angular og Vue som frontend, og Azure som skytjeneste."
+            },
+            {
+                "company": "NTNU",
+                "url": "https://www.ntnu.no",
+                "position": "Studentassistent",
+                "location": "Gjøvik, Innlandet",
+                "startDate": "2020-08-01",
+                "endDate": "2021-06-01",
+                "description": "Studentassistent i fagene:\n- WWW-teknologier: Hovedvekt på å hjelpe studenter med å finne gode løsninger, feilsøke problemer i oppgaver og prosjekter, samt noe undervisning.\n- Programvareutvikling: Hovedvekt på å veilede grupper med en større semesteroppgave, samt noe lab-assistanse."
+            },
+            {
+                "company": "Telia (previously Get — via Express Recruiting)",
+                "url": "https://www.telia.no",
+                "position": "Kundeservicemedarbeider",
+                "location": "Oslo",
+                "startDate": "2018-02-01",
+                "endDate": "2018-06-01",
+                "description": "Kundeservice for Gets kunder, hovedsaklig hjelp med fakturaspørsmål, bestilling av tjenester, og mobilhjelp. Ansatt gjennom Express Recruiting for Loyalty Customerservice som driver kundesenteret for Get."
+            },
+            {
+                "company": "Entur (NSB)",
+                "url": "https://www.entur.no",
+                "position": "Salgs- og servicevert",
+                "location": "Oslo",
+                "startDate": "2014-03-01",
+                "endDate": "2017-06-01",
+                "description": "Service for NSBs kunder i form av salg av norske og internasjonale togbilletter, guiding av kunder på billettautomater, gi reiseinformasjon, problemløsning for kunder med ulike problemer etc.\nVirksomhetsoverdratt fra NSB til Entur i oktober 2016."
+            },
+            {
+                "company": "OsloMet (previously HiOA)",
+                "url": "https://www.oslomet.no",
+                "position": "Seminarleder/studentassistent",
+                "location": "Oslo",
+                "startDate": "2016-08-01",
+                "endDate": "2016-12-01",
+                "description": "Seminarleder og studentassistent i emnet \"Offentlig politikk og administrasjon\" (BAL1100). Hovedvekt på planlegging, tilrettelegging og ledelse av seminarer, samt hjelp til studenter med oppgaver og prosjekter."
+            },
+            {
+                "company": "Norwegian Institute for Urban and Regional Research - NIBR",
+                "url": "https://www.oslomet.no/om/nibr",
+                "position": "Forskningsassistent",
+                "location": "Oslo",
+                "startDate": "2016-04-01",
+                "endDate": "2016-12-01",
+                "description": "Forskningsassistent på prosjektet \"Hjemløse i Norge 2016\"."
+            },
+            {
+                "company": "Hornnes Skoles Musikkorps",
+                "url": "https://www.facebook.com/hornnesmksandbakkensk/",
+                "position": "Klarinettinstruktør og dirigentvikar",
+                "location": "Sarpsborg, Viken",
+                "startDate": "2012-08-01",
+                "endDate": "2016-12-01",
+                "description": "Klarinettinstruktør for korpsets medlemmer, samt dirigentvikar for juniorkorpset og hovedkorpset."
+            },
+            {
+                "company": "Lande skolemusikkorps",
+                "url": "https://www.facebook.com/groups/182688588980/",
+                "position": "Klarinettinstruktør",
+                "location": "Sarpsborg, Viken",
+                "startDate": "2009-10-01",
+                "endDate": "2011-10-01",
+                "description": "Klarinettinstruktør for korpsets medlemmer."
+            }
+        ],
+        "educations": [
+            {
+                "school": "NTNU",
+                "url": "https://www.ntnu.no/",
+                "degree": "Bacehlor i Programmering",
+                "startDate": "2018-08-01",
+                "endDate": "2021-06-01",
+                "description": "I studiet opparbeider jeg ferdigheter i å skrive god og effektiv programkode i ulike programmeringsspråk. Jeg følger prosessen fra idé til fungerende program med spesialisering i applikasjonsutvikling.\n\nStudiet gir en grunnleggende informatikkutdannelse, men med større vekt på programmering enn det som er vanlig i slike studier. Det benyttes i stor grad de samme verktøyene som man finner i bruk i profesjonelle virksomheter."
+            },
+            {
+                "school": "OsloMet (previously HiOA)",
+                "url": "https://www.oslomet.no/",
+                "degree": "Bachelor of Administration and Management",
+                "startDate": "2014-08-01",
+                "endDate": "2017-06-01",
+                "description": "Bachelorstudiet ga bred kompetanse i offentlig politikk og administrasjon, juss, økonomi, organisasjonsfag og ledelse. Utdanningen er særlig rettet mot offentlig sektor, men gir også relevant kompetanse for arbeid innen organisasjons- og næringsliv.\n\nBacheloroppgaven min omhandlet Jernbanereformen, og hvordan de ansatte har oppfattet kommunikasjon fra politikerne og fra ledelsen underveis i prosessen. "
+            },
+            {
+                "school": "Frederik II High School",
+                "url": "https://viken.no/frederikii-vgs/utdanningstilbud/international-baccalaureate-ib/international-baccalaureate/",
+                "degree": "International Baccalaureate",
+                "startDate": "2012-08-01",
+                "endDate": "2014-06-01",
+                "description": "Et internationalt studiespesialiserende utdanningsprogram med engelsk som undervisnings- og eksamensspråk. Regnes generelt som mer krevende enn vanlig studiespesialiserende."
+            }
+        ]
     }
 }
