@@ -10,7 +10,7 @@
 - [ ] Add social links
 - [ ] Add landing page content
 - [ ] Add about content
-- [ ] Add i18n
+- [x] Add i18n
 - [ ] Make it look decent
 - [ ] ...
 

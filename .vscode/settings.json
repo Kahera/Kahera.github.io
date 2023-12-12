@@ -10,6 +10,13 @@
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
   "tailwindCSS.includeLanguages": {
     "vue": "html",
     "vue-html": "html",
@@ -19,4 +26,5 @@
     "src/i18n"
   ],
   "i18n-ally.keystyle": "nested",
+  "typescript.tsdk": "node_modules/typescript/lib",
 }

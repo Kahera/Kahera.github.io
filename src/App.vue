@@ -22,7 +22,7 @@ const isDev = import.meta.env.DEV;
   <header class="flex items-center space-x-4 md:space-x-8 mx-4 md:mx-6 my-2 md:my-4">
     <!-- Logo home-link -->
     <RouterLink to="/" class="flex sm:space-x-4 md:space-x-6 max-md:grow">
-      <img alt="{{ $t('common.JuneIcon') }}" src="@/assets/images/Kahera.png" class="max-h-12 max-sm:hidden" />
+      <img alt="{{ $t('common.JuneIcon') }}" src="@/assets/images/Kahera.webp" class="max-h-12 max-sm:hidden" />
       <h1 class="font-display font-bold text-center my-auto text-2xl sm:text-4xl text-primary dark:text-primary">
         {{ $t('common.JuneHansen') }}
       </h1>

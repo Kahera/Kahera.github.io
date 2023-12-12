@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 // Vue
-import { computed, ref, watch } from 'vue';
+import { computed, ref, watchEffect } from 'vue';
 
 // Components
 import Button from '@/components/ButtonComponent.vue';
@@ -13,25 +13,23 @@ import gsap from 'gsap';
 import { usePrefersReducedMotion } from '@/utilities/prefers-reduced-motion';
 
 // Models
-import { type IEmployment } from '@/models/IEmployment';
-import { type IEducation } from '@/models/IEducation';
+// Models
+import type { IEmployment } from '@/models/IEmployment';
+import type { IEducation } from '@/models/IEducation';
+import type { IResumeItem } from '@/models/IResumeItem';
 
 // i18n
 import { useI18n } from "vue-i18n";
-import type { IResumeItem } from '@/models/IResumeItem';
 const i18n = useI18n();
 
 let educationRef = ref(<IEducation[]>[]);
 let jobsRef = ref(<IEmployment[]>[]);
 
-updateData();
-watch(() => i18n.locale.value, (newLocale, oldLocale) => {
-  updateData();
-});
+watchEffect(() => updateData());
 
 function updateData() {
-  jobsRef.value = i18n.tm('resume.jobs') as IEmployment[];
   educationRef.value = i18n.tm('resume.educations') as IEducation[];
+  jobsRef.value = i18n.tm('resume.jobs') as IEmployment[];
 }
 
 // Sort data by end date - most recent first, with current jobs at the top
