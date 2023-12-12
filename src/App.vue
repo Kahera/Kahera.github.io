@@ -15,7 +15,7 @@ const isDev = import.meta.env.DEV;
 <template>
   <!-- Under construction indicator for deployed version -->
   <p v-if="!isDev" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45
-  text-center text-red-600 opacity-90 font-bold text-6xl pointer-events-none">
+  text-center text-danger opacity-90 font-bold text-6xl pointer-events-none">
     {{ $t('warnings.underConstruction') }}
   </p>
 
@@ -23,7 +23,7 @@ const isDev = import.meta.env.DEV;
     <!-- Logo home-link -->
     <RouterLink to="/" class="flex sm:space-x-4 md:space-x-6 max-md:grow">
       <img alt="{{ $t('common.JuneIcon') }}" src="@/assets/images/Kahera.png" class="max-h-12 max-sm:hidden" />
-      <h1 class="font-display font-bold text-center my-auto text-2xl sm:text-4xl text-primary dark:text-primary/80">
+      <h1 class="font-display font-bold text-center my-auto text-2xl sm:text-4xl text-primary dark:text-primary">
         {{ $t('common.JuneHansen') }}
       </h1>
     </RouterLink>
@@ -34,18 +34,26 @@ const isDev = import.meta.env.DEV;
         :links="$router.getRoutes()" />
       <div class="max-md:hidden mx-auto space-x-6">
         <RouterLink v-for="route in $router.getRoutes().filter(x => x.name != 'home')" :key="route.path" :to="route.path"
-          class="!text-primary/80">
+          class="dark:text-primary-light text-primary-darker">
           {{ $t('pages.' + route.name?.toString()) }}
         </RouterLink>
       </div>
     </nav>
-    <select v-model="$i18n.locale"
-      class="h-12 px-2 rounded-lg bg-transparent border border-primary dark:border-primary/80 text-primary dark:text-primary/80">
-      <option v-for="(locale, index) in $i18n.availableLocales" :data-index="index" :key="`locale-${locale}`"
-        :value="locale" class="bg-primary-lighter dark:bg-accent-darker">
-        {{ $t('locale.' + locale) }}
-      </option>
-    </select>
+
+    <div class="relative">
+      <label for="locale"
+        class="absolute text-sm -top-2 bg-primary-lightest dark:bg-accent-darkest left-3 px-1 transition-transform duration-200">
+        {{ $t('locale.select') }}
+      </label>
+      <!-- class="h-12 px-2 rounded-lg bg-transparent border border-primary dark:border-primary text-primary dark:text-primary"> -->
+      <select id="locale" v-model="$i18n.locale"
+        class="block h-12 py-0 px-6 border border-1 rounded-lg border-primary bg-transparent appearance-none">
+        <option v-for="(locale, index) in $i18n.availableLocales" :data-index="index" :key="`locale-${locale}`"
+          :value="locale" class="bg-primary-lightest dark:bg-accent-dark">
+          {{ $t('locale.' + locale) }}
+        </option>
+      </select>
+    </div>
     <Button @click=" darkModeStore.toggle()" :icon-position="'right'" :type="'outline'" :size="'lg'"
       class="focus:outline-1 focus:outline-primary-light">
       <template #icon> {{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }}</template>
@@ -53,7 +61,7 @@ const isDev = import.meta.env.DEV;
   </header>
 
   <!-- Main page content -->
-  <main class="mx-auto w-4/5 mt-20">
+  <main class="mx-auto w-4/5 mt-6 lg:mt-20">
     <RouterView />
   </main>
 </template>

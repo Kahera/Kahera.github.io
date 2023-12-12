@@ -1,53 +1,50 @@
+import { gray, green, yellow, red, transparent } from 'tailwindcss/colors';
+
 /** @type {import('tailwindcss').Config} */
 // eslint-disable-next-line no-undef
-module.exports = {
-  darkMode: 'class',
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
-  theme: {
-    fontFamily: {
-      'sans': ['"OpenSans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-      'display': ['"Merienda"'],
-      'mono': ['"RedHatMono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
-      'icon': ['"Material Symbols Outlined"']
-    },
-    extend: {
-      colors: {
-        'primary': {
-          'lightest': '#f9fbee',
-          'lighter': '#f7e8de',
-          'light': '#E592A6',
-          DEFAULT: '#D23C6E',
-          'darker': '#913654',
-          'darkest': '#261c1f',
-          'dusty': {
-            'light': '#d08e80',
-            'dark': '#d08e80'
-          }
-        },
-        'secondary': {
-          'lightest': '#e5f3dd',
-          'lighter': '#d6f5db',
-          DEFAULT: '#C5ECB1',
-          '600': '#75cc84',
-          'darker': '#45ba93',
-          'darkest': '#297058',
-          'deep': '#1e3932',
-        },
-        'accent': {
-          'lightest': '#d1eff4',
-          'lighter': '#6ebac9',
-          DEFAULT: '#41557C',
-          'dusty': '#525c6f',
-          'darker': '#2F3E5B',
-          'darkest': '#1E2739',
-          'deep': '#0c1018',
-        }
-      }
-    },
+export const darkMode = 'class'
+export const content = [
+  "./index.html",
+  "./src/**/*.{vue,js,ts,jsx,tsx}",
+]
+export const theme = {
+  fontFamily: {
+    'sans': ['Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif'],
+    'display': ['"Merienda"'],
+    'mono': ['ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace'],
+    'icon': ['"Material Symbols Outlined"']
   },
-  plugins: [],
+  colors: {
+    transparent: transparent,
+    primary: {
+      lightest: "rgb(var(--color-primary-lightest) / <alpha-value>)",
+      lighter: "rgb(var(--color-primary-lighter) / <alpha-value>)",
+      light: "rgb(var(--color-primary-light) / <alpha-value>)",
+      DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
+      darker: "rgb(var(--color-primary-darker) / <alpha-value>)",
+      darkest: "rgb(var(--color-primary-darkest) / <alpha-value>)",
+    },
+    secondary: {
+      light: "rgb(var(--color-secondary-light) / <alpha-value>)",
+      DEFAULT: "rgb(var(--color-secondary) / <alpha-value>)",
+      darker: "rgb(var(--color-secondary-darker) / <alpha-value>)",
+      darkest: "rgb(var(--color-secondary-darkest) / <alpha-value>)",
+    },
+    accent: {
+      lightest: "rgb(var(--color-accent-lightest) / <alpha-value>)",
+      light: "rgb(var(--color-accent-light) / <alpha-value>)",
+      DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
+      dark: "rgb(var(--color-accent-dark) / <alpha-value>)",
+      darker: "rgb(var(--color-accent-darker) / <alpha-value>)",
+      darkest: "rgb(var(--color-accent-darkest) / <alpha-value>)",
+    },
+    neutral: gray,
+    success: green[500],
+    warning: yellow[500],
+    danger: red[500]
+  }
+  // extend: {
+  // },
 }
+export const plugins = []
 

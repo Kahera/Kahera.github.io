@@ -4,8 +4,9 @@
         "JuneIcon": "June ikon"
     },
     "locale": {
-        "en": "EN",
-        "no": "NO"
+        "select": "Språk",
+        "en": "English",
+        "no": "Norsk"
     },
     "pages": {
         "about": "Om",

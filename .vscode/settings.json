@@ -8,7 +8,7 @@
     ".vscode/tailwind.json"
   ],
   "[css]": {
-    "editor.defaultFormatter": "bradlc.vscode-tailwindcss"
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
   "tailwindCSS.includeLanguages": {
     "vue": "html",
@@ -18,4 +18,5 @@
   "i18n-ally.localesPaths": [
     "src/i18n"
   ],
+  "i18n-ally.keystyle": "nested",
 }

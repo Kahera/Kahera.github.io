@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 // Vue
 import { computed, ref, watch } from 'vue';
 
@@ -24,7 +25,6 @@ let educationRef = ref(<IEducation[]>[]);
 let jobsRef = ref(<IEmployment[]>[]);
 
 updateData();
-
 watch(() => i18n.locale.value, (newLocale, oldLocale) => {
   updateData();
 });
@@ -57,7 +57,7 @@ const reducedMotion = usePrefersReducedMotion();
 function onEnter(el: any, done: any) {
   gsap.fromTo(el, {
     opacity: 0,
-    height: 0
+    height: 0.2
   }, {
     opacity: 1,
     height: 'auto',
@@ -80,12 +80,12 @@ function onLeave(el: any, done: any) {
 </script>
 
 <template>
-  <ul class="space-y-8 mb-8">
+  <div class="space-y-8 mb-8">
     <ListItem>
       <template #icon>work</template>
       <template #heading>{{ $t('resume.work') }}</template>
 
-      <ol class="flex flex-col space-y-6">
+      <ol class="flex flex-col space-y-6 mb-6">
         <TransitionGroup name="list" @enter="onEnter" @leave="onLeave">
           <CVItem v-for="(job, index) in jobsToDisplay" :key="index" :data-index="index" :data-type="'job'"
             :startDate="new Date(job.startDate)" :endDate="job.endDate ? new Date(job.endDate) : undefined"
@@ -93,12 +93,13 @@ function onLeave(el: any, done: any) {
             <template #description><span class="whitespace-pre-wrap">{{ job.description }}</span></template>
           </CVItem>
         </TransitionGroup>
-        <Button @click="displayAllJobs = !displayAllJobs" :color="'secondary'">
-          <template #icon><span class="inline-block transition-transform"
-              :class="{ '-rotate-180': displayAllJobs }">expand_more</span></template>
-          <template #text>{{ displayAllJobs ? 'Show fewer' : 'Show all' }}</template>
-        </Button>
       </ol>
+
+      <Button @click="displayAllJobs = !displayAllJobs" :color="'secondary'" class="w-full">
+        <template #icon><span class="inline-block transition-transform"
+            :class="{ '-rotate-180': displayAllJobs }">expand_more</span></template>
+        <template #text>{{ displayAllJobs ? 'Show fewer' : 'Show all' }}</template>
+      </Button>
     </ListItem>
 
     <ListItem>
@@ -112,7 +113,7 @@ function onLeave(el: any, done: any) {
         </CVItem>
       </ul>
     </ListItem>
-  </ul>
+  </div>
 </template>
 
 <style scoped></style>

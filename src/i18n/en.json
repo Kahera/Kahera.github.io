@@ -4,8 +4,9 @@
         "JuneIcon": "June icon"
     },
     "locale": {
-        "en": "EN",
-        "no": "NO"
+        "select": "Language",
+        "en": "English",
+        "no": "Norsk"
     },
     "pages": {
         "about": "About",

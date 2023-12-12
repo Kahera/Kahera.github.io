@@ -4,14 +4,71 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities { }
+@layer base {
+  /* 'primary': {
+    'lightest': '#f9fbee',
+    'lighter': '#f7e8de',
+    'light': '#E592A6',
+    DEFAULT: '#D23C6E',
+    'darker': '#913654',
+    'darkest': '#261c1f',
+    'dusty': {
+      'light': '#d08e80',
+      'dark': '#d08e80'
+    }
+  },
+  'secondary': {
+    'lightest': '#e5f3dd',
+    'lighter': '#d6f5db',
+    DEFAULT: '#C5ECB1',
+    '600': '#75cc84',
+    'darkest': '#297058',
+    'deep': '#1e3932',
+  },
+  'accent': {
+    'lightest': '#d1eff4',
+    'lighter': '#6ebac9',
+    DEFAULT: '#41557C',
+    'dusty': '#525c6f',
+    'darker': '#2F3E5B',
+    'darkest': '#1E2739',
+    'deep': '#0c1018',
+  } */
+
+  :root {
+    --color-primary-lightest: 249 251 238;
+    --color-primary-lighter: 247 232 222;
+    --color-primary-light: 229 146 166;
+    --color-primary: 210 60 110;
+    --color-primary-darker: 145 54 84;
+    --color-primary-darkest: 38 28 31;
+
+    --color-secondary-lighest: 214 245 219;
+    --color-secondary-light: 197 236 177;
+    --color-secondary: 117 204 132;
+    --color-secondary-darker: 79 158 110;
+    --color-secondary-darkest: 41 112 88;
+    /* --color-secondary-darkest: 117 204 132; */
+
+    --color-accent-lightest: 209 239 244;
+    --color-accent-light: 110 186 201;
+    --color-accent: 65 85 124;
+    --color-accent-dark: 47 62 91;
+    --color-accent-darker: 30 39 57;
+    --color-accent-darkest: 12 16 24;
+  }
+
+  :root[class~="dark"] {}
+}
+
+@layer utilities {}
 
 .font-icon {
   &.filled {
     font-variation-settings:
-    'FILL' 1
+      'FILL' 1
   }
-};  
+}
 
 @font-face {
   font-family: "Material Symbols Outlined";
@@ -23,29 +80,22 @@
   src: url(./fonts/Merienda-VariableFont_wght.ttf);
 }
 
-@font-face {
-  font-family: "OpenSans";
-  src: url(./fonts/OpenSans-VariableFont_wdth,wght.ttf);
-}
-
-@font-face {
-  font-family: "RedHatMono";
-  src: url("./fonts/RedHatMono-VariableFont_wght.ttf");
+html {
+  font-size: 18px;
 }
 
 body {
-  @apply min-h-[100dvh] bg-primary-lightest dark:bg-accent-deep text-accent-deep dark:text-primary-lightest font-sans antialiased leading-6;
+  @apply min-h-[100dvh] bg-primary-lightest dark:bg-accent-darkest text-accent-darkest dark:text-primary-lightest font-sans antialiased leading-6;
 
   transition: color 0.5s, background-color 0.5s;
   text-wrap: balance;
 
   h2 {
     @apply text-2xl font-bold font-display;
-    color: #0c1018;
   }
 
   a {
-    @apply text-accent dark:text-accent-lighter hover:dark:opacity-90 hover:opacity-80;
+    @apply text-accent dark:text-accent-light hover:dark:opacity-90 hover:opacity-80;
   }
 }
 
@@ -55,7 +105,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-primary-darker rounded-full; 
+  @apply bg-primary-darker rounded-full;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -24,22 +24,20 @@ defineProps({
 
 
 <template>
-    <li class="bg-primary-lighter/50 dark:bg-accent-darkest/50 
+    <li class="bg-primary-lighter/90 dark:bg-accent-darker/30 
             rounded-lg overflow-hidden">
         <div class="flex justify-between mb-2 m-6">
             <!-- Position/company -->
             <div class="justify-between">
                 <p class="font-bold">{{ position }}</p>
-                <a :href="url" target="_blank" rel="noopener">
+                <a :href="url" target="_blank" rel="noopener" tabindex="-1">
                     <p class="italic opacity-80">{{ company }}</p>
                 </a>
             </div>
 
             <!-- Date(s) -->
             <p class="text-right">
-                {{ $d(startDate, 'month') }} — {{ endDate ? $d(endDate, 'month') :
-                    $t('resume.present')
-                }}
+                {{ $d(startDate, 'month') }} — {{ endDate ? $d(endDate, 'month') : $t('resume.present') }}
             </p>
         </div>
 

@@ -47,7 +47,7 @@ const background = computed(() => {
     switch (props.color) {
         case 'primary':
             if (props.type == 'soft') return 'bg-primary/40';
-            return 'bg-primary dark:bg-primary/80';
+            return 'bg-primary';
         case 'secondary':
             if (props.type == 'soft') return 'bg-secondary/40';
             return 'bg-secondary';
@@ -80,7 +80,7 @@ const textColor = computed(() => {
             case 'secondary':
                 return 'text-secondary-darkest dark:text-secondary-darker';
             case 'accent':
-                return 'text-accent dark:text-accent-lighter';
+                return 'text-accent dark:text-accent-light';
             case 'neutral':
                 return 'text-gray-500 dark:text-gray-400';
             case 'danger':
@@ -131,7 +131,7 @@ const border = computed(() => {
             case 'secondary':
                 return 'border border-secondary-darkest dark:border-secondary-darker';
             case 'accent':
-                return 'border border-accent dark:border-accent-lighter';
+                return 'border border-accent dark:border-accent-light';
             case 'neutral':
                 return 'border border-gray-500';
             case 'danger':

@@ -74,7 +74,7 @@ function onLeave(el: any, done: any) {
                 <!-- Dropdown items (list content) -->
                 <TransitionGroup name="list" @enter="onEnter" @leave="onLeave">
                     <a v-for="(link, index) in dropDownElements" :key="index" :href=link.path :data-index="index" class="block 
-                        bg-primary-lighter dark:bg-accent-darker">
+                        bg-primary-lighter dark:bg-accent-dark">
                         <span class="font-icon">
                             <slot name="icon"></slot>
                         </span>
