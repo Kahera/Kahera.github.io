@@ -126,6 +126,7 @@
     },
     "about": {
         "heading": "Om meg",
+        "imageAlt": "June som smiler bredt forran en fargerik bakgrunn",
         "body": [
             "Heihei! Jeg heter June - født i de kalde vitermånedene i Nord-Norge, men med et navn som iallefall på englesk er varmt og sommerlig. Jeg er en engasjert fullstack-utvikler, og som kvinne innen tech er navigerer jeg den raskt utviklende verden av programmering med masse nysgjerrighet, er opptatt av å bryte ned barrierer.",
             "Kjernen av min yrkesreise er å skape intuitive og tilgjengelige løsninger. Enten det dreier seg om en brukervennlig frontend-applikasjon med inklusivt design, eller et solid internt API som gir en smidig utvikleropplevelse. Jeg er glad i å utvikle solide og meningsfylte løsninger.",

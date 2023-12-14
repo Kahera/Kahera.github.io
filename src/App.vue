@@ -61,11 +61,10 @@ const isDev = import.meta.env.DEV;
     <div class="relative">
       <label
         for="locale"
-        class="absolute text-sm -top-2 bg-primary-lightest dark:bg-accent-darkest left-3 px-1 transition-transform duration-200"
+        class="absolute text-sm text-primary-darker dark:text-primary-light -top-2 bg-primary-lightest dark:bg-accent-darkest left-3 px-1 transition-transform duration-200"
       >
         {{ $t('locale.select') }}
       </label>
-      <!-- class="h-12 px-2 rounded-lg bg-transparent border border-primary dark:border-primary text-primary dark:text-primary"> -->
       <select
         id="locale"
         v-model="$i18n.locale"

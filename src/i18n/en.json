@@ -126,6 +126,7 @@
     },
     "about": {
         "heading": "About me",
+        "imageAlt": "June smiling broadly in front of a colorful background",
         "body": [
             "Hi there! I'm June, born in the cold winter months north in Norway, but with a summery name. I am a passionate full-stack developer, and as a woman in tech, I navigate the ever-evolving world of programming with an insatiable curiosity and a determination to break barriers.",
             "At the heart of my professional journey is the art of crafting intuitive and accessible solutions. Whether it be a user-friendly frontend application with inclusive and accessible features, or a robust internal API offering a seamless developer experience, I thrive on creating meaningful solutions.",
