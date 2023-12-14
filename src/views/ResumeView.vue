@@ -18,7 +18,7 @@ import type { IEmployment } from '@/models/IEmployment';
 import type { IEducation } from '@/models/IEducation';
 import type { IResumeItem } from '@/models/IResumeItem';
 
-// i18n
+// i18n 
 import { useI18n } from "vue-i18n";
 const i18n = useI18n();
 

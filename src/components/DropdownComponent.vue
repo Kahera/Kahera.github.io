@@ -19,7 +19,7 @@ const props = defineProps({
     buttonType: {
         type: String as PropType<'outline' | 'solid'>,
         default: 'outline'
-    }
+    } 
 });
 
 let dropdownOpen = ref(false);
@@ -63,29 +63,48 @@ function onLeave(el: any, done: any) {
 </script>
 
 <template>
-    <Button class="dropdown-btn" @click="dropdownOpen = !dropdownOpen" :type="'solid'" :size="'lg'">
-        <template #icon>menu</template>
-        <template #other>
-            <!-- Wrapper with position styling -->
-            <div class="dropdown absolute z-10 top-16 mb-2
+  <Button
+    class="dropdown-btn"
+    :type="'solid'"
+    :size="'lg'"
+    @click="dropdownOpen = !dropdownOpen"
+  >
+    <template #icon>
+      menu
+    </template>
+    <template #other>
+      <!-- Wrapper with position styling -->
+      <div
+        class="dropdown absolute z-10 top-16 mb-2
                         min-w-[12rem] leading-8
                         overflow-hidden rounded-lg"
-                :class="{ 'right-0': position == 'right', 'left-0': position == 'left' }">
-                <!-- Dropdown items (list content) -->
-                <TransitionGroup name="list" @enter="onEnter" @leave="onLeave">
-                    <a v-for="(link, index) in dropDownElements" :key="index" :href=link.path :data-index="index" class="block 
-                        bg-primary-lighter dark:bg-accent-dark">
-                        <span class="font-icon">
-                            <slot name="icon"></slot>
-                        </span>
-                        <span class="text-primary-darker dark:text-primary-light">
-                            {{ $t('pages.' + link.name?.toString()) }}
-                        </span>
-                    </a>
-                </TransitionGroup>
-            </div>
-        </template>
-    </Button>
+        :class="{ 'right-0': position == 'right', 'left-0': position == 'left' }"
+      >
+        <!-- Dropdown items (list content) -->
+        <TransitionGroup
+          name="list"
+          @enter="onEnter"
+          @leave="onLeave"
+        >
+          <a
+            v-for="(link, index) in dropDownElements"
+            :key="index"
+            :href="link.path"
+            :data-index="index"
+            class="block 
+                        bg-primary-lighter dark:bg-accent-dark"
+          >
+            <span class="font-icon">
+              <slot name="icon" />
+            </span>
+            <span class="text-primary-darker dark:text-primary-light">
+              {{ $t('pages.' + link.name?.toString()) }}
+            </span>
+          </a>
+        </TransitionGroup>
+      </div>
+    </template>
+  </Button>
 </template>
 
 

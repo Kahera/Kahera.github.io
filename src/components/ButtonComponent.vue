@@ -161,7 +161,7 @@ const buttonSize = computed(() => {
 
 const iconSize = computed(() => {
     switch (props.size) {
-        case 'sm':
+        case 'sm': 
             return 'text-xl';
         case 'md':
         case 'lg':
@@ -174,14 +174,23 @@ const iconSize = computed(() => {
 
 
 <template>
-    <button class="btn flex justify-center space-x-2"
-        :class="[{ 'flex-row-reverse space-x-reverse': iconPosition == 'right' }, background, textColor, border, buttonSize, rounded]">
-        <span v-if="$slots.icon" class="font-icon my-auto" :class="[iconSize]">
-            <slot name="icon"></slot>
-        </span>
-        <span v-if="$slots.text" class="my-auto">
-            <slot name="text"></slot>
-        </span>
-        <slot name="other"></slot>
-    </button>
+  <button
+    class="btn flex justify-center space-x-2"
+    :class="[{ 'flex-row-reverse space-x-reverse': iconPosition == 'right' }, background, textColor, border, buttonSize, rounded]"
+  >
+    <span
+      v-if="$slots.icon"
+      class="font-icon my-auto"
+      :class="[iconSize]"
+    >
+      <slot name="icon" />
+    </span>
+    <span
+      v-if="$slots.text"
+      class="my-auto"
+    >
+      <slot name="text" />
+    </span>
+    <slot name="other" />
+  </button>
 </template>

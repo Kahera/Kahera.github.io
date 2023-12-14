@@ -18,10 +18,13 @@ function updateData() {
 
 </script>
 
-<template>
+<template> 
   <div class="space-y-4">
     <h2>{{ $t('about.heading') }}</h2>
-    <div v-for="(item, index) in aboutStrings" :key="index">
+    <div
+      v-for="(item, index) in aboutStrings"
+      :key="index"
+    >
       <p>{{ item }}</p>
     </div>
   </div>
