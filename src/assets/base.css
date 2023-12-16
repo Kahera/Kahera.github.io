@@ -56,11 +56,17 @@
     --color-accent-darker: 30 39 57;
     --color-accent-darkest: 12 16 24;
   }
-
-  :root[class~="dark"] {}
 }
 
-@layer utilities {}
+@layer utilities {
+  .bg-gradient {
+    @apply bg-gradient-to-tl from-primary-lightest to-secondary-light via-accent-lightest dark:from-accent-darkest dark:to-primary-darkest;
+  }
+
+  .bg-default {
+    @apply bg-primary-lightest dark:bg-accent-darkest;
+  }
+}
 
 .font-icon {
   &.filled {
@@ -84,9 +90,10 @@ html {
 }
 
 body {
-  @apply min-h-[100dvh] bg-primary-lightest dark:bg-accent-darkest text-accent-darkest dark:text-primary-lightest font-sans antialiased leading-6;
+  @apply min-h-[100dvh] text-accent-darkest dark:text-primary-lightest font-sans antialiased leading-6 bg-gradient;
 
-  transition: color 0.5s, background-color 0.5s;
+  transition: color 0.5s,
+    background-color 0.5s;
   text-wrap: balance;
 
   h2 {
@@ -94,7 +101,7 @@ body {
   }
 
   a {
-    @apply text-accent dark:text-accent-light hover:dark:opacity-90 hover:opacity-80;
+    @apply text-accent dark:text-accent-light;
   }
 }
 

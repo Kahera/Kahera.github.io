@@ -1,5 +1,5 @@
 <template>
-  <section class="space-y-2">
+  <section class="@container space-y-2">
     <div class="flex space-x-4 mb-4 text-secondary-darker">
       <!-- Icon -->
       <span class="font-icon filled text-4xl">

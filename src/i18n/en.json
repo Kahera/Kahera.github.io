@@ -16,6 +16,11 @@
         "projects": "Projects",
         "resume": "Resume"
     },
+    "ui": {
+        "darkMode": "Dark mode",
+        "lightMode": "Light mode",
+        "swapTo": "Swap to {mode}"
+    },
     "warnings": {
         "underConstruction": "Under construction"
     },
@@ -132,7 +137,7 @@
             "At the heart of my professional journey is the art of crafting intuitive and accessible solutions. Whether it be a user-friendly frontend application with inclusive and accessible features, or a robust internal API offering a seamless developer experience, I thrive on creating meaningful solutions.",
             "Currently, my days are filled with the exciting challenges of front-end development using Angular and Vue, as well as resilient .NET backends. Embracing the cloud, I find myself in the azure skies of Azure, shaping scalable and efficient solutions. My toolkit also includes experience with various CI/CD solutions, lately with GitHub Actions as my current platform for automating processes such as testing, linting and deployments. No matter what challenge comes my way, I revel in finding robust solutions and relish the accompanying learning experience.",
             "Academically, I hold dual bachelor's degrees—one in Programming and another in Administration and Management. With fluency in both Norwegian and English, a solid understanding of the other Nordic languages, and some grasp of German, I possess a diverse set of skills and insights that provides me with a holistic perspective, allowing me to seamlessly bridge the gap between technology and business.",
-            "When I have time off, I switch gears to more hands-on creativity. I'm a maker at heart, and love messing with both electronics, IoT projects and smart home solutions (where coding comes in handy!). In addition, I love 3D printing, sewing, woodworking, or doing house renovations. And when my energy stores runs out, I love sitting down with a good book or enjoy a video game. I believe maintaining a balance between using both hands and mind, fosters creativity in both realms."
+            "When I have time off, I switch gears to more hands-on creativity. I'm a maker at heart, and love messing with both electronics, IoT projects and smart home solutions (where coding also comes in handy!). In addition, I love 3D printing, sewing, woodworking, and doing house renovations. And when my energy stores runs out I love sitting down with a good book, or enjoy a video game. I believe maintaining a balance between using hands and mind fosters creativity in both realms."
         ]
     }
 }

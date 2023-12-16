@@ -5,8 +5,8 @@ import { computed, ref, watchEffect } from 'vue';
 
 // Components
 import Button from '@/components/ButtonComponent.vue';
-import ListItem from '@/components/view-experience/ListItem.vue'
-import CVItem from '@/components/view-experience/CVItem.vue';
+import ListItem from './components/ListItem.vue';
+import CVItem from './components/CVItem.vue';
 
 // Animations
 import gsap from 'gsap';
@@ -47,7 +47,7 @@ const education = computed(() => sortDataByEndDate(educationRef.value));
 const jobsSorted = computed(() => sortDataByEndDate(jobsRef.value));
 const jobsToDisplay = computed(() => {
   if (displayAllJobs.value) return jobsSorted.value;
-  else return jobsSorted.value.slice(0, 2);
+  else return jobsSorted.value.slice(0, 3);
 });
 
 // Animations
@@ -78,7 +78,7 @@ function onLeave(el: any, done: any) {
 </script>
 
 <template>
-  <div class="space-y-8 mb-8">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 2xl:gap-14 mb-8">
     <ListItem>
       <template #icon>work</template>
       <template #heading>{{ $t('resume.work') }}</template>
@@ -103,13 +103,13 @@ function onLeave(el: any, done: any) {
     <ListItem>
       <template #icon>school</template>
       <template #heading>{{ $t('resume.education') }}</template>
-      <ul class="flex flex-col space-y-6">
+      <ol class="flex flex-col space-y-6">
         <CVItem v-for="ed in education" :startDate="new Date(ed.startDate)"
           :endDate="ed.endDate ? new Date(ed.endDate) : undefined" :company="ed.school" :url="ed.url"
           :position="ed.degree">
           <template #description>{{ ed.description }}</template>
         </CVItem>
-      </ul>
+      </ol>
     </ListItem>
   </div>
 </template>

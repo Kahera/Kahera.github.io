@@ -95,7 +95,7 @@ const textColor = computed(() => {
         switch (props.color) {
             case 'primary':
                 if (props.type == 'soft') return 'text-primary-dark';
-                return 'text-white dark:text-black/90';
+                return 'text-white dark:text-black';
             case 'secondary':
                 if (props.type == 'soft') return 'text-black/80 dark:text-white/90';
                 return 'text-black/80';
@@ -122,28 +122,25 @@ const textColor = computed(() => {
 });
 
 const border = computed(() => {
-    if (props.type == 'outline') {
-        if (props.disabled) return 'border border-gray-300 dark:border-gray-600';
+    if (!(props.type == 'outline')) return 'border-0';
+    if (props.disabled) return 'border border-gray-300 dark:border-gray-600';
 
-        switch (props.color) {
-            case 'primary':
-                return 'border border-primary dark:border-primary/80';
-            case 'secondary':
-                return 'border border-secondary-darkest dark:border-secondary-darker';
-            case 'accent':
-                return 'border border-accent dark:border-accent-light';
-            case 'neutral':
-                return 'border border-gray-500';
-            case 'danger':
-                return 'border border-red-500';
-            case 'warning':
-                return 'border border-yellow-500';
-            case 'success':
-                return 'border border-green-500';
-            default: return 'border border-primary';
-        }
-    } else {
-        return 'border-0';
+    switch (props.color) {
+        case 'primary':
+            return 'border border-primary dark:border-primary/80';
+        case 'secondary':
+            return 'border border-secondary-darkest dark:border-secondary-darker';
+        case 'accent':
+            return 'border border-accent dark:border-accent-light';
+        case 'neutral':
+            return 'border border-gray-500';
+        case 'danger':
+            return 'border border-red-500';
+        case 'warning':
+            return 'border border-yellow-500';
+        case 'success':
+            return 'border border-green-500';
+        default: return 'border border-primary';
     }
 });
 

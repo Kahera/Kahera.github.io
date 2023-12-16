@@ -1,17 +1,12 @@
 <script setup lang="ts">
-import { ref, type PropType, computed } from 'vue';
-import type { RouteRecordNormalized } from 'vue-router';
+import { ref, type PropType, onUnmounted } from 'vue';
 import Button from './ButtonComponent.vue';
 
 // Animations
 import gsap from 'gsap';
 import { usePrefersReducedMotion } from '@/utilities/prefers-reduced-motion';
 
-const props = defineProps({
-    links: {
-        type: Array<RouteRecordNormalized>,
-        required: true
-    },
+defineProps({
     position: {
         type: String as PropType<'left' | 'right'>,
         default: 'left'
@@ -22,89 +17,77 @@ const props = defineProps({
     } 
 });
 
-let dropdownOpen = ref(false);
-const dropDownElements = computed(() => {
-    if (dropdownOpen.value) return props.links ?? [];
-    else return [];
-})
-
-// Close dropdown when clicking outside of it
-window.addEventListener('click', (e) => {
-    if (!(e.target as HTMLElement).closest('.dropdown-btn')) {
-        dropdownOpen.value = false;
-    }
-});
+const dropdownOpen = ref(false);
 
 // Animations
 const reducedMotion = usePrefersReducedMotion();
-function onEnter(el: any, done: any) {
-    gsap.fromTo(el, {
-        opacity: 0,
-        height: 0
+
+function toggleDropdown(closeDropdown: boolean = false) {
+  if (closeDropdown) dropdownOpen.value = false;
+  else dropdownOpen.value = !dropdownOpen.value;
+
+  if (dropdownOpen.value) {
+    gsap.fromTo('.dropdown', {
+      opacity: 0,
+      height: 0
     }, {
-        opacity: 1,
-        height: 'auto',
-        duration: reducedMotion.value ? 0 : 0.2,
-        delay: reducedMotion.value ? 0 : el.dataset.index * 0.08,
-        onComplete: done
-    })
+      opacity: 1,
+      height: 'auto',
+      duration: reducedMotion.value ? 0 : 0.2,
+      delay: reducedMotion.value ? 0 : 0.08,
+    });
+  } else {
+    gsap.to('.dropdown', {
+      opacity: 0,
+      height: 0,
+      duration: reducedMotion.value ? 0 : 0.2,
+    });
+  }
 }
 
-function onLeave(el: any, done: any) {
-    const delayModifier = props.links.length;
-    gsap.to(el, {
-        opacity: 0,
-        height: 0,
-        duration: reducedMotion.value ? 0 : 0.2,
-        delay: reducedMotion.value ? 0 : (delayModifier - el.dataset.index) * 0.05,
-        onComplete: done
-    })
-}
+// Close dropdown when clicking outside of it
+const handleOutsideClick = (e: MouseEvent) => {
+  if (!(e.target as HTMLElement).closest('.dropdown-btn')) {
+    toggleDropdown(true);
+  }
+};
+
+window.addEventListener('click', handleOutsideClick);
+onUnmounted(() => {
+  window.removeEventListener('click', handleOutsideClick);
+});
+
 </script>
 
 <template>
-  <Button
-    class="dropdown-btn"
-    :type="'solid'"
-    :size="'lg'"
-    @click="dropdownOpen = !dropdownOpen"
-  >
-    <template #icon>
-      menu
-    </template>
-    <template #other>
-      <!-- Wrapper with position styling -->
-      <div
-        class="dropdown absolute z-10 top-16 mb-2
-                        min-w-[12rem] leading-8
-                        overflow-hidden rounded-lg"
-        :class="{ 'right-0': position == 'right', 'left-0': position == 'left' }"
-      >
-        <!-- Dropdown items (list content) -->
-        <TransitionGroup
-          name="list"
-          @enter="onEnter"
-          @leave="onLeave"
-        >
-          <a
-            v-for="(link, index) in dropDownElements"
-            :key="index"
-            :href="link.path"
-            :data-index="index"
-            class="block 
-                        bg-primary-lighter dark:bg-accent-dark"
-          >
-            <span class="font-icon">
-              <slot name="icon" />
-            </span>
-            <span class="text-primary-darker dark:text-primary-light">
-              {{ $t('pages.' + link.name?.toString()) }}
-            </span>
-          </a>
-        </TransitionGroup>
-      </div>
-    </template>
-  </Button>
+  <div class="relative min-w-fit">
+    <Button
+      class="dropdown-btn"
+      :type="'solid'"
+      :size="'lg'"
+      @click="toggleDropdown()"
+    >
+      <template #icon>
+        menu
+      </template>
+    </Button>
+    <div
+      class="dropdown absolute z-10 top-14 mb-2
+  min-w-[10rem] leading-8
+  overflow-hidden rounded-lg"
+      :class="{ 'right-0': position == 'right', 'left-0': position == 'left' }"
+    >
+      <slot />
+    </div>
+  </div>
 </template>
 
-
+<style scoped>
+:slotted(.dropdown > *) {
+  @apply px-4 py-2 block text-center
+    text-primary-darkest dark:text-primary-lighter
+    bg-primary-lighter dark:bg-accent-darker 
+    hover:bg-primary-light dark:hover:bg-accent-darkest
+    transition-colors duration-200;
+}
+</style>
