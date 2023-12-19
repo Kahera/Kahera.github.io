@@ -57,7 +57,7 @@ function getNavIcon(name: string | undefined) {
       </RouterLink>
     </nav>
 
-    <LanguageSelector class="max-md:hidden w-24" />
+    <LanguageSelector class="max-md:hidden w-28" />
 
     <!-- Dark/light mode for larger screens -->
     <Button
@@ -68,7 +68,7 @@ function getNavIcon(name: string | undefined) {
       @click=" darkModeStore.toggle()"
     >
       <template #icon>
-        {{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }} 
+        {{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }}
       </template>
     </Button>
 

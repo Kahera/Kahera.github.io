@@ -14,7 +14,7 @@ defineProps({
     buttonType: {
         type: String as PropType<'outline' | 'solid'>,
         default: 'outline'
-    } 
+    }
 });
 
 const dropdownOpen = ref(false);
@@ -27,7 +27,7 @@ function toggleDropdown(closeDropdown: boolean = false) {
   else dropdownOpen.value = !dropdownOpen.value;
 
   if (dropdownOpen.value) {
-    gsap.fromTo('.dropdown', {
+    gsap.fromTo('.dropdown-parent', {
       opacity: 0,
       height: 0
     }, {
@@ -37,7 +37,7 @@ function toggleDropdown(closeDropdown: boolean = false) {
       delay: reducedMotion.value ? 0 : 0.08,
     });
   } else {
-    gsap.to('.dropdown', {
+    gsap.to('.dropdown-parent', {
       opacity: 0,
       height: 0,
       duration: reducedMotion.value ? 0 : 0.2,
@@ -84,7 +84,7 @@ onUnmounted(() => {
 :slotted(.dropdown-parent > *) {
   @apply px-4 py-2 block text-center
     text-primary-darkest dark:text-primary-lighter
-    bg-primary-lighter dark:bg-accent-darker 
+    bg-primary-lighter dark:bg-accent-darker
     hover:bg-primary-light dark:hover:bg-accent-darkest
     transition-colors duration-200;
 }

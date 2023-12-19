@@ -1,48 +1,51 @@
 <script setup lang="ts">
-
-import { computed } from 'vue';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const labelRef = ref<HTMLElement | null>(null);
-const cssVariables = computed(() => ({
-   '--width': (labelRef.value ? (labelRef.value.offsetWidth + 16) : 0) + 'px'
+let cssVariables = computed(() => ({
+'--width': (labelRef.value ? (labelRef.value.offsetWidth + 16) : 0) + 'px'
 }));
+
 
 </script>
 
 <template>
-  <div class="relative">
-    <label
-      ref="labelRef"
-      for="locale"
-      class="absolute text-sm -mt-2.5 left-3 text-primary-darker dark:text-primary-light "
-    >
-      {{ $t('locale.select') }}
-    </label>
-    <div class="hide-border-top relative border border-primary overflow-clip rounded-md">
-      <div
-        class="absolute top-0 left-0 w-2 border-t border-x-0 border-primary rounded-tl-md"
-      />
-      <div
+  <div>
+    <!-- Wrapper to avoid the padding from the outside of this element to affect the insets -->
+    <div class="relative">
+      <label
+        ref="labelRef"
+        for="locale"
         :style="cssVariables"
-        class="absolute top-0 right-0 border-t border-x-0 border-primary top-border-right"
-      />
-      <select
-        id="locale"
-        v-model="$i18n.locale"
-        class="block h-12 py-0 px-6 w-full rounded-lg bg-transparent appearance-none"
-        @click="$event.stopPropagation()"
+        class="absolute text-sm -mt-2.5 left-3 text-primary-darker dark:text-primary-light floating-label-position"
       >
-        <option
-          v-for="(locale, index) in $i18n.availableLocales"
-          :key="`locale-${locale}`"
-          :data-index="index"
-          :value="locale"
-          class="bg-primary-lightest dark:bg-accent-darker"
+        {{ $t('locale.select') }}
+      </label>
+      <div class="hide-border-top relative  overflow-clip rounded-md">
+        <div
+          class="absolute top-0 left-0 w-2 border-t border-x-0 border-primary rounded-tl-md"
+        />
+        <div
+          :style="cssVariables"
+          class="absolute top-0 right-0 border-t border-x-0 border-primary top-border-right"
+        />
+        <select
+          id="locale"
+          v-model="$i18n.locale"
+          class="block h-12 py-0 px-6 w-full bg-transparent rounded-md border border-primary hide-border-top focus-visible:border-2 focus-visible:outline-0 focus-visible:outline-transparent appearance-none"
+          @click="$event.stopPropagation()"
         >
-          {{ $t('locale.' + locale) }}
-        </option>
-      </select>
+          <option
+            v-for="(locale, index) in $i18n.availableLocales"
+            :key="`locale-${locale}`"
+            :data-index="index"
+            :value="locale"
+            class="bg-primary-lightest dark:bg-accent-darker"
+          >
+            {{ $t('locale.' + locale) }}
+          </option>
+        </select>
+      </div>
     </div>
   </div>
 </template>
