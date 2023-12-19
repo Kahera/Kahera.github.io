@@ -117,8 +117,6 @@ const textColor = computed(() => {
             default: return 'text-white';
         }
     }
-
-
 });
 
 const border = computed(() => {

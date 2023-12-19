@@ -7,6 +7,7 @@ import { useDarkModeStore } from '@/stores/darkMode';
 // Components
 import Dropdown from '@/components/DropdownComponent.vue';
 import Button from '@/components/ButtonComponent.vue';
+import LanguageSelector from './LanguageSelector.vue';
 
 // Variables
 const darkModeStore = useDarkModeStore();
@@ -56,30 +57,7 @@ function getNavIcon(name: string | undefined) {
       </RouterLink>
     </nav>
 
-    <!-- Language selector for larger screens -->
-    <div class="relative max-md:hidden">
-      <label
-        for="locale"
-        class="absolute text-sm text-primary-darker dark:text-primary-light -top-2 bg-primary-lightest dark:bg-accent-darkest left-3 px-1 transition-transform duration-200"
-      >
-        {{ $t('locale.select') }}
-      </label>
-      <select
-        id="locale"
-        v-model="$i18n.locale"
-        class="block h-12 py-0 px-6 border border-1 rounded-lg border-primary bg-transparent appearance-none"
-      >
-        <option
-          v-for="(locale, index) in $i18n.availableLocales"
-          :key="`locale-${locale}`"
-          :data-index="index"
-          :value="locale"
-          class="bg-primary-lightest dark:bg-accent-darker"
-        >
-          {{ $t('locale.' + locale) }}
-        </option>
-      </select>
-    </div>
+    <LanguageSelector class="max-md:hidden w-24" />
 
     <!-- Dark/light mode for larger screens -->
     <Button
@@ -120,33 +98,7 @@ function getNavIcon(name: string | undefined) {
           </div>
         </button>
 
-        <div class="relative group">
-          <label
-            for="locale"
-            class="absolute text-sm -top-0.5 left-6 px-1
-            text-primary-darker dark:text-primary-light bg-primary-lighter dark:bg-accent-darker 
-            group-hover:bg-primary-light group-hover:dark:bg-accent-darkest 
-            transition duration-200"
-          >
-            {{ $t('locale.select') }}
-          </label>
-          <select
-            id="locale"
-            v-model="$i18n.locale"
-            class="block h-12 w-full py-0 px-6 border border-1 rounded-lg border-primary bg-transparent appearance-none"
-            @click="$event.stopPropagation()"
-          >
-            <option
-              v-for="(locale, index) in $i18n.availableLocales"
-              :key="`locale-${locale}`"
-              :data-index="index"
-              :value="locale"
-              class="bg-primary-lightest dark:bg-accent-darker"
-            >
-              {{ $t('locale.' + locale) }}
-            </option>
-          </select>
-        </div>
+        <LanguageSelector />
       </Dropdown>
     </nav>
   </header>

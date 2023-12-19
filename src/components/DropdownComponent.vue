@@ -72,9 +72,7 @@ onUnmounted(() => {
       </template>
     </Button>
     <div
-      class="dropdown absolute z-10 top-14 mb-2
-  min-w-[10rem] leading-8
-  overflow-hidden rounded-lg"
+      class="dropdown-parent absolute z-10 top-14 mb-2 min-w-[10rem] rounded-lg"
       :class="{ 'right-0': position == 'right', 'left-0': position == 'left' }"
     >
       <slot />
@@ -83,7 +81,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-:slotted(.dropdown > *) {
+:slotted(.dropdown-parent > *) {
   @apply px-4 py-2 block text-center
     text-primary-darkest dark:text-primary-lighter
     bg-primary-lighter dark:bg-accent-darker 
