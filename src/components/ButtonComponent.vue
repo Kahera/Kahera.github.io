@@ -2,30 +2,34 @@
 import { computed, type PropType } from 'vue';
 
 const props = defineProps({
-    type: {
-        type: String as PropType<'outline' | 'solid' | 'soft'>,
-        default: 'outline'
-    },
-    color: {
-        type: String as PropType<'primary' | 'secondary' | 'accent' | 'neutral' | 'danger' | 'warning' | 'success'>,
-        default: 'primary'
-    },
-    iconPosition: {
-        type: String as PropType<'left' | 'right'>,
-        default: 'left'
-    },
-    size: {
-        type: String as PropType<'sm' | 'md' | 'lg'>,
-        default: 'md'
-    },
-    round: {
-        type: Boolean,
-        default: false
-    },
-    disabled: {
-        type: Boolean,
-        default: false
-    }
+   type: {
+      type: String as PropType<'outline' | 'solid' | 'soft'>,
+      default: 'outline'
+   },
+   color: {
+      type: String as PropType<'primary' | 'secondary' | 'accent' | 'neutral' | 'danger' | 'warning' | 'success'>,
+      default: 'primary'
+   },
+   icon: {
+      type: String,
+      default: ''
+   },
+   iconPosition: {
+      type: String as PropType<'left' | 'right'>,
+      default: 'left'
+   },
+   size: {
+      type: String as PropType<'sm' | 'md' | 'lg'>,
+      default: 'md'
+   },
+   round: {
+      type: Boolean,
+      default: false
+   },
+   disabled: {
+      type: Boolean,
+      default: false
+   }
 });
 
 const rounded = computed(() => {
@@ -156,7 +160,7 @@ const buttonSize = computed(() => {
 
 const iconSize = computed(() => {
     switch (props.size) {
-        case 'sm': 
+        case 'sm':
             return 'text-xl';
         case 'md':
         case 'lg':
@@ -167,19 +171,24 @@ const iconSize = computed(() => {
 });
 </script>
 
-
 <template>
   <button
     class="btn flex justify-center space-x-2"
     :class="[{ 'flex-row-reverse space-x-reverse': iconPosition == 'right' }, background, textColor, border, buttonSize, rounded]"
   >
-    <span
-      v-if="$slots.icon"
-      class="font-icon my-auto"
-      :class="[iconSize]"
+    <transition
+      name="fade"
+      mode="out-in"
     >
-      <slot name="icon" />
-    </span>
+      <span
+        v-if="icon != ''"
+        :key="icon"
+        class="font-icon my-auto"
+        :class="[iconSize]"
+      >
+        {{ icon }}
+      </span>
+    </transition>
     <span
       v-if="$slots.text"
       class="my-auto"
@@ -189,3 +198,14 @@ const iconSize = computed(() => {
     <slot name="other" />
   </button>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

@@ -1,143 +1,155 @@
 {
-    "common": {
-        "JuneHansen": "June Hansen",
-        "JuneIcon": "June icon"
+  "common": {
+    "JuneHansen": "June Hansen",
+    "JuneIcon": "June icon"
+  },
+  "locale": {
+    "select": "Language",
+    "en": "English",
+    "no": "Norsk"
+  },
+  "pages": {
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "home": "Home",
+    "projects": "Projects",
+    "resume": "Resume"
+  },
+  "ui": {
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "swapTo": "Swap to {mode}"
+  },
+  "warnings": {
+    "underConstruction": "Under construction"
+  },
+  "resume": {
+    "work": "Employment",
+    "education": "Education",
+    "present": "Present",
+    "jobs": [
+      {
+        "company": "Evidi",
+        "url": "https://evidi.com",
+        "position": "Developer",
+        "location": "Oslo, Norway",
+        "startDate": "2021-08-01",
+        "endDate": "",
+        "description": "Fullstack developer with main emphasis on .NET/C# as backend, Angular and Vue as frontend, and Azure as cloud provider."
+      },
+      {
+        "company": "NTNU",
+        "url": "https://www.ntnu.no",
+        "position": "Teaching assistant",
+        "location": "Gjøvik, Norway",
+        "startDate": "2020-08-01",
+        "endDate": "2021-06-01",
+        "description": "Student assisstant in the subjects:\n- WWW-technologies: Main emphasis on helping students finding good solutions, troubleshoot problems in assignments and projects, as well as some teaching.\n- Software development: Main emphasis on guiding groups with a larger semester task, as well as some lab assistance."
+      },
+      {
+        "company": "Telia (previously Get — via Express Recruiting)",
+        "url": "https://www.telia.no",
+        "position": "Customer service representative",
+        "location": "Oslo, Norway",
+        "startDate": "2018-02-01",
+        "endDate": "2018-06-01",
+        "description": "Customer service to Get's customers, mainly helping with invoice issues, help ordering, and mobile support. Hired through Express Recruiting for Loyalty Customerservice who runs the customer service centre for Get."
+      },
+      {
+        "company": "Entur (NSB)",
+        "url": "https://www.entur.no",
+        "position": "Sales and service host",
+        "location": "Oslo, Norway",
+        "startDate": "2014-03-01",
+        "endDate": "2017-06-01",
+        "description": "Service for NSBs customers in form of sale of Norwegian and international train tickets, guiding customers at ticket machines, give travel information, problem solving for customers with different problems etc.\nTransferred from NSB to Entur in October 2016. "
+      },
+      {
+        "company": "OsloMet (previously HiOA)",
+        "url": "https://www.oslomet.no",
+        "position": "Seminar leader/teaching assistant",
+        "location": "Oslo, Norway",
+        "startDate": "2016-08-01",
+        "endDate": "2016-12-01",
+        "description": "Seminar leader and teaching assistant for the subject \"Public administration and management\". Main emphasis on planning, facilitating and leading seminars, as well as helping students with assignments and projects."
+      },
+      {
+        "company": "Norwegian Institute for Urban and Regional Research - NIBR",
+        "url": "https://www.oslomet.no/om/nibr",
+        "location": "Oslo, Norway",
+        "position": "Research assistant",
+        "startDate": "2016-04-01",
+        "endDate": "2016-12-01",
+        "description": "Research assistant on the project \"Homeless in Norway 2016.\""
+      },
+      {
+        "company": "Hornnes Skoles Musikkorps",
+        "url": "https://www.facebook.com/hornnesmksandbakkensk/",
+        "position": "Clarinet instructor and substitute conductor",
+        "location": "Sarpsborg, Norway",
+        "startDate": "2012-08-01",
+        "endDate": "2016-12-01",
+        "description": "Clarinet instructor for band members, and substitute conductor for the youth band and the main band."
+      },
+      {
+        "company": "Lande skolemusikkorps",
+        "url": "https://www.facebook.com/groups/182688588980/",
+        "position": "Clarinet instructor",
+        "location": "Sarpsborg, Norway",
+        "startDate": "2009-10-01",
+        "endDate": "2011-10-01",
+        "description": "Clarinet instructor for band members."
+      }
+    ],
+    "educations": [
+      {
+        "school": "NTNU",
+        "url": "https://www.ntnu.no/",
+        "degree": "Bacehlor of Programming",
+        "startDate": "2018-08-01",
+        "endDate": "2021-06-01",
+        "description": "During the degree I'm developing skills in writing good and efficient program code in different programming languages. I'm following the process from idea to working program with specialisation in application development. The program provides a foundation in informatics, but with greater emphasis on programming than is usual in such studies. To a large extent, the tools used are the same ones that are used professionally."
+      },
+      {
+        "school": "OsloMet (previously HiOA)",
+        "url": "https://www.oslomet.no/",
+        "degree": "Bachelor of Administration and Management",
+        "startDate": "2014-08-01",
+        "endDate": "2017-06-01",
+        "description": "The bachelor's degree provided broad expertise in public policy and administration, law, economics, organizational science and management. The education is especially aimed at the public sector, but also provides relevant expertise for work in organizational and business life. \nMy thesis dealt with the Railway Reform, and how staff perceived communication from politicians and management during the process."
+      },
+      {
+        "school": "Frederik II High School",
+        "url": "https://viken.no/frederikii-vgs/utdanningstilbud/international-baccalaureate-ib/international-baccalaureate/",
+        "degree": "International Baccalaureate",
+        "startDate": "2012-08-01",
+        "endDate": "2014-06-01",
+        "description": "An international educational programme taught in English. The programme gives qualification for entry into higher education."
+      }
+    ]
+  },
+  "about": {
+    "heading": "About me",
+    "imageAlt": "June smiling broadly in front of a colorful background",
+    "body": [
+      "Hi there! I'm June, born in the cold winter months north in Norway, but with a summery name. I am a passionate full-stack developer, and as a woman in tech, I navigate the ever-evolving world of programming with an insatiable curiosity and a determination to break barriers.",
+      "At the heart of my professional journey is the art of crafting intuitive and accessible solutions. Whether it be a user-friendly frontend application with inclusive and accessible features, or a robust internal API offering a seamless developer experience, I thrive on creating meaningful solutions.",
+      "Currently, my days are filled with the exciting challenges of front-end development using Angular and Vue, as well as resilient .NET backends. Embracing the cloud, I find myself in the azure skies of Azure, shaping scalable and efficient solutions. My toolkit also includes experience with various CI/CD solutions, lately with GitHub Actions as my current platform for automating processes such as testing, linting and deployments. No matter what challenge comes my way, I revel in finding robust solutions and relish the accompanying learning experience.",
+      "Academically, I hold dual bachelor's degrees—one in Programming and another in Administration and Management. With fluency in both Norwegian and English, a solid understanding of the other Nordic languages, and some grasp of German, I possess a diverse set of skills and insights that provides me with a holistic perspective, allowing me to seamlessly bridge the gap between technology and business.",
+      "When I have time off, I switch gears to more hands-on creativity. I'm a maker at heart, and love messing with both electronics, IoT projects and smart home solutions (where coding also comes in handy!). In addition, I love 3D printing, sewing, woodworking, and doing house renovations. And when my energy stores runs out I love sitting down with a good book, or enjoy a video game. I believe maintaining a balance between using hands and mind fosters creativity in both realms."
+    ],
+    "reachMe": {
+      "heading": "Reach me",
+      "body": "I'm always open to new opportunities, and would love to hear from you! You can reach me at any of these platforms:"
     },
-    "locale": {
-        "select": "Language",
-        "en": "English",
-        "no": "Norsk"
-    },
-    "pages": {
-        "about": "About",
-        "blog": "Blog",
-        "contact": "Contact",
-        "home": "Home",
-        "projects": "Projects",
-        "resume": "Resume"
-    },
-    "ui": {
-        "darkMode": "Dark mode",
-        "lightMode": "Light mode",
-        "swapTo": "Swap to {mode}"
-    },
-    "warnings": {
-        "underConstruction": "Under construction"
-    },
-    "resume": {
-        "work": "Employment",
-        "education": "Education",
-        "present": "Present",
-        "jobs": [
-            {
-                "company": "Evidi",
-                "url": "https://evidi.com",
-                "position": "Developer",
-                "location": "Oslo, Norway",
-                "startDate": "2021-08-01",
-                "endDate": "",
-                "description": "Fullstack developer with main emphasis on .NET/C# as backend, Angular and Vue as frontend, and Azure as cloud provider."
-            },
-            {
-                "company": "NTNU",
-                "url": "https://www.ntnu.no",
-                "position": "Teaching assistant",
-                "location": "Gjøvik, Norway",
-                "startDate": "2020-08-01",
-                "endDate": "2021-06-01",
-                "description": "Student assisstant in the subjects:\n- WWW-technologies: Main emphasis on helping students finding good solutions, troubleshoot problems in assignments and projects, as well as some teaching.\n- Software development: Main emphasis on guiding groups with a larger semester task, as well as some lab assistance."
-            },
-            {
-                "company": "Telia (previously Get — via Express Recruiting)",
-                "url": "https://www.telia.no",
-                "position": "Customer service representative",
-                "location": "Oslo, Norway",
-                "startDate": "2018-02-01",
-                "endDate": "2018-06-01",
-                "description": "Customer service to Get's customers, mainly helping with invoice issues, help ordering, and mobile support. Hired through Express Recruiting for Loyalty Customerservice who runs the customer service centre for Get."
-            },
-            {
-                "company": "Entur (NSB)",
-                "url": "https://www.entur.no",
-                "position": "Sales and service host",
-                "location": "Oslo, Norway",
-                "startDate": "2014-03-01",
-                "endDate": "2017-06-01",
-                "description": "Service for NSBs customers in form of sale of Norwegian and international train tickets, guiding customers at ticket machines, give travel information, problem solving for customers with different problems etc.\nTransferred from NSB to Entur in October 2016. "
-            },
-            {
-                "company": "OsloMet (previously HiOA)",
-                "url": "https://www.oslomet.no",
-                "position": "Seminar leader/teaching assistant",
-                "location": "Oslo, Norway",
-                "startDate": "2016-08-01",
-                "endDate": "2016-12-01",
-                "description": "Seminar leader and teaching assistant for the subject \"Public administration and management\". Main emphasis on planning, facilitating and leading seminars, as well as helping students with assignments and projects."
-            },
-            {
-                "company": "Norwegian Institute for Urban and Regional Research - NIBR",
-                "url": "https://www.oslomet.no/om/nibr",
-                "location": "Oslo, Norway",
-                "position": "Research assistant",
-                "startDate": "2016-04-01",
-                "endDate": "2016-12-01",
-                "description": "Research assistant on the project \"Homeless in Norway 2016.\""
-            },
-            {
-                "company": "Hornnes Skoles Musikkorps",
-                "url": "https://www.facebook.com/hornnesmksandbakkensk/",
-                "position": "Clarinet instructor and substitute conductor",
-                "location": "Sarpsborg, Norway",
-                "startDate": "2012-08-01",
-                "endDate": "2016-12-01",
-                "description": "Clarinet instructor for band members, and substitute conductor for the youth band and the main band."
-            },
-            {
-                "company": "Lande skolemusikkorps",
-                "url": "https://www.facebook.com/groups/182688588980/",
-                "position": "Clarinet instructor",
-                "location": "Sarpsborg, Norway",
-                "startDate": "2009-10-01",
-                "endDate": "2011-10-01",
-                "description": "Clarinet instructor for band members."
-            }
-        ],
-        "educations": [
-            {
-                "school": "NTNU",
-                "url": "https://www.ntnu.no/",
-                "degree": "Bacehlor of Programming",
-                "startDate": "2018-08-01",
-                "endDate": "2021-06-01",
-                "description": "During the degree I'm developing skills in writing good and efficient program code in different programming languages. I'm following the process from idea to working program with specialisation in application development. The program provides a foundation in informatics, but with greater emphasis on programming than is usual in such studies. To a large extent, the tools used are the same ones that are used professionally."
-            },
-            {
-                "school": "OsloMet (previously HiOA)",
-                "url": "https://www.oslomet.no/",
-                "degree": "Bachelor of Administration and Management",
-                "startDate": "2014-08-01",
-                "endDate": "2017-06-01",
-                "description": "The bachelor's degree provided broad expertise in public policy and administration, law, economics, organizational science and management. The education is especially aimed at the public sector, but also provides relevant expertise for work in organizational and business life. \nMy thesis dealt with the Railway Reform, and how staff perceived communication from politicians and management during the process."
-            },
-            {
-                "school": "Frederik II High School",
-                "url": "https://viken.no/frederikii-vgs/utdanningstilbud/international-baccalaureate-ib/international-baccalaureate/",
-                "degree": "International Baccalaureate",
-                "startDate": "2012-08-01",
-                "endDate": "2014-06-01",
-                "description": "An international educational programme taught in English. The programme gives qualification for entry into higher education."
-            }
-        ]
-    },
-    "about": {
-        "heading": "About me",
-        "imageAlt": "June smiling broadly in front of a colorful background",
-        "body": [
-            "Hi there! I'm June, born in the cold winter months north in Norway, but with a summery name. I am a passionate full-stack developer, and as a woman in tech, I navigate the ever-evolving world of programming with an insatiable curiosity and a determination to break barriers.",
-            "At the heart of my professional journey is the art of crafting intuitive and accessible solutions. Whether it be a user-friendly frontend application with inclusive and accessible features, or a robust internal API offering a seamless developer experience, I thrive on creating meaningful solutions.",
-            "Currently, my days are filled with the exciting challenges of front-end development using Angular and Vue, as well as resilient .NET backends. Embracing the cloud, I find myself in the azure skies of Azure, shaping scalable and efficient solutions. My toolkit also includes experience with various CI/CD solutions, lately with GitHub Actions as my current platform for automating processes such as testing, linting and deployments. No matter what challenge comes my way, I revel in finding robust solutions and relish the accompanying learning experience.",
-            "Academically, I hold dual bachelor's degrees—one in Programming and another in Administration and Management. With fluency in both Norwegian and English, a solid understanding of the other Nordic languages, and some grasp of German, I possess a diverse set of skills and insights that provides me with a holistic perspective, allowing me to seamlessly bridge the gap between technology and business.",
-            "When I have time off, I switch gears to more hands-on creativity. I'm a maker at heart, and love messing with both electronics, IoT projects and smart home solutions (where coding also comes in handy!). In addition, I love 3D printing, sewing, woodworking, and doing house renovations. And when my energy stores runs out I love sitting down with a good book, or enjoy a video game. I believe maintaining a balance between using hands and mind fosters creativity in both realms."
-        ]
+    "links": {
+      "linkedIn": "https://www.linkedin.com/in/juneveh/?locale=en_US"
+    }, 
+    "thisPage": {
+      "heading": "About this page",
+      "intro": "This page is actively being worked on, and can be viewed as a beta. If you find any errors, or have any feedback, please",
+      "openAnIssue": "open an issue in the GitHub repository"
     }
+  }
 }

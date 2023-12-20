@@ -65,13 +65,11 @@ onUnmounted(() => {
       class="dropdown-btn"
       :type="'solid'"
       :size="'lg'"
+      :icon="dropdownOpen ? 'close' : 'menu'"
       @click="toggleDropdown()"
-    >
-      <template #icon>
-        menu
-      </template>
-    </Button>
+    />
     <div
+      v-if="dropdownOpen"
       class="dropdown-parent absolute z-10 top-14 mb-2 min-w-[10rem] rounded-lg"
       :class="{ 'right-0': position == 'right', 'left-0': position == 'left' }"
     >

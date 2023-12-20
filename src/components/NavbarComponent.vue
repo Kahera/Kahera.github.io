@@ -40,7 +40,7 @@ function getNavIcon(name: string | undefined) {
         src="@/assets/images/Kahera.webp"
         class="max-h-12 max-sm:hidden"
       >
-      <h1 class="font-display font-bold text-center my-auto text-2xl sm:text-4xl text-primary dark:text-primary">
+      <h1 class="text-center my-auto sm:text-4xl text-primary dark:text-primary">
         {{ $t('common.JuneHansen') }}
       </h1>
     </RouterLink>
@@ -64,13 +64,10 @@ function getNavIcon(name: string | undefined) {
       :icon-position="'right'"
       :type="'outline'"
       :size="'lg'"
+      :icon="darkModeStore.darkMode ? 'light_mode' : 'dark_mode'"
       class="max-md:hidden focus:outline-1 focus:outline-primary-light"
       @click=" darkModeStore.toggle()"
-    >
-      <template #icon>
-        {{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }}
-      </template>
-    </Button>
+    />
 
     <!-- Dropdown navigation for smaller screens -->
     <nav class="md:hidden">

@@ -18,8 +18,8 @@ const isDev = import.meta.env.DEV;
 
   <NavbarComponent />
 
-  <!-- Main page content -->  
-  <main class="mx-auto w-10/12 md:w-4/5 mt-6 lg:mt-20">
+  <!-- Main page content -->
+  <main class="mx-auto w-10/12 mb-8 md:w-4/5 mt-6 lg:mt-20">
     <RouterView />
   </main>
 </template>
