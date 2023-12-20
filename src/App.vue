@@ -3,7 +3,6 @@
 import { RouterView } from 'vue-router'
 import NavbarComponent from './components/NavbarComponent.vue';
 
-const isDev = import.meta.env.DEV;
 </script>
 
 <template>
