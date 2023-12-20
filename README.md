@@ -6,12 +6,12 @@
 > - Add certifications and courses
 > - Only show relevant work by default
 > - Add technologies section?
-- [ ] Restructure layout
-- [ ] Add social links
+- [x] Restructure layout
+- [x] Add social links
 - [ ] Add landing page content
-- [ ] Add about content
+- [x] Add about content
 - [x] Add i18n
-- [ ] Make it look decent
+- [x] Make it look decent
 - [ ] ...
 
 ## Recommended IDE Setup
