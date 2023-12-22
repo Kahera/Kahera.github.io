@@ -51,10 +51,10 @@ const background = computed(() => {
     switch (props.color) {
         case 'primary':
             if (props.type == 'soft') return 'bg-primary/40';
-            return 'bg-primary';
+            return 'bg-primary-hover-bg';
         case 'secondary':
             if (props.type == 'soft') return 'bg-secondary/40';
-            return 'bg-secondary';
+            return 'secondary-hover-bg';
         case 'accent':
             if (props.type == 'soft') return 'bg-accent/40';
             return 'bg-accent';
@@ -80,9 +80,9 @@ const textColor = computed(() => {
     if (props.type == 'outline') {
         switch (props.color) {
             case 'primary':
-                return 'text-primary dark:text-primary/80';
+                return 'primary-hover-text';
             case 'secondary':
-                return 'text-secondary-darkest dark:text-secondary-darker';
+                return 'secondary-hover-text';
             case 'accent':
                 return 'text-accent dark:text-accent-light';
             case 'neutral':
@@ -129,9 +129,9 @@ const border = computed(() => {
 
     switch (props.color) {
         case 'primary':
-            return 'border border-primary dark:border-primary/80';
+            return 'border primary-hover-border';
         case 'secondary':
-            return 'border border-secondary-darkest dark:border-secondary-darker';
+            return 'border secondary-hover-border';
         case 'accent':
             return 'border border-accent dark:border-accent-light';
         case 'neutral':

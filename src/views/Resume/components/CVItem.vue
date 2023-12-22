@@ -12,13 +12,13 @@ defineProps({
         type: String,
         required: true,
     },
-    url: { 
+    url: {
         type: String,
-        required: false, 
+        required: false,
         default: null
     },
     position: {
-        type: String, 
+        type: String,
         required: true,
     }
 });
@@ -27,8 +27,8 @@ defineProps({
 
 <template>
   <li
-    class="bg-primary-lighter/90 dark:bg-accent-darker/30 
-            rounded-lg overflow-hidden"
+    class="bg-primary-lighter/90 dark:bg-accent-darker/30
+            rounded-lg overflow-clip"
   >
     <div class="flex justify-between mb-2 m-6">
       <!-- Position/company -->

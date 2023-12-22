@@ -21,17 +21,21 @@ export const theme = {
       lighter: "rgb(var(--color-primary-lighter) / <alpha-value>)",
       light: "rgb(var(--color-primary-light) / <alpha-value>)",
       DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
+      dark: "rgb(var(--color-primary-dark) / <alpha-value>)",
       darker: "rgb(var(--color-primary-darker) / <alpha-value>)",
       darkest: "rgb(var(--color-primary-darkest) / <alpha-value>)",
     },
     secondary: {
+      lightest: "rgb(var(--color-secondary-lightest) / <alpha-value>)",
       light: "rgb(var(--color-secondary-light) / <alpha-value>)",
       DEFAULT: "rgb(var(--color-secondary) / <alpha-value>)",
+      dark: "rgb(var(--color-secondary-dark) / <alpha-value>)",
       darker: "rgb(var(--color-secondary-darker) / <alpha-value>)",
       darkest: "rgb(var(--color-secondary-darkest) / <alpha-value>)",
     },
     accent: {
       lightest: "rgb(var(--color-accent-lightest) / <alpha-value>)",
+      lighter: "rgb(var(--color-accent-lighter) / <alpha-value>)",
       light: "rgb(var(--color-accent-light) / <alpha-value>)",
       DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
       dark: "rgb(var(--color-accent-dark) / <alpha-value>)",
@@ -42,9 +46,12 @@ export const theme = {
     success: green[500],
     warning: yellow[500],
     danger: red[500]
-  }
-  // extend: {
-  // },
+  },
+  extend: {
+   transitionDuration: {
+      '250': '250ms',
+    }
+  },
 }
 export const plugins = []
 

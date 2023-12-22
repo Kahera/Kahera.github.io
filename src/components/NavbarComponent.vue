@@ -40,7 +40,7 @@ function getNavIcon(name: string | undefined) {
         src="@/assets/images/Kahera.webp"
         class="max-h-12 max-sm:hidden"
       >
-      <h1 class="text-center my-auto sm:text-4xl text-primary dark:text-primary">
+      <h1 class="text-center my-auto sm:text-4xl primary-hover-text">
         {{ $t('common.JuneHansen') }}
       </h1>
     </RouterLink>
@@ -51,7 +51,6 @@ function getNavIcon(name: string | undefined) {
         v-for="route in $router.getRoutes().filter(x => x.name != 'home')"
         :key="route.path"
         :to="route.path"
-        class="dark:text-primary-light text-primary-darker"
       >
         {{ $t('pages.' + route.name?.toString()) }}
       </RouterLink>

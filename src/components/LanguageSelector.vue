@@ -12,27 +12,27 @@ let cssVariables = computed(() => ({
 <template>
   <div>
     <!-- Wrapper to avoid the padding from the outside of this element to affect the insets -->
-    <div class="relative">
+    <div class="relative group">
       <label
         ref="labelRef"
         for="locale"
         :style="cssVariables"
-        class="absolute text-sm -mt-2.5 left-3 text-primary-darker dark:text-primary-light floating-label-position"
+        class="absolute text-sm -mt-2.5 left-3 floating-label-position primary-hover-text group-text-color"
       >
         {{ $t('locale.select') }}
       </label>
-      <div class="hide-border-top relative  overflow-clip rounded-md">
+      <div class="hide-border-top relative overflow-clip rounded-md text-primary-darkest dark:text-primary-lighter">
         <div
-          class="absolute top-0 left-0 w-2 border-t border-x-0 border-primary rounded-tl-md"
+          class="absolute top-0 left-0 w-2 border-t border-x-0 primary-hover-border group-border-color rounded-tl-md"
         />
         <div
           :style="cssVariables"
-          class="absolute top-0 right-0 border-t border-x-0 border-primary top-border-right"
+          class="absolute top-0 right-0 border-t border-x-0 primary-hover-border group-border-color top-border-right"
         />
         <select
           id="locale"
           v-model="$i18n.locale"
-          class="block h-12 py-0 px-6 w-full bg-transparent rounded-md border border-primary hide-border-top focus-visible:border-2 focus-visible:outline-0 focus-visible:outline-transparent appearance-none"
+          class="block h-12 py-0 px-6 w-full bg-transparent rounded-md border primary-hover-border group-border-color hide-border-top focus-visible:border-2 focus-visible:outline-0 focus-visible:outline-transparent appearance-none"
           @click="$event.stopPropagation()"
         >
           <option

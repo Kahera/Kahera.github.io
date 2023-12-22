@@ -22,7 +22,7 @@ function updateData() {
     <!-- About me -->
     <div class="w-2/5 -ml-10 md:-ml-20 lg:-ml-28">
       <!-- Popup image -->
-      <div class="image-container m-6 float-left relative w-full aspect-[1/1.15] flex items-end rounded-b-full overflow-hidden transform transition-transform duration-250 ease-linear hover:scale-105">
+      <div class="image-container m-6 float-left relative w-full aspect-[1/1.15] flex items-end rounded-b-full overflow-clip transform transition-transform duration-250 ease-linear hover:scale-105">
         <img
           alt=""
           src="@/assets/images/background-1.webp"
@@ -59,6 +59,7 @@ function updateData() {
 
     <div class="flex justify-around">
       <a
+        class="icon"
         :href="$t('about.links.linkedIn')"
         target="_blank"
         aria-label="LinkedIn"
@@ -70,6 +71,7 @@ function updateData() {
 
       </a>
       <a
+        class="icon"
         href="https://github.com/Kahera"
         target="_blank"
         aria-label="GitHub"
@@ -80,6 +82,7 @@ function updateData() {
         />
       </a>
       <a
+        class="icon"
         href="https://www.instagram.com/juneveh/"
         target="_blank"
         aria-label="Instagram"
@@ -110,5 +113,8 @@ function updateData() {
 <style scoped>
 .image-container {
 	shape-outside: polygon(0 0, 65% 0, 70% 15%, 85% 25%, 100% 50%, 95% 75%, 73% 92%, 0 95%);
+}
+.icon {
+   @apply hover:scale-105 transition-transform duration-300;
 }
 </style>

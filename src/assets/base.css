@@ -10,16 +10,19 @@
     --color-primary-lighter: 247 232 222;
     --color-primary-light: 229 146 166;
     --color-primary: 210 60 110;
+    --color-primary-dark: 178 57 97;
     --color-primary-darker: 145 54 84;
     --color-primary-darkest: 38 28 31;
 
     --color-secondary-lighest: 214 245 219;
     --color-secondary-light: 197 236 177;
     --color-secondary: 117 204 132;
+    --color-secondary-dark: 98 181 121;
     --color-secondary-darker: 79 158 110;
     --color-secondary-darkest: 41 112 88;
 
     --color-accent-lightest: 209 239 244;
+    --color-accent-lighter: 160 213 223;
     --color-accent-light: 110 186 201;
     --color-accent: 65 85 124;
     --color-accent-dark: 47 62 91;
@@ -35,6 +38,30 @@
 
   .bg-default {
     @apply bg-primary-lightest dark:bg-accent-darkest;
+  }
+
+  .primary-hover-border {
+    @apply border-primary dark:border-primary/80 hover:border-primary-dark dark:hover:border-primary group-hover:border-primary-dark dark:group-hover:border-primary transition-colors duration-200;
+  }
+
+  .secondary-hover-border {
+    @apply border-secondary-darker dark:border-secondary-darker hover:border-secondary-darkest dark:hover:border-secondary-dark transition-colors duration-200;
+  }
+
+  .primary-hover-text {
+    @apply text-primary dark:text-primary/80 hover:text-primary-dark dark:hover:text-primary group-hover:text-primary-dark dark:group-hover:text-primary transition-colors duration-200;
+  }
+
+  .secondary-hover-text {
+    @apply text-secondary-darker dark:text-secondary-darker hover:text-secondary-darkest dark:hover:text-secondary-dark transition-colors duration-200;
+  }
+
+  .primary-hover-bg {
+    @apply bg-primary dark:bg-primary/80 hover:bg-primary-dark dark:hover:bg-primary transition-colors duration-200;
+  }
+
+  .secondary-hover-bg {
+    @apply bg-secondary-darker dark:bg-secondary-darker hover:bg-secondary-darkest dark:hover:bg-secondary-dark transition-colors duration-200;
   }
 }
 
@@ -60,10 +87,9 @@ html {
 }
 
 body {
-  @apply min-h-[100dvh] text-accent-darkest dark:text-primary-lightest font-sans antialiased leading-6 bg-gradient;
+  @apply min-h-[100dvh] text-accent-darkest dark:text-primary-lightest font-sans antialiased leading-6 bg-gradient transition-colors duration-250;
 
-  transition: color 0.5s,
-    background-color 0.5s;
+
   text-wrap: balance;
 
   h1,
@@ -85,7 +111,7 @@ body {
   }
 
   a {
-    @apply text-accent dark:text-accent-light;
+    @apply text-accent dark:text-accent-light hover:text-accent-dark dark:hover:text-accent-lighter transition-colors duration-250;
   }
 }
 
