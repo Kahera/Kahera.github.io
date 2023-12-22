@@ -148,8 +148,8 @@
     }, 
     "thisPage": {
       "heading": "About this page",
-      "intro": "This page is actively being worked on, and can be viewed as a beta. If you find any errors, or have any feedback, please",
-      "openAnIssue": "open an issue in the GitHub repository"
+      "intro": "This page is made using Vue with TypeScript, with all components made from scratch. The page is under development, so if you find any errors, or have any feedback, please",
+      "openAnIssue": "open an issue in the GitHub repository."
     }
   }
 }

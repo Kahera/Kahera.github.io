@@ -61,6 +61,7 @@ function updateData() {
       <a
         :href="$t('about.links.linkedIn')"
         target="_blank"
+        aria-label="LinkedIn"
       >
         <Icon
           name="linkedin"
@@ -71,19 +72,19 @@ function updateData() {
       <a
         href="https://github.com/Kahera"
         target="_blank"
+        aria-label="GitHub"
       >
         <Icon
-          aria-label="GitHub"
           name="github"
-          class="w-10 h-10 p-1 inline-block text-[#24292e] dark:text-[#fafbfc]"
+          class="w-10 h-10 inline-block text-[#24292e] dark:text-[#fafbfc]"
         />
       </a>
       <a
         href="https://www.instagram.com/juneveh/"
         target="_blank"
+        aria-label="Instagram"
       >
         <Icon
-          aria-label="Instagram"
           name="instagram"
           class="w-10 h-10 inline-block text-[#8a3ab9]"
         />

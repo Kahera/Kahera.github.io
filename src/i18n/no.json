@@ -148,8 +148,8 @@
     },
     "thisPage": {
       "heading": "Om denne siden",
-      "intro": "Denne siden blir aktivt arbeidet med, og kan sees på som en beta. Hvis du finner feil, eller har annen tilbakemelding,",
-      "openAnIssue": "åpne et issue i GitHub repositoryet"
+      "intro": "Denne siden er laget ved bruk av Vue med TypeScript, med alle komponenter laget fra bunnen. Siden er under arbeid, så hvis du finner feil, eller har annen tilbakemelding,",
+      "openAnIssue": "åpne veldig gjerne et issue i sidens GitHub repository."
     }
   }
 }

@@ -21,6 +21,5 @@ const icon = defineAsyncComponent(() =>
   <component
     :is="icon"
     :class="props.classes"
-    class="h-16 w-16"
   />
 </template>
