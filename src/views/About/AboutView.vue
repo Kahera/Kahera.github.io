@@ -64,7 +64,7 @@ function updateData() {
       >
         <Icon
           name="linkedin"
-          classes="inline-block text-[#0e76a8]"
+          classes="w-10 h-10 inline-block text-[#0e76a8]"
         />
 
       </a>
@@ -75,7 +75,7 @@ function updateData() {
         <Icon
           aria-label="GitHub"
           name="github"
-          class="w-12 h-12 p-1 inline-block text-[#24292e] dark:text-[#fafbfc]"
+          class="w-10 h-10 p-1 inline-block text-[#24292e] dark:text-[#fafbfc]"
         />
       </a>
       <a
@@ -85,16 +85,16 @@ function updateData() {
         <Icon
           aria-label="Instagram"
           name="instagram"
-          class="w-12 h-12 inline-block text-[#8a3ab9]"
+          class="w-10 h-10 inline-block text-[#8a3ab9]"
         />
       </a>
     </div>
 
     <!-- About this page -->
-    <h2 class="text-secondary-darker mt-8">
+    <h2 class="text-secondary-darker mt-10">
       {{ $t('about.thisPage.heading') }}
     </h2>
-    <p>
+    <p class="mt-4">
       {{ $t('about.thisPage.intro') }}
       <a
         href="https://github.com/Kahera/Kahera.github.io/issues"

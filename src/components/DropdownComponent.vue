@@ -2,10 +2,6 @@
 import { ref, type PropType, onUnmounted } from 'vue';
 import Button from './ButtonComponent.vue';
 
-// Animations
-import gsap from 'gsap';
-import { usePrefersReducedMotion } from '@/utilities/prefers-reduced-motion';
-
 defineProps({
     position: {
         type: String as PropType<'left' | 'right'>,
@@ -18,31 +14,9 @@ defineProps({
 });
 
 const dropdownOpen = ref(false);
-
-// Animations
-const reducedMotion = usePrefersReducedMotion();
-
 function toggleDropdown(closeDropdown: boolean = false) {
   if (closeDropdown) dropdownOpen.value = false;
   else dropdownOpen.value = !dropdownOpen.value;
-
-  if (dropdownOpen.value) {
-    gsap.fromTo('.dropdown-parent', {
-      opacity: 0,
-      height: 0
-    }, {
-      opacity: 1,
-      height: 'auto',
-      duration: reducedMotion.value ? 0 : 0.2,
-      delay: reducedMotion.value ? 0 : 0.08,
-    });
-  } else {
-    gsap.to('.dropdown-parent', {
-      opacity: 0,
-      height: 0,
-      duration: reducedMotion.value ? 0 : 0.2,
-    });
-  }
 }
 
 // Close dropdown when clicking outside of it
@@ -53,9 +27,7 @@ const handleOutsideClick = (e: MouseEvent) => {
 };
 
 window.addEventListener('click', handleOutsideClick);
-onUnmounted(() => {
-  window.removeEventListener('click', handleOutsideClick);
-});
+onUnmounted(() => window.removeEventListener('click', handleOutsideClick));
 
 </script>
 

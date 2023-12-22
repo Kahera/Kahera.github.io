@@ -5,36 +5,6 @@
 @tailwind utilities;
 
 @layer base {
-  /* 'primary': {
-    'lightest': '#f9fbee',
-    'lighter': '#f7e8de',
-    'light': '#E592A6',
-    DEFAULT: '#D23C6E',
-    'darker': '#913654',
-    'darkest': '#261c1f',
-    'dusty': {
-      'light': '#d08e80',
-      'dark': '#d08e80'
-    }
-  },
-  'secondary': {
-    'lightest': '#e5f3dd',
-    'lighter': '#d6f5db',
-    DEFAULT: '#C5ECB1',
-    '600': '#75cc84',
-    'darkest': '#297058',
-    'deep': '#1e3932',
-  },
-  'accent': {
-    'lightest': '#d1eff4',
-    'lighter': '#6ebac9',
-    DEFAULT: '#41557C',
-    'dusty': '#525c6f',
-    'darker': '#2F3E5B',
-    'darkest': '#1E2739',
-    'deep': '#0c1018',
-  } */
-
   :root {
     --color-primary-lightest: 249 251 238;
     --color-primary-lighter: 247 232 222;
