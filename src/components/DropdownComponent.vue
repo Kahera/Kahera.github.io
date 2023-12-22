@@ -14,6 +14,7 @@ defineProps({
 });
 
 const dropdownOpen = ref(false);
+
 function toggleDropdown(closeDropdown: boolean = false) {
   if (closeDropdown) dropdownOpen.value = false;
   else dropdownOpen.value = !dropdownOpen.value;
@@ -27,7 +28,9 @@ const handleOutsideClick = (e: MouseEvent) => {
 };
 
 window.addEventListener('click', handleOutsideClick);
-onUnmounted(() => window.removeEventListener('click', handleOutsideClick));
+onUnmounted(() => {
+  window.removeEventListener('click', handleOutsideClick);
+});
 
 </script>
 
@@ -40,13 +43,18 @@ onUnmounted(() => window.removeEventListener('click', handleOutsideClick));
       :icon="dropdownOpen ? 'close' : 'menu'"
       @click="toggleDropdown()"
     />
-    <div
-      v-if="dropdownOpen"
-      class="dropdown-parent absolute z-10 top-14 mb-2 min-w-[10rem] rounded-lg"
-      :class="{ 'right-0': position == 'right', 'left-0': position == 'left' }"
+    <transition
+      name="fade"
+      mode="out-in"
     >
-      <slot />
-    </div>
+      <div
+        v-if="dropdownOpen"
+        class="dropdown-parent absolute z-10 top-14 mb-2 min-w-[10rem] rounded-lg"
+        :class="{ 'right-0': position == 'right', 'left-0': position == 'left' }"
+      >
+        <slot />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -57,5 +65,14 @@ onUnmounted(() => window.removeEventListener('click', handleOutsideClick));
     bg-primary-lighter dark:bg-accent-darker
     hover:bg-primary-light dark:hover:bg-accent-darkest
     transition-colors duration-200;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
