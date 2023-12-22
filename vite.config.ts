@@ -12,7 +12,8 @@ export default defineConfig({
   plugins: [
     vue(),
     VueI18nPlugin({
-      include: resolve(dirname(fileURLToPath(import.meta.url)), './src/i18n/**')
+      include: resolve(dirname(fileURLToPath(import.meta.url)), './src/i18n/**'),
+      runtimeOnly: false
     }),
     svgLoader()
   ],
