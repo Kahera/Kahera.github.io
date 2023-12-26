@@ -20,7 +20,7 @@ function updateData() {
 <template>
   <div class="max-w-lg mx-auto">
     <!-- About me -->
-    <div class="w-2/5 -ml-10 md:-ml-20 lg:-ml-28">
+    <div class="w-2/5 max-xxs:hidden -ml-6 sm:-ml-10 md:-ml-20 lg:-ml-28">
       <!-- Popup image -->
       <div class="image-container m-6 float-left relative w-full aspect-[1/1.15] flex items-end rounded-b-full overflow-clip transform transition-transform duration-250 ease-linear hover:scale-105">
         <img

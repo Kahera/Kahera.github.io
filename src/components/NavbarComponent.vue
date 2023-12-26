@@ -29,18 +29,18 @@ function getNavIcon(name: string | undefined) {
 </script>
 
 <template>
-  <header class="flex items-center space-x-4 md:space-x-8 mx-4 md:mx-6 my-2 md:my-4">
+  <header class="flex items-center space-x-4 md:space-x-8 mx-4 md:mx-6 my-3 md:my-4">
     <!-- Logo home-link -->
     <RouterLink
       to="/"
-      class="flex sm:space-x-4 md:space-x-6 max-md:grow"
+      class="flex space-x-4 md:space-x-6 max-md:grow"
     >
       <img
         alt="{{ $t('common.JuneIcon') }}"
         src="@/assets/images/Kahera.webp"
-        class="max-h-12 max-sm:hidden"
+        class="max-h-12 max-xs:hidden"
       >
-      <h1 class="text-center my-auto sm:text-4xl primary-hover-text">
+      <h1 class="text-center my-auto text-xl xxs:text-2xl md:text-3xl lg:text-4xl primary-hover-text">
         {{ $t('common.JuneHansen') }}
       </h1>
     </RouterLink>
@@ -65,15 +65,15 @@ function getNavIcon(name: string | undefined) {
       :size="'lg'"
       :icon="darkModeStore.darkMode ? 'light_mode' : 'dark_mode'"
       class="max-md:hidden focus:outline-1 focus:outline-primary-light"
-      @click=" darkModeStore.toggle()"
+      @click="darkModeStore.toggle()"
     />
-
     <!-- Dropdown navigation for smaller screens -->
     <nav class="md:hidden">
       <!-- Dropdown on small screens, link list on larger -->
       <Dropdown
         :position="'right'"
-        :button-type="'solid'"
+        :button-type="'outline'"
+        :button-size="'lg'"
       >
         <RouterLink
           v-for="route in $router.getRoutes().filter(x => x.name != 'home')"
@@ -81,8 +81,8 @@ function getNavIcon(name: string | undefined) {
           class="flex space-x-2"
           :to="route.path"
         >
-          <span class="font-icon align-middle">{{ getNavIcon(route.name?.toString()) }}</span>
-          <span class="align-middle">{{ $t('pages.' + route.name?.toString()) }}</span>
+          <span class="font-icon align-bottom">{{ getNavIcon(route.name?.toString()) }}</span>
+          <span>{{ $t('pages.' + route.name?.toString()) }}</span>
         </RouterLink>
         <button
           class="w-full"

@@ -10,6 +10,10 @@ defineProps({
     buttonType: {
         type: String as PropType<'outline' | 'solid'>,
         default: 'outline'
+    },
+    buttonSize: {
+        type: String as PropType<'sm' | 'md' | 'lg'>,
+        default: 'md'
     }
 });
 
@@ -39,7 +43,7 @@ onUnmounted(() => {
     <Button
       class="dropdown-btn"
       :type="'solid'"
-      :size="'lg'"
+      :size="buttonSize"
       :icon="dropdownOpen ? 'close' : 'menu'"
       @click="toggleDropdown()"
     />

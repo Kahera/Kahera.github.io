@@ -51,7 +51,7 @@ const background = computed(() => {
     switch (props.color) {
         case 'primary':
             if (props.type == 'soft') return 'bg-primary/40';
-            return 'bg-primary-hover-bg';
+            return 'primary-hover-bg';
         case 'secondary':
             if (props.type == 'soft') return 'bg-secondary/40';
             return 'secondary-hover-bg';
@@ -150,11 +150,10 @@ const buttonSize = computed(() => {
     switch (props.size) {
         case 'sm':
             return 'px-2 text-sm';
-        case 'md':
-            return 'px-3 py-1 text-base';
-        case 'lg':
+         case 'lg':
             return 'px-3 py-2 text-lg';
-        default: return 'px-3 py-1 text-base';
+         case 'md':
+         default: return 'px-3 py-1 text-base';
     }
 });
 
@@ -174,7 +173,7 @@ const iconSize = computed(() => {
 <template>
   <button
     class="btn flex justify-center space-x-2"
-    :class="[{ 'flex-row-reverse space-x-reverse': iconPosition == 'right' }, background, textColor, border, buttonSize, rounded]"
+    :class="[{ 'flex-row-reverse space-x-reverse': iconPosition == 'right', 'w-[56px] min-w-fit': icon != ''}, background, textColor, border, buttonSize, rounded]"
   >
     <transition
       name="fade"
