@@ -44,8 +44,8 @@ const rounded = computed(() => {
 const background = computed(() => {
     if (props.type == 'outline') return 'bg-transparent';
     if (props.disabled) {
-        if (props.type == 'soft') return 'bg-gray-200/40';
-        return 'bg-gray-200 dark:bg-gray-700';
+        if (props.type == 'soft') return 'bg-neutral-200/40';
+        return 'bg-neutral-200 dark:bg-neutral-700';
     }
 
     switch (props.color) {
@@ -59,8 +59,8 @@ const background = computed(() => {
             if (props.type == 'soft') return 'bg-accent/40';
             return 'bg-accent';
         case 'neutral':
-            if (props.type == 'soft') return 'bg-gray-500/40';
-            return 'bg-gray-500';
+            if (props.type == 'soft') return 'bg-neutral-500/40';
+            return 'bg-neutral-500';
         case 'success':
             if (props.type == 'soft') return 'bg-green-500/40';
             return 'bg-green-500';
@@ -75,7 +75,7 @@ const background = computed(() => {
 })
 
 const textColor = computed(() => {
-    if (props.disabled) return 'text-gray-400';
+    if (props.disabled) return 'text-neutral-400';
 
     if (props.type == 'outline') {
         switch (props.color) {
@@ -86,7 +86,7 @@ const textColor = computed(() => {
             case 'accent':
                 return 'text-accent dark:text-accent-light';
             case 'neutral':
-                return 'text-gray-500 dark:text-gray-400';
+                return 'text-neutral-500 dark:text-neutral-400';
             case 'danger':
                 return 'text-red-500';
             case 'warning':
@@ -107,7 +107,7 @@ const textColor = computed(() => {
                 if (props.type == 'soft') return 'text-accent-darkest dark:text-accent-lightest';
                 return 'text-white';
             case 'neutral':
-                if (props.type == 'soft') return 'text-gray-600 dark:text-gray-200';
+                if (props.type == 'soft') return 'text-neutral-600 dark:text-neutral-200';
                 return 'text-white';
             case 'success':
                 if (props.type == 'soft') return 'text-black/70 dark:text-white/90';
@@ -125,7 +125,7 @@ const textColor = computed(() => {
 
 const border = computed(() => {
     if (!(props.type == 'outline')) return 'border-0';
-    if (props.disabled) return 'border border-gray-300 dark:border-gray-600';
+    if (props.disabled) return 'border border-neutral-300 dark:border-neutral-600';
 
     switch (props.color) {
         case 'primary':
@@ -135,7 +135,7 @@ const border = computed(() => {
         case 'accent':
             return 'border border-accent dark:border-accent-light';
         case 'neutral':
-            return 'border border-gray-500';
+            return 'border border-neutral-500';
         case 'danger':
             return 'border border-red-500';
         case 'warning':

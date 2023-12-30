@@ -1,4 +1,4 @@
-import { gray, green, yellow, red, transparent } from 'tailwindcss/colors';
+import { green, yellow, red, transparent, zinc } from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
@@ -23,32 +23,32 @@ export const theme = {
    colors: {
       transparent: transparent,
       primary: {
-         lightest: "rgb(var(--color-primary-lightest) / <alpha-value>)",
-         lighter: "rgb(var(--color-primary-lighter) / <alpha-value>)",
-         light: "rgb(var(--color-primary-light) / <alpha-value>)",
-         DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
-         dark: "rgb(var(--color-primary-dark) / <alpha-value>)",
-         darker: "rgb(var(--color-primary-darker) / <alpha-value>)",
-         darkest: "rgb(var(--color-primary-darkest) / <alpha-value>)",
+         lightest: "rgb(249 251 238 / <alpha-value>)",
+         lighter: "rgb(247 232 222 / <alpha-value>)",
+         light: "rgb(229 146 166 / <alpha-value>)",
+         DEFAULT: "rgb(210 60 110 / <alpha-value>)",
+         dark: "rgb(178 57 97 / <alpha-value>)",
+         darker: "rgb(145 54 84 / <alpha-value>)",
+         darkest: "rgb(38 28 31 / <alpha-value>)",
       },
       secondary: {
-         lightest: "rgb(var(--color-secondary-lightest) / <alpha-value>)",
-         light: "rgb(var(--color-secondary-light) / <alpha-value>)",
-         DEFAULT: "rgb(var(--color-secondary) / <alpha-value>)",
-         dark: "rgb(var(--color-secondary-dark) / <alpha-value>)",
-         darker: "rgb(var(--color-secondary-darker) / <alpha-value>)",
-         darkest: "rgb(var(--color-secondary-darkest) / <alpha-value>)",
+         lightest: "rgb(214 245 219 / <alpha-value>)",
+         light: "rgb(197 236 177 / <alpha-value>)",
+         DEFAULT: "rgb(117 204 132 / <alpha-value>)",
+         dark: "rgb(98 181 121 / <alpha-value>)",
+         darker: "rgb(79 158 110 / <alpha-value>)",
+         darkest: "rgb(41 112 88 / <alpha-value>)",
       },
       accent: {
-         lightest: "rgb(var(--color-accent-lightest) / <alpha-value>)",
-         lighter: "rgb(var(--color-accent-lighter) / <alpha-value>)",
-         light: "rgb(var(--color-accent-light) / <alpha-value>)",
-         DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
-         dark: "rgb(var(--color-accent-dark) / <alpha-value>)",
-         darker: "rgb(var(--color-accent-darker) / <alpha-value>)",
-         darkest: "rgb(var(--color-accent-darkest) / <alpha-value>)",
+         lightest: "rgb(209 239 244 / <alpha-value>)",
+         lighter: "rgb(160 213 223 / <alpha-value>)",
+         light: "rgb(110 186 201 / <alpha-value>)",
+         DEFAULT: "rgb(65 85 124 / <alpha-value>)",
+         dark: "rgb(47 62 91 / <alpha-value>)",
+         darker: "rgb(30 39 57 / <alpha-value>)",
+         darkest: "rgb(12 16 24 / <alpha-value>)",
       },
-      neutral: gray,
+      neutral: zinc,
       success: green[500],
       warning: yellow[500],
       danger: red[500]

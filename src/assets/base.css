@@ -4,33 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --color-primary-lightest: 249 251 238;
-    --color-primary-lighter: 247 232 222;
-    --color-primary-light: 229 146 166;
-    --color-primary: 210 60 110;
-    --color-primary-dark: 178 57 97;
-    --color-primary-darker: 145 54 84;
-    --color-primary-darkest: 38 28 31;
-
-    --color-secondary-lighest: 214 245 219;
-    --color-secondary-light: 197 236 177;
-    --color-secondary: 117 204 132;
-    --color-secondary-dark: 98 181 121;
-    --color-secondary-darker: 79 158 110;
-    --color-secondary-darkest: 41 112 88;
-
-    --color-accent-lightest: 209 239 244;
-    --color-accent-lighter: 160 213 223;
-    --color-accent-light: 110 186 201;
-    --color-accent: 65 85 124;
-    --color-accent-dark: 47 62 91;
-    --color-accent-darker: 30 39 57;
-    --color-accent-darkest: 12 16 24;
-  }
-}
-
 @layer utilities {
   .bg-gradient {
     @apply bg-gradient-to-tl from-primary-lightest to-secondary-light via-accent-lightest dark:from-accent-darkest dark:to-primary-darkest;
