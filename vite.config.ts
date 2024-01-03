@@ -21,5 +21,9 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  test: {
+   globals: true, // enable jest-like global test APIs
+   environment: 'happy-dom' // simulate DOM with happy-dom
   }
-})
+});
