@@ -65,10 +65,12 @@ onUnmounted(() => {
 <style scoped>
 :slotted(.dropdown-parent > *) {
   @apply px-4 py-2 block text-center
-    text-primary-darkest dark:text-primary-lighter
-    bg-primary-lighter dark:bg-accent-darker
-    hover:bg-primary-light dark:hover:bg-accent-darkest
+    text-primary-darkest bg-primary-lighter hover:bg-primary-light
     transition-colors duration-200;
+
+      .dark & { /* For some reason, the tailwind dark-prefix don't work on the slotted elements */
+         @apply text-primary-lighter bg-accent-darker hover:bg-accent-darkest;
+      }
 }
 
 .fade-enter-active,
