@@ -8,10 +8,18 @@ import { useDarkModeStore } from '@/stores/darkMode';
 import Dropdown from '@/components/DropdownComponent.vue';
 import Button from '@/components/ButtonComponent.vue';
 import LanguageSelector from './LanguageSelector.vue';
+import { onUnmounted, ref } from 'vue';
 
 // Variables
 const darkModeStore = useDarkModeStore();
 
+// Screen size variable
+const isSmallScreen = ref(false);
+checkWindowSize();
+function checkWindowSize() {
+   isSmallScreen.value = window.matchMedia('(max-width: 768px)').matches;
+}
+window.addEventListener('resize', () => checkWindowSize());
 
 function getNavIcon(name: string | undefined) {
   switch (name) {
@@ -26,6 +34,8 @@ function getNavIcon(name: string | undefined) {
   }
 }
 
+// Destroy event listener on unmount
+onUnmounted(() => window.removeEventListener('resize', () => checkWindowSize()));
 </script>
 
 <template>
@@ -56,7 +66,12 @@ function getNavIcon(name: string | undefined) {
       </RouterLink>
     </nav>
 
-    <LanguageSelector class="max-md:hidden w-28" />
+    <!-- Using if here to ensure new component is generated on resize,
+         in case of language change between size changes -->
+    <LanguageSelector
+      v-if="!isSmallScreen"
+      class="w-28"
+    />
 
     <!-- Dark/light mode for larger screens -->
     <Button
@@ -67,8 +82,8 @@ function getNavIcon(name: string | undefined) {
       class="max-md:hidden focus:outline-1 focus:outline-primary-light"
       @click="darkModeStore.toggle()"
     />
-    <!-- Dropdown navigation for smaller screens -->
-    <nav class="md:hidden">
+    <!-- Dropdown navigation for smaller screens, see v-if explanation above LanguageSelector -->
+    <nav v-if="isSmallScreen">
       <!-- Dropdown on small screens, link list on larger -->
       <Dropdown
         :position="'right'"
