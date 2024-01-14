@@ -1,5 +1,5 @@
 <template>
-  <section class="@container space-y-2">
+  <section class="@container space-y-2 max-w-[80ch]">
     <div class="flex space-x-4 mb-4 text-secondary-darker">
       <!-- Icon -->
       <span class="font-icon filled text-4xl">
@@ -18,4 +18,3 @@
     </div>
   </section>
 </template>
- 

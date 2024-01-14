@@ -20,7 +20,7 @@ function updateData() {
 </script>
 
 <template>
-  <div class="max-w-lg mx-auto">
+  <div class="max-w-[75ch] mx-auto">
     <!-- About me -->
     <div class="w-2/5 max-xxs:hidden -ml-6 sm:-ml-10 md:-ml-20 lg:-ml-28">
       <!-- Popup image -->

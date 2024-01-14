@@ -133,10 +133,10 @@
     "heading": "Om meg",
     "imageAlt": "June som smiler bredt forran en fargerik bakgrunn",
     "body": [
-      "Heihei! Jeg heter June - født i de kalde vintermånedene i Nord-Norge, men med et navn som iallefall på englesk er varmt og sommerlig. Jeg er en engasjert fullstack-utvikler, og som kvinne innen tech er navigerer jeg den raskt utviklende verden av programmering med masse nysgjerrighet, er opptatt av å bryte ned barrierer.",
-      "Kjernen av min yrkesreise er å skape intuitive og tilgjengelige løsninger. Enten det dreier seg om en brukervennlig frontend-applikasjon med inklusivt design, eller et solid internt API som gir en smidig utvikleropplevelse. Jeg er glad i å utvikle solide og meningsfylte løsninger.",
+      "Heihei! Jeg heter June - født i de kalde vintermånedene i Nord-Norge, men med et navn som iallefall på englesk er varmt og sommerlig. Jeg er en engasjert fullstack-utvikler, og som kvinne innen tech navigerer jeg den raskt utviklende verden av programmering med masse nysgjerrighet, samtidig som jeg er opptatt av å bryte ned barrierer.",
+      "Jeg brenner for å skape intuitive og tilgjengelige løsninger. Enten det dreier seg om en brukervennlig frontend-applikasjon med inklusivt og tilgjengelig design, eller et solid internt API som gir en smidig utvikleropplevelse.",
       "For tiden brukes dagene mine på spennende utfordringer innen frontend-utvikling hvor jeg bruker Angular og Vue, samt backend-utvikling hvor jeg bygger robuste .NET-backender. I skyverden bruker jeg Azure, hvor jeg skaper skalerbare og effektive løsninger. I verktøybeltet mitt har jeg i tillegg ulike CI/CD-verktøy, med GitHub Actions som nåværende hovedverktøy for å automatisere prosesser som testing, linting og deployments. Uansett hvilken utfordring som dukker opp, er jeg glad i veien til å finne gode løsninger, og digger læringen som følger med.",
-      "Akademisk sett har jeg to bachelorgrader - en i programmering og en i administrasjon og ledelse. Dette, samt flytende engelsk og norsk, god forståelse for de andre nordiske språkene, og forståelse for tysk, har gitt meg et mangfoldig sett med ferdigheter og innsiketer, som gir meg et helhetlig perspektiv og lar meg gjøre sømløs brobygging mellom den teknologiske og den forretningsmessige verdenen.",
+      "Akademisk sett har jeg to bachelorgrader - en i programmering, og en i administrasjon og ledelse. Dette, samt flytende engelsk og norsk, god forståelse for de andre nordiske språkene, og forståelse for tysk, har gitt meg et mangfoldig sett med ferdigheter og innsiketer, som gir meg et helhetlig perspektiv og lar meg drive sømløs brobygging mellom den teknologiske og den forretningsmessige verdenen.",
       "På fritiden skifter jeg modus til mer praktisk krativitet. Jeg er en \"maker\", og elsker å eksprimentere med elektronikk, IoT og smarthjemløsninger (hvor koding også kommer til nytte!). Jeg er stortrives med 3D-printing, søm, trearbeid og oppussing. Og når jeg går tom for energi setter jeg meg gjerne med en god bok, eller et dataspill. Jeg tenker at å ha en balanse mellom å bruke både hendene og hodet fremmer kreativitet på begge områder."
     ],
     "reachMe": {
@@ -148,7 +148,7 @@
     },
     "thisPage": {
       "heading": "Om denne siden",
-      "intro": "Denne siden er laget ved bruk av Vue med TypeScript, med alle komponenter laget fra bunnen. Siden er under arbeid, så hvis du finner feil, eller har annen tilbakemelding,",
+      "intro": "Denne siden er laget ved bruk av Vue med TypeScript, med alle komponenter laget fra bunnen. Siden er under arbeid, så hvis du finner feil, eller har andre tilbakemeldinger,",
       "openAnIssue": "åpne veldig gjerne et issue i sidens GitHub repository."
     }
   }

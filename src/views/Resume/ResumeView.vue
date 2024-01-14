@@ -18,7 +18,7 @@ import type { IEmployment } from '@/models/IEmployment';
 import type { IEducation } from '@/models/IEducation';
 import type { IResumeItem } from '@/models/IResumeItem';
 
-// i18n 
+// i18n
 import { useI18n } from "vue-i18n";
 const i18n = useI18n();
 
@@ -79,7 +79,7 @@ function onLeave(el: any, done: any) {
 
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 2xl:gap-14 mb-8">
-    <ListItem>
+    <ListItem class="justify-self-center lg:justify-self-end">
       <template #icon>work</template>
       <template #heading>{{ $t('resume.work') }}</template>
 
@@ -100,7 +100,7 @@ function onLeave(el: any, done: any) {
       </Button>
     </ListItem>
 
-    <ListItem>
+    <ListItem class="justify-self-center lg:justify-self-start">
       <template #icon>school</template>
       <template #heading>{{ $t('resume.education') }}</template>
       <ol class="flex flex-col space-y-6">

@@ -57,13 +57,11 @@
 
 html {
   font-size: 18px;
+  hanging-punctuation: first last;
 }
 
 body {
   @apply min-h-[100dvh] text-accent-darkest dark:text-primary-lightest font-sans antialiased leading-6 bg-gradient transition-colors duration-250;
-
-
-  text-wrap: balance;
 
   h1,
   h2,
@@ -71,7 +69,7 @@ body {
   h4,
   h5,
   h6 {
-    @apply font-display font-bold;
+    @apply font-display font-bold text-balance;
   }
 
   h1,
@@ -85,6 +83,16 @@ body {
 
   a {
     @apply text-accent dark:text-accent-light hover:text-accent-dark dark:hover:text-accent-lighter transition-colors duration-250;
+  }
+
+  p {
+    @apply max-w-[75ch] text-pretty;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+      @apply scroll-smooth scroll-pt-4;
+    }
   }
 }
 
