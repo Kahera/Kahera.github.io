@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { onMounted } from 'vue';
+import { nextTick, ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n();
 
 const labelRef = ref<HTMLElement | null>(null);
-let cssVariables = computed(() => ({
-'--width': (labelRef.value ? (labelRef.value.offsetWidth + 16) : 0) + 'px'
-}));
+const cssVariables = ref<Record<string, string>>({ '--width': '0px' });
 
+onMounted(() => updateWidth());
+watch(locale, async() => updateWidth());
 
+const updateWidth = async () => {
+   await nextTick();
+   cssVariables.value['--width'] = `${labelRef.value ? labelRef.value.offsetWidth + 18 : 0}px`;
+}
 </script>
 
 <template>
@@ -36,13 +44,13 @@ let cssVariables = computed(() => ({
           @click="$event.stopPropagation()"
         >
           <option
-            v-for="(locale, index) in $i18n.availableLocales"
-            :key="`locale-${locale}`"
+            v-for="(loc, index) in $i18n.availableLocales"
+            :key="`locale-${loc}`"
             :data-index="index"
-            :value="locale"
+            :value="loc"
             class="bg-primary-lightest dark:bg-accent-darker"
           >
-            {{ $t('locale.' + locale) }}
+            {{ $t('locale.' + loc) }}
           </option>
         </select>
       </div>
