@@ -33,8 +33,8 @@ const colorOptions: Record<string, Record<string, string>> = {
       {{ $t('locale.select') }}
     </legend>
     <select
-      id="locale"
       v-model="$i18n.locale"
+      name="locale"
       class="w-full bg-transparent focus-visible:outline-none text-primary-darkest dark:text-primary-lighter"
       @click="$event.stopPropagation()"
     >
