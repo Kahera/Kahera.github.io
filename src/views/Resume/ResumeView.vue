@@ -22,8 +22,8 @@ import type { IResumeItem } from '@/models/IResumeItem';
 import { useI18n } from "vue-i18n";
 const i18n = useI18n();
 
-let educationRef = ref(<IEducation[]>[]);
-let jobsRef = ref(<IEmployment[]>[]);
+let educationRef = ref([] as IEducation[]);
+let jobsRef = ref([] as IEmployment[]);
 
 watchEffect(() => updateData());
 
@@ -80,34 +80,74 @@ function onLeave(el: any, done: any) {
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 2xl:gap-14 mb-8">
     <ListItem class="justify-self-center lg:justify-self-end">
-      <template #icon>work</template>
-      <template #heading>{{ $t('resume.work') }}</template>
+      <template #icon>
+        work
+      </template>
+      <template #heading>
+        {{ $t('resume.work') }}
+      </template>
 
-      <ol class="flex flex-col space-y-6 mb-6">
-        <TransitionGroup name="list" @enter="onEnter" @leave="onLeave">
-          <CVItem v-for="(job, index) in jobsToDisplay" :key="index" :data-index="index" :data-type="'job'"
-            :startDate="new Date(job.startDate)" :endDate="job.endDate ? new Date(job.endDate) : undefined"
-            :company="job.company" :url="job.url" :position="job.position">
-            <template #description><span class="whitespace-pre-wrap">{{ job.description }}</span></template>
+      <ol class="flex flex-col gap-y-2 sm:gap-y-4 md:gap-y-6 mb-6">
+        <TransitionGroup
+          name="list"
+          @enter="onEnter"
+          @leave="onLeave"
+        >
+          <CVItem
+            v-for="(job, index) in jobsToDisplay"
+            :key="index"
+            :data-index="index"
+            :data-type="'job'"
+            :start-date="new Date(job.startDate)"
+            :end-date="job.endDate ? new Date(job.endDate) : undefined"
+            :company="job.company"
+            :url="job.url"
+            :position="job.position"
+          >
+            <template #description>
+              <span class="whitespace-pre-wrap">{{ job.description }}</span>
+            </template>
           </CVItem>
         </TransitionGroup>
       </ol>
 
-      <Button @click="displayAllJobs = !displayAllJobs" :color="'secondary'" class="w-full">
-        <template #icon><span class="inline-block transition-transform"
-            :class="{ '-rotate-180': displayAllJobs }">expand_more</span></template>
-        <template #text>{{ displayAllJobs ? 'Show fewer' : 'Show all' }}</template>
+      <Button
+        :color="'secondary'"
+        class="w-full"
+        @click="displayAllJobs = !displayAllJobs"
+      >
+        <template #icon>
+          <span
+            class="inline-block transition-transform"
+            :class="{ '-rotate-180': displayAllJobs }"
+          >expand_more</span>
+        </template>
+        <template #text>
+          {{ displayAllJobs ? 'Show fewer' : 'Show all' }}
+        </template>
       </Button>
     </ListItem>
 
     <ListItem class="justify-self-center lg:justify-self-start">
-      <template #icon>school</template>
-      <template #heading>{{ $t('resume.education') }}</template>
-      <ol class="flex flex-col space-y-6">
-        <CVItem v-for="ed in education" :startDate="new Date(ed.startDate)"
-          :endDate="ed.endDate ? new Date(ed.endDate) : undefined" :company="ed.school" :url="ed.url"
-          :position="ed.degree">
-          <template #description>{{ ed.description }}</template>
+      <template #icon>
+        school
+      </template>
+      <template #heading>
+        {{ $t('resume.education') }}
+      </template>
+      <ol class="flex flex-col gap-y-2 sm:gap-y-4 md:gap-y-6">
+        <CVItem
+          v-for="(ed, index) in education"
+          :key="index"
+          :start-date="new Date(ed.startDate)"
+          :end-date="ed.endDate ? new Date(ed.endDate) : undefined"
+          :company="ed.school"
+          :url="ed.url"
+          :position="ed.degree"
+        >
+          <template #description>
+            {{ ed.description }}
+          </template>
         </CVItem>
       </ol>
     </ListItem>
