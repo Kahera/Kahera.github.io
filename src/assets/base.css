@@ -4,7 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  *:focus-visible {
+    @apply focus-outline;
+  }
+}
+
 @layer utilities {
+  .focus-outline {
+    @apply rounded-md outline outline-2 outline-offset-4 outline-primary-dark dark:outline-primary-light;
+  }
+
   .bg-gradient {
     @apply bg-gradient-to-tl from-primary-lightest to-secondary-light via-accent-lightest dark:from-accent-darkest dark:to-primary-darkest;
   }
@@ -25,6 +35,10 @@
     @apply text-primary dark:text-primary/80 hover:text-primary-dark dark:hover:text-primary group-hover:text-primary-dark dark:group-hover:text-primary transition-colors duration-200;
   }
 
+  .primary-higher-contrast-hover-text {
+    @apply text-primary-darkest dark:text-primary-lightest hover:text-primary-darker dark:hover:text-primary-light transition-colors duration-200;
+  }
+
   .secondary-hover-text {
     @apply text-secondary-darker dark:text-secondary-darker hover:text-secondary-darkest dark:hover:text-secondary-dark transition-colors duration-200;
   }
@@ -36,6 +50,7 @@
   .secondary-hover-bg {
     @apply bg-secondary-darker dark:bg-secondary-darker hover:bg-secondary-darkest dark:hover:bg-secondary-dark transition-colors duration-200;
   }
+
 }
 
 .font-icon {
