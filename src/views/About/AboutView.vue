@@ -78,10 +78,10 @@ function updateData() {
       >
         <Icon
           name="linkedin"
-          classes="w-10 h-10 inline-block text-[#0e76a8]"
+          classes="w-10 h-10 inline-block"
         />
-
       </a>
+
       <a
         class="icon"
         href="https://github.com/Kahera"
@@ -93,6 +93,19 @@ function updateData() {
           class="w-10 h-10 inline-block text-[#24292e] dark:text-[#fafbfc]"
         />
       </a>
+
+      <a
+        class="icon"
+        href="https://bsky.app/profile/junehansen.no"
+        target="_blank"
+        aria-label="Bluesky"
+      >
+        <Icon
+          name="bluesky"
+          class="w-10 h-10 inline-block"
+        />
+      </a>
+
       <a
         class="icon"
         href="https://www.instagram.com/juneveh/"
@@ -101,7 +114,7 @@ function updateData() {
       >
         <Icon
           name="instagram"
-          class="w-10 h-10 inline-block text-[#8a3ab9]"
+          class="w-10 h-10 inline-block"
         />
       </a>
     </div>
