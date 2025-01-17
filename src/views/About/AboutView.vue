@@ -25,7 +25,7 @@ function updateData() {
     <div class="w-2/5 max-xxs:hidden -ml-6 sm:-ml-10 md:-ml-20 lg:-ml-28">
       <!-- Popup image -->
       <div
-        class="image-container m-6 float-left relative w-full aspect-[1/1.15] flex items-end rounded-b-full overflow-clip transform transition-transform duration-150 ease-linear hover:scale-105"
+        class="image-container -mt-28 m-6 float-left relative w-full aspect-[1/1.15] flex items-end rounded-b-full overflow-clip transform transition-transform duration-150 ease-linear hover:scale-105"
       >
         <img
           v-show="isLoaded"
@@ -40,16 +40,16 @@ function updateData() {
           class="primary-image relative z-[2] transform transition-transform w-full duration-[400ms] translate-y-[33%] hover:translate-y-[30%]"
           @load="isLoaded = true"
         >
+        <!-- Skeleton image -->
         <div
           v-show="!isLoaded"
           class="absolute rounded-full aspect-square w-full object-cover animate-pulse bg-neutral-300 dark:bg-neutral-700"
         />
       </div>
-      <!-- Skeleton image -->
     </div>
-    <h2 class="text-secondary-darker">
+    <h1 class="text-secondary-darker">
       {{ $t('about.heading') }}
-    </h2>
+    </h1>
     <div class="space-y-4 mt-4">
       <p
         v-for="(item, index) in aboutStrings"
