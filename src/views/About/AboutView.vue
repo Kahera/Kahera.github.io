@@ -37,7 +37,7 @@ function updateData() {
           v-show="isLoaded"
           alt="{{ $t('about.imageAlt') }}"
           src="@/assets/images/june-smily.webp"
-          class="primary-image relative z-[2] transform transition-transform w-full duration-[400ms] translate-y-[33%] hover:translate-y-[30%]"
+          class="primary-image relative z-2 transform transition-transform w-full duration-[400ms] translate-y-[33%] hover:translate-y-[30%]"
           @load="isLoaded = true"
         >
         <!-- Skeleton image -->

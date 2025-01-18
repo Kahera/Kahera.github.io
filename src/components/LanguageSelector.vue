@@ -35,7 +35,7 @@ const colorOptions: Record<string, Record<string, string>> = {
     <select
       v-model="$i18n.locale"
       name="locale"
-      class="w-full bg-transparent focus-visible:outline-none text-primary-darkest dark:text-primary-lighter"
+      class="w-full bg-transparent focus-visible:outline-hidden text-primary-darkest dark:text-primary-lighter"
       @click="$event.stopPropagation()"
     >
       <option

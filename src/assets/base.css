@@ -1,56 +1,53 @@
-@import './components.css';
+@import './components.css' layer(base);
+@import 'tailwindcss';
+@import "theme.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@variant dark (&:where(.dark, .dark *));
+
+@utility focus-outline {
+  @apply rounded-md outline outline-offset-4 outline-primary-dark dark:outline-primary-light;
+}
+
+@utility bg-gradient {
+  @apply bg-linear-to-tl from-primary-lightest via-accent-lightest to-secondary-lightest dark:from-accent-darkest dark:via-accent-darkest dark:to-primary-darkest;
+}
+
+@utility bg-default {
+  @apply bg-primary-lightest dark:bg-accent-darkest;
+}
+
+@utility primary-hover-border {
+  @apply border-primary dark:border-primary/80 hover:border-primary-dark dark:hover:border-primary group-hover:border-primary-dark dark:group-hover:border-primary transition-colors duration-200;
+}
+
+@utility secondary-hover-border {
+  @apply border-secondary-darker dark:border-secondary-darker hover:border-secondary-darkest dark:hover:border-secondary-dark transition-colors duration-200;
+}
+
+@utility primary-hover-text {
+  @apply text-primary dark:text-primary/80 hover:text-primary-dark dark:hover:text-primary group-hover:text-primary-dark dark:group-hover:text-primary transition-colors duration-200;
+}
+
+@utility primary-higher-contrast-hover-text {
+  @apply text-primary-darkest dark:text-primary-lightest hover:text-primary-darker dark:hover:text-primary-light transition-colors duration-200;
+}
+
+@utility secondary-hover-text {
+  @apply text-secondary-darker dark:text-secondary-darker hover:text-secondary-darkest dark:hover:text-secondary-dark transition-colors duration-200;
+}
+
+@utility primary-hover-bg {
+  @apply bg-primary dark:bg-primary/80 hover:bg-primary-dark dark:hover:bg-primary transition-colors duration-200;
+}
+
+@utility secondary-hover-bg {
+  @apply bg-secondary-darker dark:bg-secondary-darker hover:bg-secondary-darkest dark:hover:bg-secondary-dark transition-colors duration-200;
+}
 
 @layer base {
   *:focus-visible {
     @apply focus-outline;
   }
-}
-
-@layer utilities {
-  .focus-outline {
-    @apply rounded-md outline outline-2 outline-offset-4 outline-primary-dark dark:outline-primary-light;
-  }
-
-  .bg-gradient {
-    @apply bg-gradient-to-tl from-primary-lightest to-secondary-light via-accent-lightest dark:from-accent-darkest dark:to-primary-darkest;
-  }
-
-  .bg-default {
-    @apply bg-primary-lightest dark:bg-accent-darkest;
-  }
-
-  .primary-hover-border {
-    @apply border-primary dark:border-primary/80 hover:border-primary-dark dark:hover:border-primary group-hover:border-primary-dark dark:group-hover:border-primary transition-colors duration-200;
-  }
-
-  .secondary-hover-border {
-    @apply border-secondary-darker dark:border-secondary-darker hover:border-secondary-darkest dark:hover:border-secondary-dark transition-colors duration-200;
-  }
-
-  .primary-hover-text {
-    @apply text-primary dark:text-primary/80 hover:text-primary-dark dark:hover:text-primary group-hover:text-primary-dark dark:group-hover:text-primary transition-colors duration-200;
-  }
-
-  .primary-higher-contrast-hover-text {
-    @apply text-primary-darkest dark:text-primary-lightest hover:text-primary-darker dark:hover:text-primary-light transition-colors duration-200;
-  }
-
-  .secondary-hover-text {
-    @apply text-secondary-darker dark:text-secondary-darker hover:text-secondary-darkest dark:hover:text-secondary-dark transition-colors duration-200;
-  }
-
-  .primary-hover-bg {
-    @apply bg-primary dark:bg-primary/80 hover:bg-primary-dark dark:hover:bg-primary transition-colors duration-200;
-  }
-
-  .secondary-hover-bg {
-    @apply bg-secondary-darker dark:bg-secondary-darker hover:bg-secondary-darkest dark:hover:bg-secondary-dark transition-colors duration-200;
-  }
-
 }
 
 .font-icon {

@@ -1,0 +1,43 @@
+@theme {
+    /* Breakpoints */
+    --breakpoint-xxs: 320px;
+    --breakpoint-xs: 475px;
+
+    /* Font Families */
+    --font-sans: 'Seravek', 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', 'source-sans-pro', sans-serif;
+    --font-display: 'Merienda';
+    --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    --font-icon: 'Material Symbols Outlined';
+
+    /* Colors */
+    --color-primary-lightest: oklch(0.98 0.02 114);
+    --color-primary-lighter: oklch(0.94 0.02 56);
+    --color-primary-light: oklch(0.75 0.10 4);
+    --color-primary: oklch(0.59 0.19 5);
+    --color-primary-dark: oklch(0.53 0.16 4);
+    --color-primary-darker: oklch(0.47 0.13 3);
+    --color-primary-darkest: oklch(0.24 0.02 359);
+
+    --color-secondary-lightest: oklch(0.94 0.05 150);
+    --color-secondary-light: oklch(0.90 0.09 135);
+    --color-secondary: oklch(0.77 0.13 148);
+    --color-secondary-dark: oklch(0.70 0.12 151);
+    --color-secondary-darker: oklch(0.64 0.11 155);
+    --color-secondary-darkest: oklch(0.49 0.08 168);
+
+    --color-accent-lightest: oklch(0.93 0.03 209);
+    --color-accent-lighter: oklch(0.84 0.06 210);
+    --color-accent-light: oklch(0.75 0.08 212);
+    --color-accent: oklch(0.45 0.07 263);
+    --color-accent-dark: oklch(0.36 0.05 263);
+    --color-accent-darker: oklch(0.27 0.04 264);
+    --color-accent-darkest: oklch(0.17 0.02 264);
+
+    --color-neutral: var(--zinc);
+    --color-success: var(--green-500);
+    --color-warning: var(--yellow-500);
+    --color-danger: var(--red-500);
+
+    /* Transition Durations */
+    --transition-duration-250: 250ms;
+}

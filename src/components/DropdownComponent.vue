@@ -17,7 +17,7 @@ defineProps({
       },
       backgroundColorClasses: {
          type: String as PropType<string>,
-            default: 'bg-accent-lightest dark:bg-accent-darker shadow shadow-accent-light dark:shadow-accent-dark'
+            default: 'bg-accent-lightest dark:bg-accent-darker shadow-sm shadow-accent-light dark:shadow-accent-dark'
          }
       });
       const dropdownOpen = ref(false);
