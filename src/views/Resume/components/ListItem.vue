@@ -1,5 +1,5 @@
 <template>
-  <section class="@container space-y-2 max-w-[80ch]">
+  <section class="@container max-w-readable">
     <div class="flex gap-x-4 mb-4 text-secondary-darker">
       <!-- Icon -->
       <span class="font-icon filled text-4xl">

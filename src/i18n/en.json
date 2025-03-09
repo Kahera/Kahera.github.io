@@ -28,6 +28,8 @@
     "work": "Employment",
     "education": "Education",
     "present": "Present",
+    "showAll": "Show all",
+    "showFewer": "Show fewer",
     "jobs": [
       {
         "company": "Evidi",

@@ -173,7 +173,7 @@ const iconSize = computed(() => {
 <template>
   <button
     class="btn flex justify-center space-x-2"
-    :class="[{ 'flex-row-reverse space-x-reverse': iconPosition == 'right', 'w-[56px] min-w-fit': icon != ''}, background, textColor, border, buttonSize, rounded]"
+    :class="[{ 'flex-row-reverse space-x-reverse': iconPosition == 'right', 'w-14 min-w-fit': icon != ''}, background, textColor, border, buttonSize, rounded]"
   >
     <transition
       name="fade"

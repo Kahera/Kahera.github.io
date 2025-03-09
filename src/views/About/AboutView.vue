@@ -20,12 +20,12 @@ function updateData() {
 </script>
 
 <template>
-  <div class="max-w-[75ch] mx-auto">
+  <div class="max-w-readable mx-auto">
     <!-- About me -->
     <div class="w-2/5 max-xxs:hidden -ml-6 sm:-ml-10 md:-ml-20 lg:-ml-28">
       <!-- Popup image -->
       <div
-        class="image-container -mt-28 m-6 float-left relative w-full aspect-[1/1.15] flex items-end rounded-b-full overflow-clip transform transition-transform duration-150 ease-linear hover:scale-105"
+        class="image-container -mt-28 m-6 float-left relative w-full aspect-1/1.15 flex items-end rounded-b-full overflow-clip transform transition-transform duration-150 ease-linear hover:scale-105"
       >
         <img
           v-show="isLoaded"
@@ -37,7 +37,7 @@ function updateData() {
           v-show="isLoaded"
           alt="{{ $t('about.imageAlt') }}"
           src="@/assets/images/june-smily.webp"
-          class="primary-image relative z-2 transform transition-transform w-full duration-[400ms] translate-y-[33%] hover:translate-y-[30%]"
+          class="primary-image relative z-2 transform transition-transform w-full duration-400 translate-y-1/3 hover:translate-y-3/10"
           @load="isLoaded = true"
         >
         <!-- Skeleton image -->

@@ -28,6 +28,8 @@
     "work": "Erfaring",
     "education": "Utdanning",
     "present": "Nåværende",
+    "showAll": "Vis alle",
+    "showFewer": "Vis færre",
     "jobs": [
       {
         "company": "Evidi",

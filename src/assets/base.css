@@ -4,16 +4,16 @@
 
 @variant dark (&:where(.dark, .dark *));
 
+@utility max-w-readable {
+  @apply max-w-[75ch];
+}
+
 @utility focus-outline {
   @apply rounded-md outline outline-offset-4 outline-primary-dark dark:outline-primary-light;
 }
 
 @utility bg-gradient {
-  @apply bg-linear-to-tl from-primary-lightest via-accent-lightest to-secondary-lightest dark:from-accent-darkest dark:via-accent-darkest dark:to-primary-darkest;
-}
-
-@utility bg-default {
-  @apply bg-primary-lightest dark:bg-accent-darkest;
+  @apply bg-linear-to-tl from-accent-lightest via-secondary-lightest to-primary-lightest dark:from-accent-darkest dark:via-accent-darkest dark:to-primary-darkest;
 }
 
 @utility primary-hover-border {
@@ -46,7 +46,7 @@
 
 @layer base {
   *:focus-visible {
-    @apply focus-outline;
+    @apply focus-outline outline-2;
   }
 }
 
@@ -73,7 +73,7 @@ html {
 }
 
 body {
-  @apply min-h-[100dvh] text-accent-darkest dark:text-primary-lightest font-sans antialiased leading-6 bg-gradient transition-colors duration-250;
+  @apply min-h-dvh text-accent-darkest dark:text-primary-lightest font-sans antialiased leading-6 bg-gradient transition-colors duration-250;
 
   h1,
   h2,
@@ -98,7 +98,7 @@ body {
   }
 
   p {
-    @apply max-w-[75ch] text-pretty;
+    @apply max-w-readable text-pretty;
   }
 
   @media (prefers-reduced-motion: no-preference) {

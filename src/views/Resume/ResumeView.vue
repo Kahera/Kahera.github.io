@@ -78,8 +78,8 @@ function onLeave(el: any, done: any) {
 </script>
 
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 2xl:gap-14 mb-8">
-    <ListItem class="justify-self-center lg:justify-self-end">
+  <div class="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-[calc((75ch*2)+8*var(--spacing))] gap-8 2xl:gap-14 mb-8">
+    <ListItem>
       <template #icon>
         work
       </template>
@@ -120,15 +120,17 @@ function onLeave(el: any, done: any) {
           <span
             class="inline-block transition-transform"
             :class="{ '-rotate-180': displayAllJobs }"
-          >expand_more</span>
+          >
+            expand_more
+          </span>
         </template>
         <template #text>
-          {{ displayAllJobs ? 'Show fewer' : 'Show all' }}
+          {{ displayAllJobs ? $t('resume.showFewer') : $t('resume.showAll') }}
         </template>
       </Button>
     </ListItem>
 
-    <ListItem class="justify-self-center lg:justify-self-start">
+    <ListItem>
       <template #icon>
         school
       </template>
@@ -155,3 +157,4 @@ function onLeave(el: any, done: any) {
 </template>
 
 <style scoped></style>
+

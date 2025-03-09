@@ -24,7 +24,7 @@ const colorOptions: Record<string, Record<string, string>> = {
 <template>
   <fieldset
     :class="colorOptions.border[colorScheme]"
-    class="group border rounded-md px-2 pb-3 -mt-2 has-[:focus-within]:focus-outline"
+    class="group border rounded-md px-2 pb-3 -mt-2 has-[:focus-within]:focus-outline has-[:focus-within]:outline-2"
   >
     <legend
       class="px-1 text-sm"
