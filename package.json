@@ -12,7 +12,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@intlify/unplugin-vue-i18n": "^6.0.8",
+    "@intlify/unplugin-vue-i18n": "^11.0.1",
     "@tailwindcss/postcss": "^4.1.13",
     "gsap": "^3.12.2",
     "pinia": "^3.0.1",
