@@ -12,3 +12,7 @@ updates:
       day: "saturday"
       time: "09:00"
       timezone: "Europe/Oslo"
+    groups:
+      npm-dependencies:
+        patterns:
+          - "*"
