@@ -8,17 +8,20 @@ defineProps({
    }
 });
 
-// First string = text or border, second string = color scheme
-const colorOptions: Record<string, Record<string, string>> = {
-   text: {
-      primary: 'primary-hover-text',
-      secondary: 'secondary-hover-text'
-   },
-   border: {
-      primary: 'primary-hover-border',
-      secondary: 'secondary-hover-border'
-   }
-}
+// Strongly typed color options so template indexing is safe
+interface ColorVariants { primary: string; secondary: string }
+interface ColorOptions { text: ColorVariants; border: ColorVariants }
+
+const colorOptions: ColorOptions = {
+  text: {
+    primary: 'primary-hover-text',
+    secondary: 'secondary-hover-text'
+  },
+  border: {
+    primary: 'primary-hover-border',
+    secondary: 'secondary-hover-border'
+  }
+};
 </script>
 
 <template>
