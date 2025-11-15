@@ -22,10 +22,10 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.14.1",
+    "@rushstack/eslint-patch": "^1.15.0",
     "@testing-library/vue": "^8.0.1",
-    "@tsconfig/node18": "^18.2.0",
-    "@types/node": "^24.10.0",
+    "@tsconfig/node18": "^18.2.5",
+    "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/tsconfig": "^0.8.1",
@@ -38,7 +38,7 @@
     "typescript": "^5.9.3",
     "vite": "^7.2.2",
     "vite-svg-loader": "^5.1.0",
-    "vitest": "^4.0.8",
+    "vitest": "^4.0.9",
     "vue-eslint-parser": "^10.2.0",
     "vue-tsc": "^3.1.3"
   }
