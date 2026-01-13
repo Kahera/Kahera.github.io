@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 // Vue
-import { computed, ref, watchEffect } from 'vue';
+import { computed, ref, watchEffect, watch } from 'vue';
 
 // Components
 import Button from '@/components/ButtonComponent.vue';
@@ -50,17 +50,36 @@ const jobsToDisplay = computed(() => {
   else return jobsSorted.value.slice(0, 3);
 });
 
+// Track the number of visible items to calculate new item indices
+const prevVisibleCount = ref(3);
+
+// Capture the old count before the list updates
+watch(
+  () => jobsToDisplay.value.length,
+  (_newLength, oldLength) => {
+    prevVisibleCount.value = oldLength;
+  }
+);
+
 // Animations
 const reducedMotion = usePrefersReducedMotion();
 function onEnter(el: any, done: any) {
+  // Calculate delay based on position relative to previously visible items
+  const itemIndex = parseInt(el.dataset.index);
+  const isNewItem = itemIndex >= prevVisibleCount.value;
+  const delayIndex = isNewItem ? itemIndex - prevVisibleCount.value : 0;
+
   gsap.fromTo(el, {
     opacity: 0,
-    height: 0.2
+    height: 0,
+    visibility: 'hidden',
+    overflow: 'hidden'
   }, {
     opacity: 1,
     height: 'auto',
-    duration: reducedMotion.value ? 0 : 0.5,
-    delay: reducedMotion.value ? 0 : el.dataset.index * 0.15,
+    visibility: 'visible',
+    duration: reducedMotion.value ? 0 : 0.4,
+    delay: reducedMotion.value ? 0 : delayIndex * 0.15,
     onComplete: done
   })
 }
