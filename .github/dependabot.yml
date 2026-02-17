@@ -12,7 +12,11 @@ updates:
       day: "saturday"
       time: "09:00"
       timezone: "Europe/Oslo"
+    rebase-strategy: "auto"
     groups:
       npm-dependencies:
         patterns:
           - "*"
+        update-types:
+          - "minor"
+          - "patch"
