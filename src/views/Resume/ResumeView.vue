@@ -22,8 +22,8 @@ import type { IResumeItem } from '@/models/IResumeItem';
 import { useI18n } from "vue-i18n";
 const i18n = useI18n();
 
-let educationRef = ref([] as IEducation[]);
-let jobsRef = ref([] as IEmployment[]);
+const educationRef = ref([] as IEducation[]);
+const jobsRef = ref([] as IEmployment[]);
 
 watchEffect(() => updateData());
 
@@ -63,9 +63,10 @@ watch(
 
 // Animations
 const reducedMotion = usePrefersReducedMotion();
-function onEnter(el: any, done: any) {
+function onEnter(element: Element, done: () => void) {
+  const el = element as HTMLElement;
   // Calculate delay based on position relative to previously visible items
-  const itemIndex = parseInt(el.dataset.index);
+  const itemIndex = parseInt(el.dataset.index!);
   const isNewItem = itemIndex >= prevVisibleCount.value;
   const delayIndex = isNewItem ? itemIndex - prevVisibleCount.value : 0;
 
@@ -84,13 +85,14 @@ function onEnter(el: any, done: any) {
   })
 }
 
-function onLeave(el: any, done: any) {
+function onLeave(element: Element, done: () => void) {
+  const el = element as HTMLElement;
   const delayModifier = el.dataset.type === 'job' ? jobsSorted.value.length : education.value.length;
   gsap.to(el, {
     opacity: 0,
     height: 0,
     duration: reducedMotion.value ? 0 : 0.4,
-    delay: reducedMotion.value ? 0 : (delayModifier - el.dataset.index) * 0.1,
+    delay: reducedMotion.value ? 0 : (delayModifier - parseInt(el.dataset.index!)) * 0.1,
     onComplete: done
   })
 }
