@@ -45,7 +45,9 @@ function getNavIcon(name: string | undefined) {
     <!-- In header navigation on larger screens -->
     <nav class="max-md:hidden flex justify-center gap-6 m-auto grow">
       <RouterLink
-        v-for="route in $router.getRoutes().filter(x => x.name != 'home')"
+        v-for="route in $router.getRoutes().filter(x =>
+         x.name != 'home' &&
+         x.name != 'notFound')"
         :key="route.path"
         :to="route.path"
       >
@@ -77,7 +79,10 @@ function getNavIcon(name: string | undefined) {
         :button-size="'lg'"
       >
         <RouterLink
-          v-for="route in $router.getRoutes().filter(x => x.name != 'home')"
+          v-for="route in $router.getRoutes().filter(x =>
+            x.name != 'home' &&
+            x.name != 'notFound'
+            )"
           :key="route.path"
           class="flex gap-2"
           :to="route.path"
@@ -89,7 +94,7 @@ function getNavIcon(name: string | undefined) {
           class="w-full"
           @click="darkModeStore.toggle()"
         >
-          <div class="flex gap-2 whitespace-nowrap w-">
+          <div class="flex gap-2 whitespace-nowrap w-full">
             <span class="font-icon">{{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }}</span>
             <span>{{ $t('ui.swapTo', {mode: darkModeStore.darkMode ? $t('ui.lightMode').toLocaleLowerCase() : $t('ui.darkMode').toLocaleLowerCase()}) }}</span>
           </div>

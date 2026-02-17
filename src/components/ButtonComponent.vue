@@ -98,7 +98,7 @@ const textColor = computed(() => {
     } else {
         switch (props.color) {
             case 'primary':
-                if (props.type == 'soft') return 'text-primary-dark';
+                if (props.type == 'soft') return 'text-primary-darker dark:text-primary-lighter';
                 return 'text-white dark:text-black';
             case 'secondary':
                 if (props.type == 'soft') return 'text-black/80 dark:text-white/90';
@@ -188,12 +188,7 @@ const iconSize = computed(() => {
         {{ icon }}
       </span>
     </transition>
-    <span
-      v-if="$slots.text"
-      class="my-auto"
-    >
-      <slot name="text" />
-    </span>
+    <slot name="text"  />
     <slot name="other" />
   </button>
 </template>

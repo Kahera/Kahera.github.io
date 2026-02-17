@@ -24,6 +24,11 @@
   "warnings": {
     "underConstruction": "Under construction"
   },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist.",
+    "backHome": "Back to Home"
+  },
   "resume": {
     "work": "Employment",
     "education": "Education",

@@ -56,7 +56,7 @@ onUnmounted(() => {
     >
       <div
         v-if="dropdownOpen"
-        class="absolute flex flex-col gap-2 top-14 p-4 min-w-[10rem] rounded-md *:primary-higher-contrast-hover-text"
+        class="absolute flex flex-col gap-2 top-14 p-4 min-w-40 rounded-md *:primary-higher-contrast-hover-text"
         :class="[
           position == 'right' ? 'right-0' : 'left-0',
           backgroundColorClasses

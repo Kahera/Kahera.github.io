@@ -13,4 +13,14 @@ app.use(createPinia());
 app.use(router);
 app.use(i18n);
 
-app.mount('#app');  
+// Handle redirect from 404.html
+router.isReady().then(() => {
+  const redirect = sessionStorage.redirect;
+  if (redirect) {
+    delete sessionStorage.redirect;
+    const path = redirect.startsWith('/') ? redirect : '/' + redirect;
+    router.push(path);
+  }
+});
+
+app.mount('#app');
