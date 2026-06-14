@@ -2,6 +2,7 @@
 // Vue
 import { ref, watchEffect } from 'vue';
 import Icon from '@/components/IconComponent.vue';
+import Image from '@/components/ImageComponent.vue';
 
 // i18n
 import { useI18n } from "vue-i18n";
@@ -27,12 +28,12 @@ function updateData() {
       <div
         class="image-container -mt-28 m-6 float-left relative w-full aspect-1/1.15 flex items-end rounded-b-full overflow-clip transform transition-transform duration-150 ease-linear hover:scale-105"
       >
-        <img
+        <Image
           v-show="isLoaded"
           alt=""
           src="@/assets/images/background-1.webp"
           class="absolute rounded-full aspect-square w-full object-cover"
-        >
+        />
         <img
           v-show="isLoaded"
           alt="{{ $t('about.imageAlt') }}"

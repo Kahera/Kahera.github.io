@@ -8,6 +8,10 @@ import { useDarkModeStore } from '@/stores/darkMode';
 import Dropdown from '@/components/DropdownComponent.vue';
 import Button from '@/components/ButtonComponent.vue';
 import LanguageSelector from './LanguageSelector.vue';
+import Image from '@/components/ImageComponent.vue';
+
+// Assets
+import KaheraImage from '@/assets/images/Kahera.webp';
 
 // Variables
 const darkModeStore = useDarkModeStore();
@@ -32,11 +36,11 @@ function getNavIcon(name: string | undefined) {
       to="/"
       class="flex gap-4 md:gap-6 max-md:grow"
     >
-      <img
-        alt="{{ $t('common.JuneIcon') }}"
-        src="@/assets/images/Kahera.webp"
+      <Image
+        :alt="$t('common.JuneIcon')"
+        :src="KaheraImage"
         class="max-h-12 max-xs:hidden"
-      >
+      />
       <h1 class="text-center my-auto brand-header primary-hover-text">
         {{ $t('common.JuneHansen') }}
       </h1>
