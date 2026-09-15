@@ -12,22 +12,24 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/About/AboutView.vue')
+      redirect: '/'
     },
     {
       path: '/resume',
       name: 'resume',
-      component: () => import('../views/Resume/ResumeView.vue')
+      redirect: { path: '/', hash: '#work' }
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'notFound',
       component: () => import('../views/NotFound/NotFoundView.vue')
     }
-  ]
+  ],
+  scrollBehavior(to, _from, savedPosition) {
+    if (savedPosition) return savedPosition;
+    if (to.hash) return { el: to.hash, top: 16 };
+    return { top: 0 };
+  }
 });
 
 export default router;

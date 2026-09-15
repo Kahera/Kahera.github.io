@@ -1,3 +1,5 @@
+import '@fontsource-variable/source-sans-3/wght.css';
+import '@fontsource-variable/fraunces/wght.css';
 import './assets/base.css';
 
 import { createApp } from 'vue';

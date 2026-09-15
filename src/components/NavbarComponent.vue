@@ -1,122 +1,49 @@
 <script setup lang="ts">
-
-// Vue
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 import { useDarkModeStore } from '@/stores/darkMode';
-
-// Components
-import Dropdown from '@/components/DropdownComponent.vue';
-import Button from '@/components/ButtonComponent.vue';
 import LanguageSelector from './LanguageSelector.vue';
-import Image from '@/components/ImageComponent.vue';
 
-// Assets
-import KaheraImage from '@/assets/images/Kahera.webp';
-
-// Variables
+const { t } = useI18n();
 const darkModeStore = useDarkModeStore();
-function getNavIcon(name: string | undefined) {
-  switch (name) {
-    case 'about':
-      return 'face_4';
-    case 'resume':
-      return 'description';
-    case 'projects':
-      return 'code';
-    case 'contact':
-      return 'email';
-  }
-}
+const route = useRoute();
 </script>
 
 <template>
-  <header class="flex items-center gap-4 md:gap-8 mx-4 md:mx-6 my-3 md:my-4">
-    <!-- Logo home-link -->
-    <RouterLink
-      to="/"
-      class="flex gap-4 md:gap-6 max-md:grow"
-    >
-      <Image
-        :alt="$t('common.JuneIcon')"
-        :src="KaheraImage"
-        class="max-h-12 max-xs:hidden"
-      />
-      <h1 class="text-center my-auto brand-header primary-hover-text">
-        {{ $t('common.JuneHansen') }}
-      </h1>
-    </RouterLink>
+  <header class="bg-surface-rose dark:bg-surface-rose-dark">
+    <div class="page-width">
+      <div class="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-4 border-b border-primary-darker py-5 lg:flex lg:gap-8 dark:border-primary-light">
+        <component :is="route.name === 'home' ? 'h1' : 'span'" id="site-title" class="min-w-0 font-display text-xl font-medium leading-relaxed text-primary-darker sm:text-2xl dark:text-primary-light">
+          <RouterLink to="/" class="block w-fit">{{ t('common.JuneHansen') }}</RouterLink>
+        </component>
 
-    <!-- In header navigation on larger screens -->
-    <nav class="max-md:hidden flex justify-center gap-6 m-auto grow">
-      <RouterLink
-        v-for="route in $router.getRoutes().filter(x =>
-         x.name != 'home' &&
-         x.name != 'notFound')"
-        :key="route.path"
-        :to="route.path"
-      >
-        {{ $t('pages.' + route.name?.toString()) }}
-      </RouterLink>
-    </nav>
+        <nav :aria-label="t('home.navigation')" class="col-span-2 row-start-2 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm lg:ml-auto lg:gap-6 lg:text-base">
+          <RouterLink :to="{ path: '/', hash: '#work' }" class="py-1 hover:underline">{{ t('home.workNav') }}</RouterLink>
+          <RouterLink :to="{ path: '/', hash: '#interests' }" class="py-1 hover:underline">{{ t('home.hobbiesNav') }}</RouterLink>
+          <a href="https://github.com/Kahera" target="_blank" rel="noopener noreferrer" class="py-1 hover:underline">GitHub</a>
+          <a :href="t('about.links.linkedIn')" target="_blank" rel="noopener noreferrer" class="py-1 hover:underline">LinkedIn</a>
+        </nav>
 
-    <!-- Using if here to ensure new component is generated on resize,
-         in case of language change between size changes -->
-    <LanguageSelector
-      class="w-28 max-md:hidden"
-    />
-
-    <!-- Dark/light mode for larger screens -->
-    <Button
-      :icon-position="'right'"
-      :type="'outline'"
-      :size="'lg'"
-      :icon="darkModeStore.darkMode ? 'light_mode' : 'dark_mode'"
-      class="max-md:hidden"
-      @click="darkModeStore.toggle()"
-    />
-
-    <!-- Dropdown navigation for smaller screens, see v-if explanation above LanguageSelector -->
-    <nav class="md:hidden">
-      <Dropdown
-        :position="'right'"
-        :button-type="'outline'"
-        :button-size="'lg'"
-      >
-        <RouterLink
-          v-for="route in $router.getRoutes().filter(x =>
-            x.name != 'home' &&
-            x.name != 'notFound'
-            )"
-          :key="route.path"
-          class="flex gap-2"
-          :to="route.path"
-        >
-          <span class="font-icon align-bottom">{{ getNavIcon(route.name?.toString()) }}</span>
-          <span>{{ $t('pages.' + route.name?.toString()) }}</span>
-        </RouterLink>
-        <button
-          class="w-full"
-          @click="darkModeStore.toggle()"
-        >
-          <div class="flex gap-2 whitespace-nowrap w-full">
-            <span class="font-icon">{{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }}</span>
-            <span>{{ $t('ui.swapTo', {mode: darkModeStore.darkMode ? $t('ui.lightMode').toLocaleLowerCase() : $t('ui.darkMode').toLocaleLowerCase()}) }}</span>
+        <div class="col-start-2 row-start-1 flex shrink-0 items-center gap-3 lg:gap-4">
+          <LanguageSelector />
+          <div class="group relative">
+            <button
+              type="button"
+              role="switch"
+              :aria-label="t('ui.darkMode')"
+              :aria-checked="darkModeStore.darkMode"
+              aria-describedby="theme-tooltip"
+              class="grid size-10 cursor-pointer place-items-center text-secondary-darkest hover:bg-secondary-darkest/10 dark:text-secondary dark:hover:bg-secondary/10"
+              @click="darkModeStore.toggle()"
+            >
+              <span aria-hidden="true" class="font-icon text-2xl">{{ darkModeStore.darkMode ? 'light_mode' : 'dark_mode' }}</span>
+            </button>
+            <span id="theme-tooltip" role="tooltip" class="pointer-events-none absolute top-full right-0 z-10 mt-2 w-max max-w-52 bg-ink px-3 py-2 text-xs text-surface opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 dark:bg-ink-dark dark:text-surface-dark">
+              {{ t('ui.swapTo', { mode: darkModeStore.darkMode ? t('ui.lightMode') : t('ui.darkMode') }) }}
+            </span>
           </div>
-        </button>
-
-        <LanguageSelector
-          class="-mt-1"
-          :color-scheme="'secondary'"
-        />
-      </Dropdown>
-    </nav>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
-
-<style scoped>
-.brand-header {
-   /* Magic numbers from the website fluid.style */
-   --preferred: 1.15rem + 2vw;
-   font-size: clamp(1.5rem, 1.16rem + 2vw, 2.5rem);
-}
-</style>

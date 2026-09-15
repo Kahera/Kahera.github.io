@@ -1,4 +1,40 @@
 {
+  "home": {
+    "eyebrow": "On the web & in the workshop",
+    "intro": "Developer, beekeeper, and maker of all sorts. I build thoughtful, accessible things for the web. Away from the keyboard, the curiosity carries on.",
+    "portraitAlt": "June smiling",
+    "workNav": "My work",
+    "workGroup": "Work",
+    "hobbiesGroup": "Hobbies",
+    "hobbiesNav": "Off-screen",
+    "navigation": "Main navigation",
+    "skipToContent": "Skip to content",
+    "hobbiesHeading": "Life, off-screen.",
+    "work": {
+      "eyebrow": "At the keyboard / My work",
+      "heading": "Software with people in mind.",
+      "body": "I'm a full-stack developer at {employer}, working with .NET/C#, Angular, Vue, and Azure. I care about accessible interfaces and thoughtful solutions, from the frontend to the API.",
+      "link": "More about my work on LinkedIn"
+    },
+    "making": {
+      "eyebrow": "01 / Making & tinkering",
+      "heading": "From an idea to a thing.",
+      "body": "Sewing, 3D modelling and printing, electronics, woodworking. Different tools, same curiosity: I love figuring out how to make something myself."
+    },
+    "beekeeping": {
+      "eyebrow": "02 / Beekeeping",
+      "heading": "A different kind of busy.",
+      "body": "Some days, I trade the keyboard for time at the hive. Beekeeping is another part of my life, with plenty to learn along the way."
+    },
+    "games": {
+      "eyebrow": "03 / Board games & beyond",
+      "heading": "One more round?",
+      "body": "Not everything needs to be a project. I also love a board game, a good book, or settling in with a video game."
+    },
+    "moreHeading": "And quite a bit more...",
+    "moreBody": "Always room for whatever catches my curiosity next.",
+    "elsewhere": "Find me elsewhere"
+  },
   "common": {
     "JuneHansen": "June Hansen",
     "JuneIcon": "June icon"

@@ -1,18 +1,31 @@
 # junehansen.no
 
-## TODO: 
-- [ ] Complete experience page 
-> - Add voluntary work 
-> - Add certifications and courses
-> - Only show relevant work by default
-> - Add technologies section?
-- [x] Restructure layout
-- [x] Add social links
-- [ ] Add landing page content
-- [x] Add about content
-- [x] Add i18n
-- [x] Make it look decent
-- [ ] ...
+## Design and Content
+
+The Workshop design is implemented in [HomeView.vue](src/views/Home/HomeView.vue)
+using Tailwind CSS. The original color palette and Merienda font are retained;
+Source Sans 3 and Fraunces are bundled locally. The earlier design studies remain
+in [mockups.html](mockups.html).
+
+- Edit the introduction, work summary, and hobbies under `home` in
+    [en.json](src/i18n/en.json) and [no.json](src/i18n/no.json).
+- [FocusSection.vue](src/components/FocusSection.vue) provides alternating focus
+    rows. Set `tone` (`rose`, `green`, or `blue`), `tinted`, `reverse`, and
+    `headingLevel`. Use an `h2` for a standalone section and an `h3` inside a group.
+- Supply `image: { src, alt, caption? }` to replace the decorative symbol with a
+    photo. The component reserves the image area and lazy-loads photos. Its default,
+    `links`, and `media` slots support richer content without changing the layout.
+- Theme and language choices are saved locally. Without a saved theme, the site
+    uses the system preference. Theme colors live in
+    [theme.css](src/assets/theme.css).
+- `/about` redirects to the homepage; `/resume` redirects to the work section.
+    LinkedIn replaces the public CV. The previous view files remain in the source
+    but are no longer routed or bundled.
+
+### Next Content Pass
+
+- Refine the short work and hobby descriptions in both languages.
+- Add personal work/hobby photos and meaningful alternative text.
 
 ## Recommended IDE Setup
 
@@ -56,3 +69,12 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Run Tests
+
+```sh
+npm run test -- --run
+```
+
+Tests cover the focus component, page structure, translations, theme controls,
+and legacy URL redirects.

@@ -1,6 +1,6 @@
 @import './components.css' layer(base);
 @import 'tailwindcss';
-@import "theme.css";
+@import './theme.css';
 
 @variant dark (&:where(.dark, .dark *));
 
@@ -9,7 +9,11 @@
 }
 
 @utility focus-outline {
-  @apply rounded-md outline outline-offset-4 outline-primary-dark dark:outline-primary-light;
+  @apply outline outline-offset-4 outline-primary-dark dark:outline-primary-light;
+}
+
+@utility page-width {
+  @apply mx-auto w-full max-w-[70rem] px-5 sm:px-9;
 }
 
 @utility bg-gradient {
@@ -51,6 +55,12 @@
 }
 
 .font-icon {
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  font-feature-settings: 'liga';
+  white-space: nowrap;
+
   &.filled {
     font-variation-settings:
       'FILL' 1
@@ -65,15 +75,23 @@
 @font-face {
   font-family: "Merienda";
   src: url(./fonts/Merienda-VariableFont_wght.ttf);
+  font-weight: 300 900;
+  font-display: swap;
 }
 
+@layer base {
 html {
-  font-size: 18px;
+  font-size: 16px;
+  color-scheme: light;
   hanging-punctuation: first last;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 body {
-  @apply min-h-dvh text-accent-darkest dark:text-primary-lightest font-sans antialiased leading-6 bg-gradient transition-colors duration-250;
+  @apply min-h-dvh bg-surface text-ink dark:bg-surface-dark dark:text-ink-dark font-sans antialiased leading-6;
 
   h1,
   h2,
@@ -94,7 +112,7 @@ body {
   }
 
   a {
-    @apply text-accent dark:text-accent-light hover:text-accent-dark dark:hover:text-accent-lighter transition-colors duration-250;
+    @apply text-inherit underline-offset-4 decoration-1 hover:text-primary-darker dark:hover:text-primary-light transition-colors duration-250;
   }
 
   p {
@@ -106,6 +124,7 @@ body {
       @apply scroll-smooth scroll-pt-4;
     }
   }
+}
 }
 
 /* Scrollbar */

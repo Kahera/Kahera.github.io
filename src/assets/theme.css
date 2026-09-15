@@ -4,8 +4,9 @@
     --breakpoint-xs: 475px;
 
     /* Font Families */
-    --font-sans: 'Seravek', 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', 'source-sans-pro', sans-serif;
+    --font-sans: 'Source Sans 3 Variable', 'Trebuchet MS', sans-serif;
     --font-display: 'Merienda';
+    --font-editorial: 'Fraunces Variable', Georgia, serif;
     --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     --font-icon: 'Material Symbols Outlined';
 
@@ -32,6 +33,15 @@
     --color-accent-dark: oklch(0.36 0.05 263);
     --color-accent-darker: oklch(0.27 0.04 264);
     --color-accent-darkest: oklch(0.17 0.02 264);
+
+    --color-surface: #fcfdfb;
+    --color-surface-dark: #1b1d1c;
+    --color-ink: oklch(0.24 0.02 359);
+    --color-ink-dark: #f3f0ec;
+    --color-surface-rose: color-mix(in oklch, var(--color-primary-light) 20%, var(--color-surface));
+    --color-surface-rose-dark: #33232d;
+    --color-surface-green-dark: #1d332d;
+    --color-surface-blue-dark: #222f39;
 
     --color-neutral: var(--zinc);
     --color-success: var(--green-500);

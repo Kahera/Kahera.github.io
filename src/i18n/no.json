@@ -1,4 +1,40 @@
 {
+  "home": {
+    "eyebrow": "På nett og på verkstedet",
+    "intro": "Utvikler, birøkter og skaper av litt av hvert. Jeg lager gjennomtenkte, tilgjengelige løsninger på nett. Nysgjerrigheten tar jeg med meg bort fra tastaturet også.",
+    "portraitAlt": "June som smiler",
+    "workNav": "Jobben min",
+    "workGroup": "Arbeid",
+    "hobbiesGroup": "Fritid",
+    "hobbiesNav": "Utenfor skjermen",
+    "navigation": "Hovedmeny",
+    "skipToContent": "Hopp til innhold",
+    "hobbiesHeading": "Livet utenfor skjermen.",
+    "work": {
+      "eyebrow": "Ved tastaturet / Jobben min",
+      "heading": "Programvare med mennesker i tankene.",
+      "body": "Jeg er fullstack-utvikler i {employer} og jobber med .NET/C#, Angular, Vue og Azure. Jeg er opptatt av tilgjengelige grensesnitt og gjennomtenkte løsninger, fra frontend til API.",
+      "link": "Mer om jobben min på LinkedIn"
+    },
+    "making": {
+      "eyebrow": "01 / Skaperglede og utforsking",
+      "heading": "Fra idé til noe håndfast.",
+      "body": "Søm, 3D-modellering og printing, elektronikk og trearbeid. Ulike verktøy, samme nysgjerrighet: Jeg elsker å finne ut hvordan jeg kan lage noe selv."
+    },
+    "beekeeping": {
+      "eyebrow": "02 / Birøkt",
+      "heading": "En annen slags travel hverdag.",
+      "body": "Noen dager bytter jeg ut tastaturet med tid ved bikuben. Birøkt er en annen del av livet mitt, med mye å lære underveis."
+    },
+    "games": {
+      "eyebrow": "03 / Brettspill og litt til",
+      "heading": "Én runde til?",
+      "body": "Ikke alt trenger å være et prosjekt. Jeg setter også pris på et brettspill, en god bok eller litt tid med et dataspill."
+    },
+    "moreHeading": "Og ganske mye mer...",
+    "moreBody": "Det er alltid plass til noe nytt som vekker nysgjerrigheten.",
+    "elsewhere": "Finn meg andre steder"
+  },
   "common": {
     "JuneHansen": "June Hansen",
     "JuneIcon": "June ikon"
