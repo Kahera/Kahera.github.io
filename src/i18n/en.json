@@ -11,9 +11,14 @@
     "skipToContent": "Skip to content",
     "hobbiesHeading": "Life, off-screen.",
     "work": {
-      "eyebrow": "At the keyboard / My work",
+      "eyebrow": "01 / People in focus",
       "heading": "Software with people in mind.",
-      "body": "I'm a full-stack developer at {employer}, working with .NET/C#, Angular, Vue, and Azure. I care about accessible interfaces and thoughtful solutions, from the frontend to the API.",
+      "body": "Whether I'm working on user experience (UX), developer experience (DevEx), or collaborating with a team, I start with the people involved. I care about accessibility, clarity, and making everyday work easier.",
+      "development": {
+        "eyebrow": "02 / Frontend & backend",
+        "heading": "From interface to API.",
+        "body": "I'm a full-stack developer at {employer}. I build frontends with Angular and Vue, backends and APIs with .NET/C#, and use Azure as the cloud platform. I enjoy working across the stack and understanding how the pieces fit together."
+      },
       "link": "More about my work on LinkedIn"
     },
     "making": {

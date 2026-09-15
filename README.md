@@ -12,6 +12,10 @@ in [mockups.html](mockups.html).
 - [FocusSection.vue](src/components/FocusSection.vue) provides alternating focus
     rows. Set `tone` (`rose`, `green`, or `blue`), `tinted`, `reverse`, and
     `headingLevel`. Use an `h2` for a standalone section and an `h3` inside a group.
+- On the homepage, add, remove, or reorder entries in `workSections` and `interests`.
+    Left/right placement is derived from their combined order, so the pattern
+    continues across the Work/Hobbies boundary without per-section `reverse` flags.
+    Colors remain independently configurable, and mobile keeps text before media.
 - Supply `image: { src, alt, caption? }` to replace the decorative symbol with a
     photo. The component reserves the image area and lazy-loads photos. Its default,
     `links`, and `media` slots support richer content without changing the layout.

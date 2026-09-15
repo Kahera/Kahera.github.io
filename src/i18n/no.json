@@ -11,9 +11,14 @@
     "skipToContent": "Hopp til innhold",
     "hobbiesHeading": "Livet utenfor skjermen.",
     "work": {
-      "eyebrow": "Ved tastaturet / Jobben min",
-      "heading": "Programvare med mennesker i tankene.",
-      "body": "Jeg er fullstack-utvikler i {employer} og jobber med .NET/C#, Angular, Vue og Azure. Jeg er opptatt av tilgjengelige grensesnitt og gjennomtenkte løsninger, fra frontend til API.",
+      "eyebrow": "01 / Mennesker i fokus",
+      "heading": "Programvare med fokus på mennesker.",
+      "body": "Enten jeg jobber med brukeropplevelse, utvikleropplevelse eller samarbeid i et team, er menneskene fokuset. Jeg er opptatt av tilgjengelighet, tydelighet og å gjøre hverdagen enklere.",
+      "development": {
+        "eyebrow": "02 / Frontend og backend",
+        "heading": "Fra grensesnitt til API.",
+        "body": "Jeg er fullstack-utvikler i {employer}. Jeg bygger frontend med Angular og Vue, backend og API-er med .NET/C#, og bruker Azure som skyplattform. Jeg liker å jobbe på tvers av lagene og forstå hvordan delene henger sammen."
+      },
       "link": "Mer om jobben min på LinkedIn"
     },
     "making": {

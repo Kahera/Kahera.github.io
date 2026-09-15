@@ -3,6 +3,7 @@ import { enableAutoUnmount, flushPromises, mount } from '@vue/test-utils';
 import { createPinia, setActivePinia } from 'pinia';
 import { nextTick } from 'vue';
 import App from '../App.vue';
+import FocusSection from '../components/FocusSection.vue';
 import router from '../router';
 import { i18n } from '../i18n';
 import { useDarkModeStore } from '../stores/darkMode';
@@ -40,9 +41,23 @@ describe('Workshop page', () => {
     expect(wrapper.get('#work-title').text()).toBe('Work');
     expect(wrapper.get('#interests-title').text()).toBe('Hobbies');
     expect(wrapper.get('#work-focus-title').element.tagName).toBe('H3');
+    expect(wrapper.findAll('#work > section').map(section => section.attributes('id'))).toEqual([
+      'work-focus', 'work-development'
+    ]);
+    expect(wrapper.get('#work-focus').text()).toContain('user experience (UX)');
+    expect(wrapper.get('#work-focus').text()).toContain('developer experience (DevEx)');
+    expect(wrapper.get('#work-development-title').element.tagName).toBe('H3');
+    expect(wrapper.get('#work-development-title').text()).toBe('From interface to API.');
+    expect(wrapper.get('#work-development').text()).toContain('frontends with Angular and Vue');
+    expect(wrapper.get('#work-development').text()).toContain('backends and APIs with .NET/C#');
+    expect(wrapper.get('#work-development a[href="https://evidi.com"]').text()).toBe('Evidi');
+    expect(wrapper.get('#work-development a[href*="linkedin"]').attributes('href')).toBe(i18n.global.t('about.links.linkedIn'));
     expect(wrapper.find('.border-dashed').exists()).toBe(false);
     expect(wrapper.get('#work').element.nextElementSibling?.id).toBe('interests');
     expect(wrapper.findAll('#interests section')).toHaveLength(3);
+    for (const [index, section] of wrapper.findAllComponents(FocusSection).entries()) {
+      expect(section.props('reverse')).toBe(index % 2 === 0);
+    }
     expect(wrapper.find('#work a[href*="linkedin"]').exists()).toBe(true);
     expect(wrapper.find('a[href="/resume"]').exists()).toBe(false);
     expect(wrapper.text()).not.toContain('photo to come');
@@ -65,6 +80,12 @@ describe('Workshop page', () => {
     expect(wrapper.get('#interests-title').text()).toBe('Fritid');
     expect(wrapper.get('#work-title').text()).toBe('Arbeid');
     expect(wrapper.get('#work').text()).toContain('Jeg er fullstack-utvikler i');
+    expect(wrapper.get('#work-focus').text()).toContain('brukeropplevelse');
+    expect(wrapper.get('#work-focus').text()).toContain('utvikleropplevelse');
+    expect(wrapper.get('#work-development-title').text()).toBe('Fra grensesnitt til API.');
+    expect(wrapper.get('#work-development').text()).toContain('frontend med Angular og Vue');
+    expect(wrapper.get('#work-development').text()).toContain('backend og API-er med .NET/C#');
+    expect(wrapper.get('#work-development a[href*="linkedin"]').attributes('href')).toBe(i18n.global.t('about.links.linkedIn'));
     expect(wrapper.get('img').attributes('alt')).toBe('June som smiler');
     expect(wrapper.get('[role="switch"]').attributes('aria-label')).toBe('Mørk modus');
     expect(document.documentElement.lang).toBe('nb');

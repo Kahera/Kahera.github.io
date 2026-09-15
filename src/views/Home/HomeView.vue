@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import FocusSection from '@/components/FocusSection.vue';
 import portrait from '@/assets/images/june-smily.webp';
@@ -6,11 +7,16 @@ import portraitBackground from '@/assets/images/background-1.webp';
 
 const { t } = useI18n();
 
-const interests = [
-  { id: 'making', tone: 'green', tinted: true, reverse: false, symbol: 'handyman' },
-  { id: 'beekeeping', tone: 'green', tinted: false, reverse: true, symbol: 'hive' },
-  { id: 'games', tone: 'rose', tinted: true, reverse: false, symbol: 'casino' }
-] as const;
+const workSections = ref([
+  { id: 'work-focus', contentKey: 'home.work', tinted: false, symbol: 'groups' },
+  { id: 'work-development', contentKey: 'home.work.development', tinted: true, symbol: 'code' }
+]);
+
+const interests = ref([
+  { id: 'making', tone: 'green', tinted: true, symbol: 'handyman' },
+  { id: 'beekeeping', tone: 'green', tinted: false, symbol: 'hive' },
+  { id: 'games', tone: 'rose', tinted: true, symbol: 'casino' }
+] as const);
 </script>
 
 <template>
@@ -46,19 +52,22 @@ const interests = [
         <h2 id="work-title" class="focus-group-heading">{{ t('home.workGroup') }}</h2>
       </div>
       <FocusSection
-        id="work-focus"
-        :eyebrow="t('home.work.eyebrow')"
-        :heading="t('home.work.heading')"
+        v-for="(section, index) in workSections"
+        :id="section.id"
+        :key="section.id"
+        :eyebrow="t(`${section.contentKey}.eyebrow`)"
+        :heading="t(`${section.contentKey}.heading`)"
         tone="blue"
-        symbol="code"
-        reverse
+        :symbol="section.symbol"
+        :tinted="section.tinted"
+        :reverse="index % 2 === 0"
       >
-        <i18n-t keypath="home.work.body" tag="p" scope="global">
+        <i18n-t :keypath="`${section.contentKey}.body`" tag="p" scope="global">
           <template #employer>
             <a href="https://evidi.com" target="_blank" rel="noopener noreferrer" class="underline">Evidi</a>
           </template>
         </i18n-t>
-        <template #links>
+        <template v-if="section.id === 'work-development'" #links>
           <a :href="t('about.links.linkedIn')" target="_blank" rel="noopener noreferrer" class="underline">
             {{ t('home.work.link') }}
           </a>
@@ -71,7 +80,7 @@ const interests = [
         <h2 id="interests-title" class="focus-group-heading">{{ t('home.hobbiesGroup') }}</h2>
       </div>
       <FocusSection
-        v-for="interest in interests"
+        v-for="(interest, index) in interests"
         :id="interest.id"
         :key="interest.id"
         :eyebrow="t(`home.${interest.id}.eyebrow`)"
@@ -79,7 +88,7 @@ const interests = [
         :description="t(`home.${interest.id}.body`)"
         :tone="interest.tone"
         :tinted="interest.tinted"
-        :reverse="interest.reverse"
+        :reverse="(workSections.length + index) % 2 === 0"
         :symbol="interest.symbol"
       />
     </section>
