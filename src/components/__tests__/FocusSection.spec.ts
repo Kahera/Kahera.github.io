@@ -19,6 +19,18 @@ describe('FocusSection', () => {
       expect(wrapper.get('.font-icon').element.closest('[aria-hidden="true"]')).not.toBeNull();
    });
 
+   it.each([false, true])('centers stacked content and restores desktop alignment with reverse=%s', (reverse) => {
+      const wrapper = mount(FocusSection, {
+         props: { ...props, reverse },
+         slots: { links: '<a href="https://example.com">More</a>' }
+      });
+      expect(wrapper.get('.text-center').classes()).toContain('md:text-left');
+      expect(wrapper.get('h3').classes()).toEqual(expect.arrayContaining(['mx-auto', 'md:mx-0']));
+      expect(wrapper.get('p').classes()).toEqual(expect.arrayContaining(['justify-center', 'md:justify-start']));
+      expect(wrapper.get('.space-y-5').classes()).toEqual(expect.arrayContaining(['mx-auto', 'md:mx-0']));
+      expect(wrapper.get('.flex-wrap').classes()).toEqual(expect.arrayContaining(['justify-center', 'md:justify-start']));
+   });
+
    it.each([
       { tone: 'rose', ink: 'primary-darker', darkInk: 'primary-light', surface: 'surface-rose', darkSurface: 'surface-rose-dark' },
       { tone: 'blue', ink: 'accent', darkInk: 'accent-lighter', surface: 'accent-lightest', darkSurface: 'surface-blue-dark' },
@@ -48,6 +60,7 @@ describe('FocusSection', () => {
       expect(wrapper.get('img').attributes('alt')).toBe('June at work');
       expect(wrapper.get('img').attributes('loading')).toBe('lazy');
       expect(wrapper.get('figcaption').text()).toBe('At the keyboard.');
+      expect(wrapper.get('figcaption').classes()).toEqual(expect.arrayContaining(['text-center', 'md:text-left']));
       expect(wrapper.find('.font-icon').exists()).toBe(false);
    });
 

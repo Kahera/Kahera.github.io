@@ -5,44 +5,44 @@
     "workNav": "Jobben",
     "workGroup": "Jobben",
     "hobbiesGroup": "Fritiden",
-    "hobbiesNav": "Utenfor skjermen",
+    "hobbiesNav": "Fritiden",
     "navigation": "Hovedmeny",
     "skipToContent": "Hopp til innhold",
     "work": {
       "eyebrow": "01 / Mennesker i fokus",
       "heading": "Programvare med fokus på mennesker.",
-      "body": "Enten jeg jobber med brukeropplevelse, utvikleropplevelse eller samarbeid i et team, er menneskene fokuset. Jeg er opptatt av tilgjengelighet, tydelighet og å gjøre hverdagen enklere.",
+      "body": "Det viktigste jeg gjør som utvikler er å skape løsninger som setter menneskene som bruker dem først. Enten det er brukeropplevelse og tilgjengelighet, eller utvikleropplevelse, ønsker jeg å gjøre hverdagen til andre enklere.",
       "development": {
         "eyebrow": "02 / Frontend og backend",
         "heading": "Fra grensesnitt til API.",
-        "body": "Jeg er fullstack-utvikler i {employer}. Jeg bygger frontend med Angular og Vue, backend og API-er med .NET/C#, og bruker Azure som skyplattform. Jeg liker å jobbe på tvers av lagene og forstå hvordan delene henger sammen."
+        "body": "Jeg er fullstackutvikler i {employer}. Jeg bygger frontend med Angular og Vue, backend og API-er med .NET/C#, og bruker Azure som skyplattform. Jeg liker å jobbe med helheten av en løsning, og sørge for at alle delene fungerer godt sammen."
       },
       "link": "Mer om jobben min på LinkedIn"
     },
     "sewing": {
       "eyebrow": "01 / Søm",
       "heading": "Ett sting av gangen.",
-      "body": "Søm er en av måtene jeg liker å skape noe med hendene på. Jeg liker å jobbe med stoff, finne ut hvordan delene passer sammen, og se en idé ta form, sting for sting."
+      "body": "Søm er en av måtene jeg liker å bruke fritiden til. Det gir masse skaperglede, og gir meg mulighet til å lage unike og personlige plagg som passer meg perfekt. I tillegg gjør reprasjon at plaggene varer lenger!"
     },
     "printing": {
       "eyebrow": "02 / 3D-modellering og printing",
-      "heading": "Fra skjerm til noe håndfast.",
-      "body": "Jeg liker å designe noe i 3D og så gjøre det til en fysisk ting med en printer. Å modellere, teste, justere og prøve igjen er en del av moroa."
+      "heading": "Fra problem til fysisk løsning.",
+      "body": "Jeg bruker også 3D-modellering og printing til å løse praktiske utfordringer, og å reparere ting. Det kan jeg tilpasse ting etter behov, slik at det fungerer best mulig."
     },
     "making": {
       "eyebrow": "03 / Mer skaperglede og utforsking",
       "heading": "Ulike verktøy. Samme nysgjerrighet.",
-      "body": "Strikking, elektronikk, trearbeid og det som ellers vekker interessen. Jeg elsker å lære nye teknikker, prøve meg frem med ulike materialer og finne ut hvordan jeg kan lage ting selv."
+      "body": "Småelektronikk, trearbeid og strikk er også måter jeg liker å lage på. Jeg elsker å lære nye teknikker, prøve meg frem med ulike materialer og finne ut hvordan jeg kan lage ting selv."
     },
     "beekeeping": {
       "eyebrow": "04 / Birøkt",
       "heading": "En annen slags travel hverdag.",
-      "body": "Noen dager bytter jeg ut tastaturet med tid ved bikuben. Birøkt er en annen del av livet mitt, med mye å lære underveis."
+      "body": "Birøkt er en annen del av livet mitt. Her er det masse å lære, og det er alltid nye utfordringer å løse. Når jeg bruker tid i bigården er det som meditasjon, og det gir meg også en ordentlig ro i sjelen."
     },
     "other": {
       "eyebrow": "05 / Litt av hvert",
       "heading": "Mellom prosjektene.",
-      "body": "En god bok, et dataspill, et brettspill innimellom. Jeg liker også å ha rom for ting som ikke trenger en plan eller et ferdig resultat."
+      "body": "En god bok (gjerne fantasy), et dataspill, eller et brettspill. Jeg liker også å ha rom for ting som ikke trenger en plan eller et ferdig resultat."
     },
     "elsewhere": "Finn meg andre steder"
   },

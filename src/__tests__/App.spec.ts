@@ -29,6 +29,32 @@ function mountPage() {
 }
 
 describe('Workshop page', () => {
+   it('separates internal and external navigation links without arrows', () => {
+      const wrapper = mountPage();
+      const groups = wrapper.findAll('nav > ul');
+      expect(groups).toHaveLength(2);
+      expect(wrapper.get('nav').classes()).toEqual(expect.arrayContaining(['flex', 'flex-wrap', 'items-center']));
+      expect(wrapper.get('nav').classes()).not.toContain('flex-col');
+      expect(groups[1]!.classes()).toContain('border-l');
+      expect(groups[1]!.classes()).not.toContain('border-t');
+      expect(wrapper.get('nav').text()).not.toContain('↗');
+      const internalLinks = groups[0]!.findAll('a');
+      const externalLinks = groups[1]!.findAll('a');
+      expect(internalLinks.map(link => link.attributes('href'))).toEqual(['/#work', '/#interests']);
+      expect(externalLinks.map(link => link.attributes('href'))).toEqual([
+         'https://github.com/Kahera', i18n.global.t('links.linkedIn')
+      ]);
+      for (const link of internalLinks) {
+         expect(link.attributes('target')).toBeUndefined();
+         expect(link.find('[aria-hidden="true"]').exists()).toBe(false);
+      }
+      for (const link of externalLinks) {
+         expect(link.attributes('target')).toBe('_blank');
+         expect(link.attributes('rel')).toBe('noopener noreferrer');
+         expect(link.find('[aria-hidden="true"]').exists()).toBe(false);
+      }
+   });
+
    it('presents work before hobbies with one main heading and no CV navigation', async () => {
       const wrapper = mountPage();
       await flushPromises();
@@ -38,13 +64,15 @@ describe('Workshop page', () => {
       expect(wrapper.find('#intro-title').exists()).toBe(false);
       expect(wrapper.text()).not.toContain('On the web & in the workshop');
       expect(wrapper.get('#work-title').text()).toBe('Work');
-      expect(wrapper.get('#interests-title').text()).toBe('Hobbies');
+      expect(wrapper.get('#interests-title').text()).toBe('Free time');
+      expect(wrapper.get('nav a[href="/#work"]').text()).toBe('Work');
+      expect(wrapper.get('nav a[href="/#interests"]').text()).toBe('Free time');
       expect(wrapper.get('#work-focus-title').element.tagName).toBe('H3');
       expect(wrapper.findAll('#work > section').map(section => section.attributes('id'))).toEqual([
          'work-focus', 'work-development'
       ]);
-      expect(wrapper.get('#work-focus').text()).toContain('user experience (UX)');
-      expect(wrapper.get('#work-focus').text()).toContain('developer experience (DevEx)');
+      expect(wrapper.get('#work-focus').text()).toContain('user experience and accessibility');
+      expect(wrapper.get('#work-focus').text()).toContain('developer experience');
       expect(wrapper.get('#work-development-title').element.tagName).toBe('H3');
       expect(wrapper.get('#work-development-title').text()).toBe('From interface to API.');
       expect(wrapper.get('#work-development').text()).toContain('frontends with Angular and Vue');
@@ -74,14 +102,16 @@ describe('Workshop page', () => {
          expect(section.get('p').text()).toMatch(new RegExp(`^0${index + 1} / `));
       }
       expect(wrapper.get('#sewing-title').text()).toBe('One stitch at a time.');
-      expect(wrapper.get('#sewing').text()).toContain('working with fabric');
+      expect(wrapper.get('#sewing').text()).toContain('unique, personal garments that fit me perfectly');
+      expect(wrapper.get('#sewing').text()).toContain('mending helps those clothes last longer');
       expect(wrapper.get('#printing').text()).toContain('3D modelling & printing');
-      expect(wrapper.get('#printing').text()).toContain('with a printer');
-      expect(wrapper.get('#making').text()).toContain('Knitting, electronics, woodworking');
-      expect(wrapper.get('#beekeeping').text()).toContain('time at the hive');
+      expect(wrapper.get('#printing-title').text()).toBe('From a problem to a tangible solution.');
+      expect(wrapper.get('#printing').text()).toContain('solve practical problems and repair things');
+      expect(wrapper.get('#making').text()).toContain('Small electronics projects, woodworking, and knitting');
+      expect(wrapper.get('#beekeeping').text()).toContain('Spending time in the apiary feels like meditation');
       expect(wrapper.get('#other').text()).toContain('A bit of everything');
-      expect(wrapper.get('#other-title').text()).toBe('Away from the projects.');
-      expect(wrapper.get('#other').text()).toContain('A good book, a video game, a board game now and then.');
+      expect(wrapper.get('#other-title').text()).toBe('Between projects.');
+      expect(wrapper.get('#other').text()).toContain('A good book (preferably fantasy), a video game, or a board game.');
       expect(wrapper.get('#other .font-icon').text()).toBe('interests');
       expect(wrapper.find('#games').exists()).toBe(false);
       expect(sections.map(section => section.get('.font-icon').text())).toEqual([
@@ -107,7 +137,7 @@ describe('Workshop page', () => {
       await wrapper.get('select[name="locale"]').setValue('no');
       expect(wrapper.get('#interests-title').text()).toBe(i18n.global.t('home.hobbiesGroup'));
       expect(wrapper.get('#work-title').text()).toBe(i18n.global.t('home.workGroup'));
-      expect(wrapper.get('#work').text()).toContain('Jeg er fullstack-utvikler i');
+      expect(wrapper.get('#work').text()).toContain('Jeg er fullstackutvikler i');
       expect(wrapper.get('#work-focus').text()).toContain('brukeropplevelse');
       expect(wrapper.get('#work-focus').text()).toContain('utvikleropplevelse');
       expect(wrapper.get('#work-development-title').text()).toBe('Fra grensesnitt til API.');
@@ -116,7 +146,8 @@ describe('Workshop page', () => {
       expect(wrapper.get('#work-development a[href*="linkedin"]').attributes('href')).toBe(i18n.global.t('links.linkedIn'));
       expect(wrapper.get('#sewing-title').text()).toBe('Ett sting av gangen.');
       expect(wrapper.get('#printing').text()).toContain('3D-modellering og printing');
-      expect(wrapper.get('#making').text()).toContain('Strikking, elektronikk, trearbeid');
+      expect(wrapper.get('#printing-title').text()).toBe('Fra problem til fysisk løsning.');
+      expect(wrapper.get('#making').text()).toContain('Småelektronikk, trearbeid og strikk');
       expect(wrapper.get('#beekeeping').text()).toContain('04 / Birøkt');
       expect(wrapper.get('#other').text()).toContain('05 / Litt av hvert');
       expect(wrapper.get('#other-title').text()).toBe('Mellom prosjektene.');

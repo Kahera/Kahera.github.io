@@ -27,7 +27,7 @@ const interests = ref([
          class="border-b-3 border-primary-darker bg-surface-rose dark:border-primary-light dark:bg-surface-rose-dark">
          <div
             class="page-width grid items-center gap-6 py-7 sm:grid-cols-[minmax(0,1fr)_11rem] sm:gap-10 md:grid-cols-[minmax(0,1fr)_14rem] md:gap-16 md:py-9">
-            <p class="max-w-[49ch] text-xl leading-relaxed md:text-2xl">
+            <p class="mx-auto max-w-[49ch] text-center text-xl leading-relaxed sm:mx-0 sm:text-left md:text-2xl">
                {{ t('home.intro') }}
             </p>
             <div
@@ -63,7 +63,7 @@ const interests = ref([
 
       <section id="interests" aria-labelledby="interests-title"
          class="focus-group bg-surface-rose dark:bg-surface-rose-dark">
-         <div class="focus-group-label text-ink dark:text-ink-dark">
+         <div class="focus-group-label text-primary-darker dark:text-primary-light">
             <h2 id="interests-title" class="focus-group-heading">{{ t('home.hobbiesGroup') }}</h2>
          </div>
          <FocusSection v-for="(interest, index) in interests" :id="interest.id" :key="interest.id"
@@ -86,7 +86,7 @@ const interests = ref([
 }
 
 .focus-group-heading {
-   @apply border-l-2 border-current pl-3 font-sans text-sm font-semibold uppercase leading-6 lg:sticky lg:top-8 lg:w-fit lg:py-2 lg:[writing-mode:vertical-rl];
+   @apply mx-auto w-fit border-l-2 border-current pl-3 font-sans text-sm font-semibold uppercase leading-6 md:mx-0 lg:sticky lg:top-8 lg:py-2 lg:[writing-mode:vertical-rl];
 }
 
 .focus-group-label::before {

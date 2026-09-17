@@ -2,47 +2,47 @@
   "home": {
     "intro": "Developer, beekeeper, and maker of all sorts. I build thoughtful, accessible things for the web. Away from the keyboard, the curiosity carries on.",
     "portraitAlt": "June smiling",
-    "workNav": "My work",
+    "workNav": "Work",
     "workGroup": "Work",
-    "hobbiesGroup": "Hobbies",
-    "hobbiesNav": "Off-screen",
+    "hobbiesGroup": "Free time",
+    "hobbiesNav": "Free time",
     "navigation": "Main navigation",
     "skipToContent": "Skip to content",
     "work": {
       "eyebrow": "01 / People in focus",
       "heading": "Software with people in mind.",
-      "body": "Whether I'm working on user experience (UX), developer experience (DevEx), or collaborating with a team, I start with the people involved. I care about accessibility, clarity, and making everyday work easier.",
+      "body": "The most important part of my work as a developer is creating solutions that put the people using them first. Whether it's user experience and accessibility or developer experience, I want to make everyday life easier for others.",
       "development": {
         "eyebrow": "02 / Frontend & backend",
         "heading": "From interface to API.",
-        "body": "I'm a full-stack developer at {employer}. I build frontends with Angular and Vue, backends and APIs with .NET/C#, and use Azure as the cloud platform. I enjoy working across the stack and understanding how the pieces fit together."
+        "body": "I'm a full-stack developer at {employer}. I build frontends with Angular and Vue, backends and APIs with .NET/C#, and use Azure as the cloud platform. I enjoy working on a solution as a whole and making sure all the parts work well together."
       },
       "link": "More about my work on LinkedIn"
     },
     "sewing": {
       "eyebrow": "01 / Sewing",
       "heading": "One stitch at a time.",
-      "body": "Sewing is one of my favourite ways to make something with my hands. I enjoy working with fabric, figuring out how the pieces fit, and watching an idea take shape, stitch by stitch."
+      "body": "Sewing is one of the ways I like to spend my free time. It brings me a lot of creative joy and lets me make unique, personal garments that fit me perfectly. And mending helps those clothes last longer!"
     },
     "printing": {
       "eyebrow": "02 / 3D modelling & printing",
-      "heading": "From screen to something solid.",
-      "body": "I like designing something in 3D, then bringing it into the real world with a printer. Modelling, testing, adjusting, and trying again is part of the fun."
+      "heading": "From a problem to a tangible solution.",
+      "body": "I also use 3D modelling and printing to solve practical problems and repair things. This lets me adapt things to my needs so they work as well as possible."
     },
     "making": {
       "eyebrow": "03 / More making & tinkering",
       "heading": "Different tools. Same curiosity.",
-      "body": "Knitting, electronics, woodworking, and whatever else catches my interest. I love learning new techniques, tinkering with materials, and figuring out how to make things myself."
+      "body": "Small electronics projects, woodworking, and knitting are other ways I enjoy making things. I love learning new techniques, experimenting with different materials, and figuring out how to make things myself."
     },
     "beekeeping": {
       "eyebrow": "04 / Beekeeping",
       "heading": "A different kind of busy.",
-      "body": "Some days, I trade the keyboard for time at the hive. Beekeeping is another part of my life, with plenty to learn along the way."
+      "body": "Beekeeping is another part of my life. There's a lot to learn and always new challenges to tackle. Spending time in the apiary feels like meditation and gives me a real sense of inner peace."
     },
     "other": {
       "eyebrow": "05 / A bit of everything",
-      "heading": "Away from the projects.",
-      "body": "A good book, a video game, a board game now and then. I also like having room for things that don't need a plan or a finished result."
+      "heading": "Between projects.",
+      "body": "A good book (preferably fantasy), a video game, or a board game. I also like having room for things that don't need a plan or a finished result."
     },
     "elsewhere": "Find me elsewhere"
   },
