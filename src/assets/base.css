@@ -1,47 +1,19 @@
-@import './components.css' layer(base);
 @import 'tailwindcss';
-@import "theme.css";
+@import './theme.css';
 
-@variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @utility max-w-readable {
-  @apply max-w-[75ch];
+  max-width: 75ch;
 }
 
 @utility focus-outline {
-  @apply rounded-md outline outline-offset-4 outline-primary-dark dark:outline-primary-light;
+  @apply outline outline-offset-4 outline-primary-dark dark:outline-primary-light;
 }
 
-@utility bg-gradient {
-  @apply bg-linear-to-tl from-accent-lightest via-secondary-lightest to-primary-lightest dark:from-accent-darkest dark:via-accent-darkest dark:to-primary-darkest;
-}
-
-@utility primary-hover-border {
-  @apply border-primary dark:border-primary/80 hover:border-primary-dark dark:hover:border-primary group-hover:border-primary-dark dark:group-hover:border-primary transition-colors duration-200;
-}
-
-@utility secondary-hover-border {
-  @apply border-secondary-darker dark:border-secondary-darker hover:border-secondary-darkest dark:hover:border-secondary-dark transition-colors duration-200;
-}
-
-@utility primary-hover-text {
-  @apply text-primary dark:text-primary/80 hover:text-primary-dark dark:hover:text-primary group-hover:text-primary-dark dark:group-hover:text-primary transition-colors duration-200;
-}
-
-@utility primary-higher-contrast-hover-text {
-  @apply text-primary-darkest dark:text-primary-lightest hover:text-primary-darker dark:hover:text-primary-light transition-colors duration-200;
-}
-
-@utility secondary-hover-text {
-  @apply text-secondary-darker dark:text-secondary-darker hover:text-secondary-darkest dark:hover:text-secondary-dark transition-colors duration-200;
-}
-
-@utility primary-hover-bg {
-  @apply bg-primary dark:bg-primary/80 hover:bg-primary-dark dark:hover:bg-primary transition-colors duration-200;
-}
-
-@utility secondary-hover-bg {
-  @apply bg-secondary-darker dark:bg-secondary-darker hover:bg-secondary-darkest dark:hover:bg-secondary-dark transition-colors duration-200;
+@utility page-width {
+  max-width: 70rem;
+  @apply mx-auto w-full px-5 sm:px-9;
 }
 
 @layer base {
@@ -51,59 +23,64 @@
 }
 
 .font-icon {
-  &.filled {
-    font-variation-settings:
-      'FILL' 1
-  }
-}
-
-@font-face {
-  font-family: "Material Symbols Outlined";
-  font-weight: 100 900;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  font-feature-settings: 'liga';
+  white-space: nowrap;
 }
 
 @font-face {
   font-family: "Merienda";
   src: url(./fonts/Merienda-VariableFont_wght.ttf);
+  font-weight: 300 900;
+  font-display: swap;
 }
 
-html {
-  font-size: 18px;
-  hanging-punctuation: first last;
-}
-
-body {
-  @apply min-h-dvh text-accent-darkest dark:text-primary-lightest font-sans antialiased leading-6 bg-gradient transition-colors duration-250;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-display font-bold text-balance;
+@layer base {
+  html {
+    font-size: 16px;
+    color-scheme: light;
+    hanging-punctuation: first last;
   }
 
-  h1,
-  h2 {
-    @apply text-2xl;
+  html.dark {
+    color-scheme: dark;
   }
 
-  h3 {
-    @apply text-xl;
-  }
+  body {
+    @apply min-h-dvh bg-surface text-ink dark:bg-surface-dark dark:text-ink-dark font-sans antialiased leading-6;
 
-  a {
-    @apply text-accent dark:text-accent-light hover:text-accent-dark dark:hover:text-accent-lighter transition-colors duration-250;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply font-display font-bold text-balance;
+    }
 
-  p {
-    @apply max-w-readable text-pretty;
-  }
+    h1,
+    h2 {
+      @apply text-2xl;
+    }
 
-  @media (prefers-reduced-motion: no-preference) {
-    :has(:target) {
-      @apply scroll-smooth scroll-pt-4;
+    h3 {
+      @apply text-xl;
+    }
+
+    a {
+      @apply text-inherit underline-offset-4 decoration-1 hover:text-primary-darker dark:hover:text-primary-light transition-colors duration-250;
+    }
+
+    p {
+      @apply max-w-readable text-pretty;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      :has(:target) {
+        @apply scroll-smooth scroll-pt-4;
+      }
     }
   }
 }

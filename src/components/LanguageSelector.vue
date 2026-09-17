@@ -1,55 +1,20 @@
 <script setup lang="ts">
-import type { PropType } from 'vue';
+import { useId } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-defineProps({
-   colorScheme: {
-      type: String as PropType<'primary' | 'secondary'>,
-      default: 'primary'
-   }
-});
-
-// Strongly typed color options so template indexing is safe
-interface ColorVariants { primary: string; secondary: string }
-interface ColorOptions { text: ColorVariants; border: ColorVariants }
-
-const colorOptions: ColorOptions = {
-  text: {
-    primary: 'primary-hover-text',
-    secondary: 'secondary-hover-text'
-  },
-  border: {
-    primary: 'primary-hover-border',
-    secondary: 'secondary-hover-border'
-  }
-};
+const id = useId();
+const { locale, availableLocales, t } = useI18n();
 </script>
 
 <template>
-  <fieldset
-    :class="colorOptions.border[colorScheme]"
-    class="group border rounded-md px-2 pb-3 -mt-2 has-[:focus-within]:focus-outline has-[:focus-within]:outline-2"
-  >
-    <legend
-      class="px-1 text-sm"
-      :class="colorOptions.text[colorScheme]"
-    >
-      {{ $t('locale.select') }}
-    </legend>
-    <select
-      v-model="$i18n.locale"
-      name="locale"
-      class="w-full bg-transparent focus-visible:outline-hidden text-primary-darkest dark:text-primary-lighter"
-      @click="$event.stopPropagation()"
-    >
-      <option
-        v-for="(loc, index) in $i18n.availableLocales"
-        :key="`locale-${loc}`"
-        :data-index="index"
-        :value="loc"
-        class="bg-primary-lightest dark:bg-accent-darker"
-      >
-        {{ $t('locale.' + loc) }}
-      </option>
-    </select>
-  </fieldset>
+   <div>
+      <label :for="id" class="sr-only">{{ t('locale.select') }}</label>
+      <select :id="id" v-model="locale" name="locale"
+         class="h-10 w-22 cursor-pointer border-0 border-b border-secondary-darkest bg-transparent text-sm text-secondary-darkest dark:border-secondary dark:text-secondary">
+         <option v-for="language in availableLocales" :key="language" :value="language"
+            class="bg-surface text-ink dark:bg-surface-dark dark:text-ink-dark">
+            {{ t(`locale.${language}`) }}
+         </option>
+      </select>
+   </div>
 </template>
