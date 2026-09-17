@@ -21,7 +21,7 @@ const route = useRoute();
           <RouterLink :to="{ path: '/', hash: '#work' }" class="py-1 hover:underline">{{ t('home.workNav') }}</RouterLink>
           <RouterLink :to="{ path: '/', hash: '#interests' }" class="py-1 hover:underline">{{ t('home.hobbiesNav') }}</RouterLink>
           <a href="https://github.com/Kahera" target="_blank" rel="noopener noreferrer" class="py-1 hover:underline">GitHub</a>
-          <a :href="t('about.links.linkedIn')" target="_blank" rel="noopener noreferrer" class="py-1 hover:underline">LinkedIn</a>
+          <a :href="t('links.linkedIn')" target="_blank" rel="noopener noreferrer" class="py-1 hover:underline">LinkedIn</a>
         </nav>
 
         <div class="col-start-2 row-start-1 flex shrink-0 items-center gap-3 lg:gap-4">

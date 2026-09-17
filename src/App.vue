@@ -20,7 +20,7 @@ import NavbarComponent from './components/NavbarComponent.vue';
       <div class="flex flex-wrap gap-x-6 gap-y-3">
         <a href="https://www.instagram.com/juneveh/" target="_blank" rel="noopener noreferrer" class="underline hover:text-secondary-lightest dark:hover:text-secondary-lightest focus-visible:outline-surface">Instagram</a>
         <a href="https://bsky.app/profile/junehansen.no" target="_blank" rel="noopener noreferrer" class="underline hover:text-secondary-lightest dark:hover:text-secondary-lightest focus-visible:outline-surface">Bluesky</a>
-        <a :href="$t('about.links.linkedIn')" target="_blank" rel="noopener noreferrer" class="underline hover:text-secondary-lightest dark:hover:text-secondary-lightest focus-visible:outline-surface">LinkedIn</a>
+        <a :href="$t('links.linkedIn')" target="_blank" rel="noopener noreferrer" class="underline hover:text-secondary-lightest dark:hover:text-secondary-lightest focus-visible:outline-surface">LinkedIn</a>
       </div>
     </div>
   </footer>

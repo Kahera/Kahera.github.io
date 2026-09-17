@@ -34,6 +34,11 @@
     --color-accent-darker: oklch(0.27 0.04 264);
     --color-accent-darkest: oklch(0.17 0.02 264);
 
+    --color-honey: #855514;
+    --color-honey-light: #edc778;
+    --color-plum: #61456e;
+    --color-plum-light: #d4bde0;
+
     --color-surface: #fcfdfb;
     --color-surface-dark: #1b1d1c;
     --color-ink: oklch(0.24 0.02 359);
@@ -42,6 +47,10 @@
     --color-surface-rose-dark: #33232d;
     --color-surface-green-dark: #1d332d;
     --color-surface-blue-dark: #222f39;
+    --color-surface-honey: #f6edda;
+    --color-surface-honey-dark: #342b1d;
+    --color-surface-plum: #eee8f2;
+    --color-surface-plum-dark: #2e2736;
 
     --color-neutral: var(--zinc);
     --color-success: var(--green-500);

@@ -1,54 +1,42 @@
 # junehansen.no
 
-## Design and Content
+## Design og innhold
 
-The Workshop design is implemented in [HomeView.vue](src/views/Home/HomeView.vue)
-using Tailwind CSS. The original color palette and Merienda font are retained;
-Source Sans 3 and Fraunces are bundled locally. The earlier design studies remain
-in [mockups.html](mockups.html).
+Det personlige nettstedet er bygget med Vue, TypeScript og Tailwind CSS.
+[src/views/Home/HomeView.vue](src/views/Home/HomeView.vue) viser arbeid og fritid.
+Merienda, Source Sans 3 og Fraunces leveres lokalt; ikonene bruker Material Symbols.
 
-- Edit the introduction, work summary, and hobbies under `home` in
-    [en.json](src/i18n/en.json) and [no.json](src/i18n/no.json).
-- [FocusSection.vue](src/components/FocusSection.vue) provides alternating focus
-    rows. Set `tone` (`rose`, `green`, or `blue`), `tinted`, `reverse`, and
-    `headingLevel`. Use an `h2` for a standalone section and an `h3` inside a group.
-- On the homepage, add, remove, or reorder entries in `workSections` and `interests`.
-    Left/right placement is derived from their combined order, so the pattern
-    continues across the Work/Hobbies boundary without per-section `reverse` flags.
-    Colors remain independently configurable, and mobile keeps text before media.
-- Supply `image: { src, alt, caption? }` to replace the decorative symbol with a
-    photo. The component reserves the image area and lazy-loads photos. Its default,
-    `links`, and `media` slots support richer content without changing the layout.
-- Theme and language choices are saved locally. Without a saved theme, the site
-    uses the system preference. Theme colors live in
-    [theme.css](src/assets/theme.css).
-- `/about` redirects to the homepage; `/resume` redirects to the work section.
-    LinkedIn replaces the public CV. The previous view files remain in the source
-    but are no longer routed or bundled.
+- Oppdater innhold under `home` i [src/i18n/en.json](src/i18n/en.json) og
+    [src/i18n/no.json](src/i18n/no.json). Begge språk skal ha de samme nøklene.
+    Den språkavhengige LinkedIn-adressen ligger under `links.linkedIn` og brukes
+    i navigasjonen, arbeidsseksjonen og bunnteksten.
+- [src/components/FocusSection.vue](src/components/FocusSection.vue) støtter
+    `tone` (`rose`, `blue`, `green`, `honey`, `plum`), `tinted`, `reverse` og
+    `headingLevel`. Bruk `h2` for en selvstendig seksjon og `h3` inni en gruppe.
+- Legg til, fjern eller flytt elementer i `workSections` og `interests` på
+    forsiden. Vekslingen mellom venstre og høyre følger den samlede rekkefølgen.
+    På mobil vises teksten før bildet eller ikonet.
+- `image: { src, alt, caption? }` erstatter et dekorativt ikon med et bilde.
+    Bildene lastes ved behov. Slottene `default`, `links` og `media` kan brukes
+    for rikere innhold.
+- Tema og språkvalg lagres lokalt. Uten lagret tema brukes systemets innstilling.
+    Fargene ligger i [src/assets/theme.css](src/assets/theme.css), og felles
+    stiler i [src/assets/base.css](src/assets/base.css).
+- Gamle visninger, CV-data og designutkast er fjernet. `/about` videresendes
+    fortsatt til forsiden, og `/resume` til arbeidsseksjonen, slik at gamle
+    bokmerker fungerer. Se [src/router/index.ts](src/router/index.ts).
+- [public/404.html](public/404.html) og oppstarten i [src/main.ts](src/main.ts)
+    bevarer direktelenker på GitHub Pages. Ukjente adresser viser
+    [src/views/NotFound/NotFoundView.vue](src/views/NotFound/NotFoundView.vue),
+    med en lenke tilbake til forsiden.
 
-### Next Content Pass
+## Editor
 
-- Refine the short work and hobby descriptions in both languages.
-- Add personal work/hobby photos and meaningful alternative text.
+Bruk [VS Code](https://code.visualstudio.com/) med
+[Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
+`vue-tsc` typekontrollerer Vue-komponentene ved bygging.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Se [Vite-dokumentasjonen](https://vitejs.dev/config/) for byggkonfigurasjon.
 
 ## Project Setup
 
@@ -93,5 +81,5 @@ npm run lint
 npm run test -- --run
 ```
 
-Tests cover the focus component, page structure, translations, theme controls,
-and legacy URL redirects.
+Testene dekker seksjonskomponenten, sidestrukturen, oversettelser, delte lenker,
+temavalg, gamle adresser og retur fra 404-siden på begge språk.
