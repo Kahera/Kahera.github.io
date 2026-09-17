@@ -12,7 +12,7 @@ import { RouterLink } from 'vue-router';
             {{ $t('notFound.description') }}
          </p>
          <RouterLink to="/"
-            class="mx-auto flex w-fit justify-center rounded-lg bg-primary/40 px-3 py-2 text-lg text-primary-darker dark:text-primary-lighter">
+            class="mx-auto flex w-fit justify-center rounded-lg bg-surface-rose px-3 py-2 text-lg text-primary-darker dark:bg-surface-rose-dark dark:text-primary-lighter">
             {{ $t('notFound.backHome') }}
          </RouterLink>
       </div>

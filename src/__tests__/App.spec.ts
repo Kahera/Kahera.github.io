@@ -55,7 +55,7 @@ describe('Workshop page', () => {
       }
    });
 
-   it('presents work before hobbies with one main heading and no CV navigation', async () => {
+   it('presents work before hobbies with one main heading and several subheadings', async () => {
       const wrapper = mountPage();
       await flushPromises();
       expect(wrapper.findAll('h1')).toHaveLength(1);
@@ -64,9 +64,9 @@ describe('Workshop page', () => {
       expect(wrapper.find('#intro-title').exists()).toBe(false);
       expect(wrapper.text()).not.toContain('On the web & in the workshop');
       expect(wrapper.get('#work-title').text()).toBe('Work');
-      expect(wrapper.get('#interests-title').text()).toBe('Free time');
+      expect(wrapper.get('#interests-title').text()).toBe('Leisure');
       expect(wrapper.get('nav a[href="/#work"]').text()).toBe('Work');
-      expect(wrapper.get('nav a[href="/#interests"]').text()).toBe('Free time');
+      expect(wrapper.get('nav a[href="/#interests"]').text()).toBe('Leisure');
       expect(wrapper.get('#work-focus-title').element.tagName).toBe('H3');
       expect(wrapper.findAll('#work > section').map(section => section.attributes('id'))).toEqual([
          'work-focus', 'work-development'

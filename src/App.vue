@@ -1,7 +1,18 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { watchEffect } from 'vue';
+import { RouterView, useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 import NavbarComponent from './components/NavbarComponent.vue';
 
+const route = useRoute();
+const { t } = useI18n();
+
+watchEffect(() => {
+  const siteTitle = t('common.JuneHansen');
+  document.title = route.name === 'notFound'
+    ? `${t('notFound.title')} – ${siteTitle}`
+    : siteTitle;
+});
 </script>
 
 <template>
