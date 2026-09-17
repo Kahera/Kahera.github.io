@@ -20,8 +20,9 @@ jobs:
         with:
           node-version: 24
           cache: "npm"
-      - run: npm ci
+      - run: npm ci --strict-peer-deps
+      - run: npm audit --audit-level=high
       - run: npm run type-check
       - run: npm run lint -- --no-fix
       - run: npm run build-only
-#     - run: npm test
+      - run: npm run test -- --run

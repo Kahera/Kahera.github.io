@@ -52,8 +52,21 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+Bruk Node.js 24 LTS (minst 24.15.0), som også brukes i CI. Node.js 22 krever
+minst 22.22.2; Node.js 26 eller nyere støttes også av avhengighetenes Node-krav.
+
+TypeScript beholdes på 6.0.x: nyeste `typescript-eslint` krever TypeScript
+`<6.1.0`, så TypeScript 7 kan ikke brukes med dagens ESLint-oppsett.
+
+`esbuild` er en eksplisitt utviklingsavhengighet for å oppfylle Vites peer-krav.
+i18n-verktøyet får sin egen kompatible 0.25.x-versjon som indirekte avhengighet.
+
+Installasjonen kan varsle om utfaset `vue-i18n` 10 via i18n-verktøyets indirekte
+avhengigheter. Selve nettstedet bruker 11.4.12; den indirekte hovedversjonen
+overstyres ikke uten støtte fra verktøyets vedlikeholdere.
+
 ```sh
-npm install
+npm ci
 ```
 
 ### Compile and Hot-Reload for Development
