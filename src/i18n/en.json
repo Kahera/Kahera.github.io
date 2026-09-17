@@ -14,8 +14,8 @@
       "body": "The most important part of my work as a developer is creating solutions that put the people using them first. Whether it's user experience and accessibility or developer experience, I want to make everyday life easier for others.",
       "development": {
         "eyebrow": "02 / Frontend & backend",
-        "heading": "From interface to API.",
-        "body": "I'm a full-stack developer at {employer}. I build frontends with Angular and Vue, backends and APIs with .NET/C#, and use Azure as the cloud platform. I enjoy working on a solution as a whole and making sure all the parts work well together."
+        "heading": "From interface to database.",
+        "body": "I'm a full-stack developer at {employer}. I build frontends with Angular and Vue, backends and APIs with .NET/C#, and work with the databases behind them. I use Azure as the cloud platform. I enjoy working on a solution as a whole and making sure all the parts work well together."
       },
       "link": "More about my work on LinkedIn"
     },
@@ -36,7 +36,7 @@
     },
     "beekeeping": {
       "eyebrow": "04 / Beekeeping",
-      "heading": "A different kind of busy.",
+      "heading": "A calm mind, with heavy lifting.",
       "body": "Beekeeping is another part of my life. There's a lot to learn and always new challenges to tackle. Spending time in the apiary feels like meditation and gives me a real sense of inner peace."
     },
     "other": {

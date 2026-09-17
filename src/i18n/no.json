@@ -14,8 +14,8 @@
       "body": "Det viktigste jeg gjør som utvikler er å skape løsninger som setter menneskene som bruker dem først. Enten det er brukeropplevelse og tilgjengelighet, eller utvikleropplevelse, ønsker jeg å gjøre hverdagen til andre enklere.",
       "development": {
         "eyebrow": "02 / Frontend og backend",
-        "heading": "Fra grensesnitt til API.",
-        "body": "Jeg er fullstackutvikler i {employer}. Jeg bygger frontend med Angular og Vue, backend og API-er med .NET/C#, og bruker Azure som skyplattform. Jeg liker å jobbe med helheten av en løsning, og sørge for at alle delene fungerer godt sammen."
+        "heading": "Fra grensesnitt til database.",
+        "body": "Jeg er fullstackutvikler i {employer}. Jeg bygger frontend med Angular og Vue, backend og API-er med .NET/C#, og jobber med databasene bak. Jeg bruker Azure som skyplattform. Jeg liker å jobbe med helheten av en løsning, og sørge for at alle delene fungerer godt sammen."
       },
       "link": "Mer om jobben min på LinkedIn"
     },
@@ -36,8 +36,8 @@
     },
     "beekeeping": {
       "eyebrow": "04 / Birøkt",
-      "heading": "En annen slags travel hverdag.",
-      "body": "Birøkt er en annen del av livet mitt. Her er det masse å lære, og det er alltid nye utfordringer å løse. Når jeg bruker tid i bigården er det som meditasjon, og det gir meg også en ordentlig ro i sjelen."
+      "heading": "Ro i hodet, med tunge tak.",
+      "body": "Birøkt er en annen del av livet mitt. Her er det masse å lære, og det er alltid nye utfordringer å løse. Når jeg bruker tid i bigården er det som meditasjon som gir ro i sjelen, selv om arbeidet er tungt."
     },
     "other": {
       "eyebrow": "05 / Litt av hvert",

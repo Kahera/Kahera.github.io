@@ -74,9 +74,10 @@ describe('Workshop page', () => {
       expect(wrapper.get('#work-focus').text()).toContain('user experience and accessibility');
       expect(wrapper.get('#work-focus').text()).toContain('developer experience');
       expect(wrapper.get('#work-development-title').element.tagName).toBe('H3');
-      expect(wrapper.get('#work-development-title').text()).toBe('From interface to API.');
+      expect(wrapper.get('#work-development-title').text()).toBe('From interface to database.');
       expect(wrapper.get('#work-development').text()).toContain('frontends with Angular and Vue');
       expect(wrapper.get('#work-development').text()).toContain('backends and APIs with .NET/C#');
+      expect(wrapper.get('#work-development').text()).toContain('work with the databases behind them');
       expect(wrapper.get('#work-development a[href="https://evidi.com"]').text()).toBe('Evidi');
       expect(wrapper.get('#work-development a[href*="linkedin"]').attributes('href')).toBe(i18n.global.t('links.linkedIn'));
       expect(wrapper.find('.border-dashed').exists()).toBe(false);
@@ -140,9 +141,10 @@ describe('Workshop page', () => {
       expect(wrapper.get('#work').text()).toContain('Jeg er fullstackutvikler i');
       expect(wrapper.get('#work-focus').text()).toContain('brukeropplevelse');
       expect(wrapper.get('#work-focus').text()).toContain('utvikleropplevelse');
-      expect(wrapper.get('#work-development-title').text()).toBe('Fra grensesnitt til API.');
+      expect(wrapper.get('#work-development-title').text()).toBe('Fra grensesnitt til database.');
       expect(wrapper.get('#work-development').text()).toContain('frontend med Angular og Vue');
       expect(wrapper.get('#work-development').text()).toContain('backend og API-er med .NET/C#');
+      expect(wrapper.get('#work-development').text()).toContain('jobber med databasene bak');
       expect(wrapper.get('#work-development a[href*="linkedin"]').attributes('href')).toBe(i18n.global.t('links.linkedIn'));
       expect(wrapper.get('#sewing-title').text()).toBe('Ett sting av gangen.');
       expect(wrapper.get('#printing').text()).toContain('3D-modellering og printing');
