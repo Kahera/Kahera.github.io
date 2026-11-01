@@ -50,7 +50,7 @@ TypeScript beholdes på 6.0.x: nyeste `typescript-eslint` krever TypeScript
 i18n-verktøyet får sin egen kompatible 0.25.x-versjon som indirekte avhengighet.
 
 Installasjonen kan varsle om utfaset `vue-i18n` 10 via i18n-verktøyets indirekte
-avhengigheter. Selve nettstedet bruker 11.4.12; den indirekte hovedversjonen
+avhengigheter. Selve nettstedet bruker 11.4.17; den indirekte hovedversjonen
 overstyres ikke uten støtte fra verktøyets vedlikeholdere.
 
 ```sh
